@@ -13,7 +13,11 @@ export const getAllIssues = (filesPath) => {
 		// Turns markdown in HTML
 		const renderer = new marked.Renderer();
 		const html = marked(content, {renderer});
-		const slug = `issue-${data.issue}-${slugify(data.title)}`
+		const slug = `issue-${data.issue}-${slugify(data.title, {
+			remove: /[*+~.()'"!:@]/g,
+			lower: true,
+			strict: true
+		})}`
 
 		// Builds data
 		return {
