@@ -12,20 +12,12 @@
 
 <Header {segment} />
 
-<main>
+<main class="wrapper">
   <slot />
+  <Subscribe />
 </main>
 
-<Subscribe />
 <Footer />
 
 <style>
-  main {
-    position: relative;
-    max-width: 56em;
-    background-color: white;
-    padding: 2em;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
 </style>

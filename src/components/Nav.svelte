@@ -1,14 +1,22 @@
 <script>
   export let segment;
-  import { onMount } from "svelte";
+  //   let behavior = "smooth";
 
-  onMount(() => {
-    document.querySelectorAll("a").forEach((a) => {
-      if (!a.hash || !document.querySelectorAll(a.hash).length) return;
+  //   // Grab the prefers reduced media query.
+  // const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-      a.href = window.location.origin + window.location.pathname + a.hash;
+  // // Check if the media query matches or is not available.
+  // if (!mediaQuery || mediaQuery.matches) {
+  //   behavior =
+  // } else {
+  //   behavior = "smooth"
+  // }
+
+  function scrollTo({ target }) {
+    document.querySelector(target.getAttribute("href")).scrollIntoView({
+      behavior: "auto",
     });
-  });
+  }
 </script>
 
 <nav>
@@ -18,11 +26,21 @@
         >Archive</a
       >
     </li>
-    <li><a href="#subscribe">Subscribe</a></li>
+    <li>
+      <a href="#subscribe" on:click|preventDefault={scrollTo}>Subscribe</a>
+    </li>
     <!-- <li>RSS</li> -->
     <!-- <li>Dark mode</li> -->
   </ul>
 </nav>
 
 <style>
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--size-400);
+    padding: 0;
+    font-size: var(--size-500);
+  }
 </style>

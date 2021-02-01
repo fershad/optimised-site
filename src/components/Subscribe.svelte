@@ -17,3 +17,9 @@
     </p>
   </form>
 </section>
+
+<style>
+  #subscribe {
+    margin-top: calc(2em + var(--size-500));
+  }
+</style>
