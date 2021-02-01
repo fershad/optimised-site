@@ -17,7 +17,6 @@
     "slugify": "^1.4.6"
   },
   "devDependencies": {
-    "@architect/sandbox": "^3.3.5",
     "@babel/core": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.0.0",
