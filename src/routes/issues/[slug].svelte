@@ -18,7 +18,8 @@
 </script>
 
 <svelte:head>
-  <title>{issue.title}</title>
+  <title>{issue.title} - Optimised</title>
+  <meta name="description" content={issue.description} />
 </svelte:head>
 
 <div class="content">
