@@ -1,7 +1,8 @@
 @app
-begin-app
+optimised
 
 @static
+__sapper__/export
 
 @http
 
