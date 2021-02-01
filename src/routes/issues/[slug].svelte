@@ -14,12 +14,19 @@
 </script>
 
 <script>
+  import { baseURL } from "../../../utils/baseURL";
   export let issue;
+  let canonicalURL;
+
+  issue.externalCanonical
+    ? (canonicalURL = issue.externalCanonical)
+    : (canonicalURL = `${baseURL}/issues/${issue.slug}`);
 </script>
 
 <svelte:head>
   <title>{issue.title} - Optimised</title>
   <meta name="description" content={issue.description} />
+  <link rel="canonical" href={canonicalURL} />
 </svelte:head>
 
 <div class="content">
