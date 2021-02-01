@@ -2,7 +2,7 @@
 optimised
 
 @static
-__sapper__/export
+folder __sapper__/export
 
 @http
 
