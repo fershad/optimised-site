@@ -5,4 +5,93 @@ description: This issue of Optimised will introduce you to a few tools you can u
 date: 2020-11-13 15:30
 excerpt: This issue of Optimised will introduce you to a few tools you can use to test and track website performance. I'd urge you to give one or two of them a try on your own site. Let's get into it!
 ---
-# This is issue 3
+Ohhhh it's Friday 13th .... spooky. It's the middle of November, and there've been a few glimmers of hope, positivity, normality in the past couple of weeks. Hopefully, they're good omens for 2021.
+
+Earlier this week Google announced that from May 2021 Core Web Vitals (page experience signals) will be added to the mix of UX signals that feed Google's search algorithm. You can read the announce on [Google's blog](https://webmasters.googleblog.com/2020/11/timing-for-page-experience.html). This is a *very big deal*, and so in the next issue (Nov. 27th) I'll go deeper into what Core Web Vitals are, and what Google's announcement means for SEO strategies.
+
+This issue of Optimised will introduce you to a few tools you can use to test and track website performance. I'd urge you to give one or two of them a try on your own site. Let's get into it!
+
+# **Tools to measure website performance**
+
+Before we get into the collection of tools below, let's get something clear - ***Your business goals are the ultimate measure of site performance***. While I advocate faster, lighter websites that shouldn't be a goal that we pursue blindly. At the end of the day, every optimisation you make (or decide not the make) should be assessed and measured against both technical metrics, and whether it helps you achieve better business results.
+
+Below are some tools you can use on your own website to check performance against both technical and user experience metrics. All the tools I've listed below present results in a form that's easily digestible for non-technical users, while also providing more details that can be shared with developers.
+
+## **Tools from Google**
+
+Not surprisingly Google has several tools that can be used to test and track website performance metrics.
+
+### **Google Lighthouse**
+
+[https://developers.google.com/web/tools/lighthouse/](https://developers.google.com/web/tools/lighthouse/)
+
+Lighthouse is an automated set of audits that can be run against any public web page. It returns results for performance, accessibility, technical SEO, best practice, and progressive web apps.
+
+There are a few ways to use Lighthouse audits, ranging from a user-friendly website through to command line and code tools. What's more, anyone can run Lighthouse audits from [within your Chrome web browser](https://developers.google.com/web/tools/lighthouse/#devtools).
+
+Lighthouse is at the heart of a lot of web page performance measuring tools on the internet, and it can even be used by dev teams as part of a CI/CD workflow to check for performance regressions before pages go live.
+
+### **Measure from Web.dev**
+
+[https://web.dev/measure/](https://web.dev/measure/)
+
+Web.dev is an easy tool that generates a simplified Lighthouse audit report for a web page. You'll be presented with summary results, some key metrics, and a few actionable improvement suggestions. You can get a more detailed report by clicking on the View Report link at the top of the audit results.
+
+I'd recommend this tool if you're looking for headline metrics to share with non-technical members of your organisation.
+
+### **Page Speed Insight**
+
+[https://developers.google.com/speed/pagespeed/insights/](https://developers.google.com/speed/pagespeed/insights/)
+
+Page Speed Insight (PSI) is built on the Lighthouse Performance audit. PSI presents separate results for both mobile & desktop versions of sites, with mobile being the default (in line with Google's mobile-first indexing initiative).
+
+PSI presents up-to three levels of data:
+
+- Field Data: For each test, PSI will query Google's Chrome User Experience Report (CrUX) dataset, and if enough data is available for the page being tested you'll see these results. These results are gold since they give you a look at how real users are experiencing your site.
+- Origin Summary: PSI will also try to gather CrUX data for the origin (domain) of the website. This allows you to compare how the page you're testing stacks up against the rest of your website. Again this depends on the data being available.
+- Lab Data: This is synthetic data, showing the results of automated Lighthouse tests run on the page. You'll get these results each time you run a test.
+
+These are pretty well explained on the [PSI about page](https://developers.google.com/speed/docs/insights/v5/about).
+
+### **Google Analytics**
+
+If you're using Google Analytics on your site you can get see website performance metrics fuelled by data from your real users. You can dive into the data by navigating to the ***Behaviour*** tab in the sidebar where you'll see a section titled ***Site Speed***.
+
+### **Google Search Console**
+
+You can also see real-world data for Google's Core Web Vitals metrics from within the Google Search Console. You'll be presented with data split by mobile and desktop experiences. This data is again based on CrUX though, so if you've got a low-traffic site you're unlikely to see data in here.
+
+## **WebPageTest**
+
+[https://webpagetest.org/](https://webpagetest.org/)
+
+WebPageTest allows you to run speed tests from multiple locations around the globe using real browsers (IE and Chrome) and at real consumer connection speeds. Using WebPageTest you'll get an extremely detailed set of results to dive into. Unlike some of the Google tools I've mentioned above, you'll need some degree of technical understanding to parse and interpret the results presented.
+
+## **SpeedCurve**
+
+[https://speedcurve.com/](https://speedcurve.com/)
+
+SpeedCurve's goal is to deliver metrics that give a true insight into what users are experiencing. What makes SpeedCurve great is that it allows you to set up performance monitoring for your website. It captures both synthetic test results, as well as real user experience data and presents the information on a slick visual dashboard. Unlike the other tools presented here, SpeedCurve is a paid service, starting from $114 per month.
+
+## **Website Carbon**
+
+[https://www.websitecarbon.com/](https://www.websitecarbon.com/)
+
+The internet consumes a lot of electricity. 416.2TWh per year to be precise. To give you some perspective, that’s more than the entire United Kingdom. Website Carbon Calculator allows you to visualise the carbon impact of a web page by analysing the green-rating of website hosts and web page size. It's a different take on web performance testing, but one that I definitely hope more companies put a focus on in the very near future.
+
+## **Articles**
+
+Here's a couple of articles that caught my eye while I tiptoed around the web in the past fortnight.
+
+**[CO2 emissions on the web](https://dannyvankooten.com/website-carbon-emissions/)**Developer Danny van Kooten talks through the large, positive, environmental impact made through shaving 20kB off a WordPress plugin he authored.
+
+**[Standing on Our Own Two Feet](https://letsencrypt.org/2020/11/06/own-two-feet.html)**SSL certificates are vital to secure data transmission on the web. From September next year Let's Encrypt (a popular certificate provider) will be using its own root certificate. As a result users on older Android phones might be blocked off from large swathes of the web. In this article, the Let's Encrypt team explain their decision, the potential impacts, and how you can start planning for this change with your website's visitors.
+
+---
+
+The next issue of Optimised will be in your inbox on November 27th. In the meantime, I'd really appreciate it if you could share this email with a friend.
+
+As always if you've got any feedback or specific topics you want covered then just reply to this email.
+
+Keep safe, stay well.
+Fershad.

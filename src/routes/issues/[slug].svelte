@@ -23,7 +23,6 @@
 </svelte:head>
 
 <div class="content">
-  <h1>{issue.title}</h1>
   {@html issue.html}
 </div>
 

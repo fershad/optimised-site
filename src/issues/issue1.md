@@ -5,4 +5,56 @@ description: Welcome to the first issue of Optimised.
 date: 2020-10-16 15:30
 excerpt: Welcome to the first issue of Optimised. To kick things off we'll be taking a quick look at why website performance matters from both a company and customer perspective.
 ---
-# This is issue 1
+# **Issue 1 - Yeah okay, but why?**
+
+Welcome to the first issue of Optimised.
+
+Before we get into this issue I'll take the chance to quickly explain how each issue will be structured (being the first issue and all). Each email will have a primary topic and resources related to that topic. I hope that this structure will allow you to easily refer back to these emails and find material should you need to later. I'll also share an article or two that I feel are worth checking out. Let's get cracking!
+
+## **Website performance matters. Yeah okay, but why?**
+
+There's a lot of noise around website performance, and what having a fast website can mean for businesses. Here's a quick rundown:
+
+- A faster loading site equates to lower bounce rates.
+- Faster sites result in better conversions.
+- Users are more likely to return to & recommend a site that's fast.
+- Google's given more weight to site performance in recent years.
+
+The site [WPO Stats](https://wpostats.com/) has a host of case studies most of which focus on the areas listed above.
+
+Earlier this year Deloitte even published a study titled *['Milliseconds Make Millions'](https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html)* (it's a solid 50-odd page read if you have the time). That title alone says everything you need to know, especially if you run an online store. Faster sites have been proven to increase conversions.
+
+But what if you're not selling anything? What if your website is focused on content? Or you're providing digital services to visitors? What benefits can a faster website bring you? Well plenty, actually, such as SEO benefits derived through *[The Speed Update](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html)* to Google's algorithm in 2018.
+
+I'd like to present another way to think about website performance. **Think of website performance as a digital form of customer service**. In a lot of cases your website is the first impression you'll leave on a potential customer, client, partner or investor - and first impressions count. People will come to your website with a specific goal in mind - likely they're seeking some type of information. The *best possible* experience for them would be to land on your site and be able to find the information they're after as quickly as possible. From there they can decide to hang around on your site, sign up for updates etc.
+
+### **A hypothetical example**
+
+Think about walking into a shop to buy a specific phone. You'd want to walk in and check out that phone as quickly as possible. Once you've had a chance to look at it, you might start asking the salesclerk about other options, alternate colours etc. If you had a good experience in store, you'd probably recommend it to your friends, or even go back yourself.
+
+On the other hand, you wouldn't like it if your path to the phone you want to see was blocked by boxes, or the salesclerks in the shop bombarded you with details their new membership plan from the moment you walked in. Depending on your mood you might walk out of the store. You'd probably not recommend it to friends and you'd be less likely to go back.
+
+That's a real-world example, but the same ideas carry over into the digital space.
+
+Now I'm not saying you should remove all sign-up forms, analytics scripts, ads, or animations from your website. You still need those things to drive, grow, and sustain your business. What we're talking about here is prioritising what is loaded on your website.
+
+The good thing about proper prioritising is that you'll see performance and user experience wins almost instantly. This will help your site's SEO, especially as Google starts putting focus on user experience metrics through [Core Web Vitals](https://web.dev/vitals/#core-web-vitals).
+
+## **Resources**
+
+- [WPO Stats](https://wpostats.com/) - Case studies demonstrating the impact of web performance optimization (WPO) on user experience and business metrics.
+- [Deloitte's](https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html) *[Milliseconds Make Millions](https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html)* [Study](https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html) - A look at how website performance gains play out across a number of industries.
+- [Using page speed in mobile search ranking](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html) - A blog post from Google (2018) introducing the algorithm update known as *The Speed Update*.
+- [Web Vitals](https://web.dev/vitals/) - A guide from Google's dev team introducing the user experience metrics that form Web Vitals and Core Web Vitals.
+
+## **Articles**
+
+**[The Real Cost of Poor Website Quality](https://www.bcg.com/publications/2020/real-cost-poor-website-quality)**This study is the only one I've come across that looks at how poor website performance/quality can harm the efficiency of marketing spend. It's another take on the *why* we went through above, looking at it through the lens of business efficiency.
+
+**[The why of website optimisation](https://www.fershad.com/blog/posts/website-optimisation-increase-conversions-engagement/)** **(shameless plug)**I recently published a series of five blog posts on my website going through some of the reasons you'd want to optimise your website. It covers some topics that we've covered in this newsletter, and others like reducing the environmental impact of your website.
+
+Phew, that was a lot. Not every newsletter will be this long, but knowing "why" is kinda an important thing. The next issue of Optimised will be in your inbox on October 30th.
+
+In the meantime, if you've got any feedback or specific topics you want covered then just reply to this email. If you know anyone who'd benefit from this email, go ahead and share it with them!
+
+Keep safe, stay well.Fershad.
