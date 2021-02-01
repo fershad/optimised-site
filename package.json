@@ -14,7 +14,8 @@
     "gray-matter": "^4.0.2",
     "marked": "^1.2.8",
     "polka": "next",
-    "sirv": "^1.0.0"
+    "sirv": "^1.0.0",
+    "slugify": "^1.4.6"
   },
   "devDependencies": {
     "sapper": "^0.28.0",

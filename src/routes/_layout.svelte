@@ -1,5 +1,7 @@
 <script>
   import Header from "../components/Header.svelte";
+  import Subscribe from "../components/Subscribe.svelte";
+  import Footer from "../components/Footer.svelte";
   export let segment;
 </script>
 
@@ -8,6 +10,9 @@
 <main>
   <slot />
 </main>
+
+<Subscribe />
+<Footer />
 
 <style>
   main {
