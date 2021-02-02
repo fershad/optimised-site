@@ -13,20 +13,13 @@
 
 <style>
   footer {
-    /* margin-top: var(--size-major); */
+    margin-top: calc(var(--size-500) * -1);
     justify-content: center;
     align-items: center;
-    padding: var(--size-500) var(--size-400);
+    padding: var(--size-700) var(--size-400);
     overflow: visible;
-    row-gap: var(--size-600);
+    row-gap: var(--size-700);
     background: var(--color-light);
-  }
-
-  footer::after {
-    content: "";
-    position: absolute;
-    width: 100vw;
-    border-bottom: 2px solid;
-    top: -1rem;
+    border-top: 2px solid;
   }
 </style>

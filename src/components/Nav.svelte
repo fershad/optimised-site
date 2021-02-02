@@ -29,8 +29,8 @@
     <li>
       <a href="#subscribe" on:click|preventDefault={scrollTo}>Subscribe</a>
     </li>
-    <!-- <li>RSS</li> -->
-    <!-- <li>Dark mode</li> -->
+    <li><a href="">RSS</a></li>
+    <li><button>🌙</button></li>
   </ul>
 </nav>
 

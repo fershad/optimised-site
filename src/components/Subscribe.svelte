@@ -8,7 +8,12 @@
     class="embeddable-buttondown-form"
   >
     <label for="bd-email">Enter your email</label>
-    <input type="email" name="email" id="bd-email" />
+    <input
+      type="email"
+      name="email"
+      id="bd-email"
+      placeholder="you@email.com"
+    />
     <input type="hidden" value="1" name="embed" />
     <input type="submit" value="Subscribe" />
     <p>
@@ -22,5 +27,15 @@
 <style>
   #subscribe {
     margin-top: calc(2em + var(--size-500));
+  }
+
+  input[type="email"] {
+    border: 2px dashed var(--text-color);
+    /* background: var(--color-secondary-alt); */
+  }
+
+  input:focus-within[type="email"] {
+    border: 2px solid var(--color-primary);
+    /* background: var(--color-primary-alt); */
   }
 </style>

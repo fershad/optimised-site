@@ -28,7 +28,7 @@
     background-repeat: no-repeat;
     background-size: 100% 0.3em;
     background-position: 0 100%;
-    margin-bottom: var(--size-600);
+    margin: 0 auto var(--size-600) auto;
     font-size: var(--size-major);
   }
 
@@ -38,17 +38,10 @@
     padding: var(--size-500) var(--size-400);
     overflow: visible;
     background: var(--color-light);
+    border-bottom: 2px solid;
   }
 
   .subtag {
     font-size: var(--size-600);
-  }
-
-  header::after {
-    content: "";
-    position: relative;
-    width: 100vw;
-    border-bottom: 2px solid;
-    bottom: -1rem;
   }
 </style>
