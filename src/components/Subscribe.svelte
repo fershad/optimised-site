@@ -1,4 +1,5 @@
 <section id="subscribe">
+  <h2>Subscribe</h2>
   <form
     action="https://buttondown.email/api/emails/embed-subscribe/fershad"
     method="post"

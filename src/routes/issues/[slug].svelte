@@ -15,6 +15,7 @@
 
 <script>
   import { baseURL } from "../../../utils/baseURL";
+
   export let issue;
   let canonicalURL;
 

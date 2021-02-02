@@ -19,7 +19,11 @@
     display: block;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-    background-image: linear-gradient(90deg, #aa873c, #aa873c);
+    background-image: linear-gradient(
+      90deg,
+      var(--color-primary-alt),
+      var(--color-primary-alt)
+    );
     background-repeat: no-repeat;
     background-size: 100% 0.3em;
     background-position: 0 100%;
@@ -28,13 +32,21 @@
   }
 
   header {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: var(--size-500) 0;
+    overflow: visible;
   }
 
   .subtag {
     font-size: var(--size-600);
+  }
+
+  header::after {
+    content: "";
+    position: relative;
+    width: 100vw;
+    border-bottom: 2px solid;
+    bottom: -1rem;
   }
 </style>

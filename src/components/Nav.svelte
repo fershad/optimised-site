@@ -19,7 +19,7 @@
   }
 </script>
 
-<nav>
+<nav role="navigation">
   <ul>
     <li>
       <a aria-current={segment === undefined ? "page" : undefined} href="."
@@ -39,8 +39,12 @@
     list-style-type: none;
     display: flex;
     justify-content: space-around;
-    gap: var(--size-400);
+    gap: var(--size-600);
     padding: 0;
     font-size: var(--size-500);
+  }
+
+  nav a {
+    font-weight: 700;
   }
 </style>
