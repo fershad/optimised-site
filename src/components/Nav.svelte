@@ -35,15 +35,18 @@
 </nav>
 
 <style>
-  ul {
+  nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
-    gap: var(--size-600);
+    justify-content: center;
+    /* gap: var(--size-600); */
     padding: 0;
     font-size: var(--size-500);
   }
 
+  nav ul li:not(:last-child) {
+    margin-inline-end: var(--size-600);
+  }
   nav a {
     font-weight: 700;
   }

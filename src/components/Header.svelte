@@ -1,6 +1,7 @@
 <script>
   // export let segment;
   import Nav from "./Nav.svelte";
+  export let segment;
 </script>
 
 <header class="text-center wrapper">
@@ -8,7 +9,7 @@
   <p class="subtag">
     Tips, insights, and articles to help you boost your site's performance.
   </p>
-  <Nav />
+  <Nav {segment} />
 </header>
 
 <style>

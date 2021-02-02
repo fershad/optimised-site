@@ -9,6 +9,7 @@
 
 <script>
   export let issues;
+  const dayjs = require("dayjs");
 </script>
 
 <svelte:head>
@@ -29,16 +30,20 @@
 			waiting for the 'click' event -->
       <li class="article">
         <div class="details">
-          <small>Issue #{issue.issue} | {issue.date}</small>
+          <small
+            ><strong data-color="secondary">Issue #{issue.issue}</strong> | {dayjs(
+              issue.date
+            ).format("MMMM D, YYYY")}</small
+          >
         </div>
-        <div class="title">
-          <a rel="prefetch" href="issues/{issue.slug}">{issue.title}</a>
+        <a rel="prefetch" href="issues/{issue.slug}">{issue.title}</a>
+        <!-- <div class="title">
           <div class="tags">
             {#each issue.tags as tag}
               <span class="tag">{tag}</span>
             {/each}
           </div>
-        </div>
+        </div> -->
         <p>{issue.excerpt}</p>
       </li>
     {/each}
@@ -51,9 +56,14 @@
   }
   .article {
     margin: var(--size-500) 0;
+    padding-bottom: var(--size-400);
   }
 
-  .article .title {
+  .article:not(:last-child) {
+    border-bottom: 2px dashed;
+  }
+
+  /* .article .title {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -61,9 +71,9 @@
     align-items: flex-start;
     row-gap: var(--size-500);
     margin-bottom: var(--size-500);
-  }
+  } */
 
-  .tag {
+  /* .tag {
     font-size: calc(var(--size-300) * 0.75);
     text-transform: uppercase;
     font-weight: 700;
@@ -73,24 +83,29 @@
     position: relative;
     z-index: 1;
     margin-inline-end: var(--size-400);
-  }
+  } */
 
-  .tag:last-child {
+  /* .tag:last-child {
     margin-inline-end: 0;
+  } */
+
+  .article a:first-of-type {
+    font-size: var(--size-600);
+    font-family: var(--heading-font);
+    font-weight: 700;
   }
 
-  .article .title a {
-    font-size: var(--size-600);
+  .article a:first-of-type + p {
+    margin-top: var(--size-400);
+  }
+
+  .details {
+    margin-bottom: -0.55rem;
   }
 
   @media (min-width: 36rem) {
-    .article .title a {
+    .article a:first-of-type {
       font-size: var(--size-700);
-    }
-
-    .article .title {
-      flex-direction: row;
-      align-items: center;
     }
   }
 </style>

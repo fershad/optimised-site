@@ -7,6 +7,7 @@ body {
   color: var(--text-color);
   overflow-x: hidden;
   background: var(--background-color);
+  font-family: var(--body-font);
 }
 
 /* Box sizing rules */
@@ -97,6 +98,14 @@ select {
   --background-color: var(--color-light-alt);
   --text-color: var(--color-dark);
 
+  --heading-font: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+    "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+    "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier,
+    monospace;
+  --body-font: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+    "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana,
+    "Verdana Ref", sans-serif;
+
   /* Set sizing properties */
   --size-300: calc(var(--base-size) * 0.75);
   --size-400: calc(var(--base-size) * 1);
@@ -165,7 +174,7 @@ h5,
 h6,
 .h6 {
   font-weight: 900;
-  /* font-family: var(--heading-font-family); */
+  font-family: var(--heading-font);
   line-height: 1.1;
   letter-spacing: 0.4px;
   word-spacing: 0px;
@@ -214,6 +223,18 @@ b,
 strong,
 .bold {
   font-weight: bolder;
+}
+
+b[data-color="primary"],
+strong[data-color="primary"],
+.bold[data-color="primary"] {
+  color: var(--color-primary);
+}
+
+b[data-color="secondary"],
+strong[data-color="secondary"],
+.bold[data-color="secondary"] {
+  color: var(--color-secondary);
 }
 
 .regular {
@@ -301,18 +322,27 @@ a:visited {
   /* text-decoration-color: var(--color-primary-alt); */
 }
 
-a:focus {
+a:focus,
+a[aria-current="page"] {
   color: var(--color-secondary);
   background-image: linear-gradient(
     var(--color-secondary-alt),
     var(--color-secondary-alt)
   );
+}
+
+a[aria-current="page"] {
+  cursor: default;
+}
+
+a:focus {
   outline: currentColor dotted calc(var(--size-300) * 0.2);
   outline-offset: calc(var(--size-300) * 0.25);
 }
 
 a:hover,
-a:focus {
+a:focus,
+a[aria-current="page"] {
   background-size: 100% 4px;
   background-position: 0% 100%;
   /* text-decoration-color: var(--color-secondary-alt); */
