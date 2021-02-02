@@ -28,6 +28,9 @@
 			the user hovers over the link or taps it, instead of
 			waiting for the 'click' event -->
       <li class="article">
+        <div class="details">
+          <small>Issue #{issue.issue} | {issue.date}</small>
+        </div>
         <div class="title">
           <a rel="prefetch" href="issues/{issue.slug}">{issue.title}</a>
           <div class="tags">
@@ -37,8 +40,6 @@
           </div>
         </div>
         <p>{issue.excerpt}</p>
-        <p>{issue.date}</p>
-        <p>Issue #{issue.issue}</p>
       </li>
     {/each}
   </ul>
@@ -63,11 +64,11 @@
   }
 
   .tag {
-    font-size: var(--size-300);
+    font-size: calc(var(--size-300) * 0.75);
     text-transform: uppercase;
     font-weight: 700;
-    background-color: var(--color-primary-alt);
-    border: 2px solid var(--color-dark);
+    background-color: var(--color-light-alt);
+    border: 2px solid var(--color-primary);
     padding: calc(var(--size-300) * 0.5) calc(var(--size-500) * 0.5);
     position: relative;
     z-index: 1;
