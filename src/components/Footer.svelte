@@ -13,12 +13,13 @@
 
 <style>
   footer {
-    margin-top: var(--size-major);
+    /* margin-top: var(--size-major); */
     justify-content: center;
     align-items: center;
     padding: var(--size-500) var(--size-400);
     overflow: visible;
     row-gap: var(--size-600);
+    background: var(--color-light);
   }
 
   footer::after {

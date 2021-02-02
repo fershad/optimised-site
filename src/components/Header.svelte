@@ -36,6 +36,7 @@
     align-items: center;
     padding: var(--size-500) var(--size-400);
     overflow: visible;
+    background: var(--color-light);
   }
 
   .subtag {

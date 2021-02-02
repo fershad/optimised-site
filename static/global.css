@@ -94,7 +94,7 @@ select {
   --color-secondary: #c56933;
   --color-secondary-alt: #e29578;
 
-  --background-color: var(--color-light);
+  --background-color: var(--color-light-alt);
   --text-color: var(--color-dark);
 
   /* Set sizing properties */
@@ -261,7 +261,7 @@ section {
   padding: var(--size-500);
   position: relative;
   z-index: 1;
-  background: white;
+  background: var(--color-light);
 }
 
 section:first-child {
