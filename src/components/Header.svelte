@@ -34,7 +34,7 @@
   header {
     justify-content: center;
     align-items: center;
-    padding: var(--size-500) 0;
+    padding: var(--size-500) var(--size-400);
     overflow: visible;
   }
 

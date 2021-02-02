@@ -106,8 +106,10 @@ select {
   --size-800: calc(var(--base-size) * 3.15);
   --size-900: calc(var(--base-size) * 4.2);
   --size-major: calc(var(--base-size) * 5.6);
+}
 
-  @media (max-width: 36rem) {
+@media (max-width: 36rem) {
+  :root {
     --size-300: calc(var(--base-size) * 0.75);
     --size-400: calc(var(--base-size) * 0.9);
     --size-500: calc(var(--base-size) * 1);
