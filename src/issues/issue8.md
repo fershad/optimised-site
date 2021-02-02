@@ -5,6 +5,7 @@ description: This week we'll look at a few ways you can optimise pages on your w
 date: 2021-01-22 15:30
 excerpt: Embedding content from Twitter or YouTube is pretty commonplace these days. However, the code these services provide isn't always the most optimised. This week we'll look at a few ways you can optimise pages on your websites that have Twitter/YouTube content embedded within.
 externalCanonical: https://www.fershad.com/blog/posts/optimising-embedded-content
+tags: ['third-party', 'lazy-loading']
 ---
 Hello again. It's been another eventful couple of weeks since the last email. Personally, I've been working on a side project that's aiming to track clean energy generation in Taiwan. It's been interesting looking into the different energy tech that's around. I've also been spending time looking at various ways to reduce the carbon footprint of the website.
 

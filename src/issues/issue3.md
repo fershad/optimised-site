@@ -4,6 +4,7 @@ title: Tools to measure site performance
 description: This issue of Optimised will introduce you to a few tools you can use to test and track website performance.
 date: 2020-11-13 15:30
 excerpt: This issue of Optimised will introduce you to a few tools you can use to test and track website performance. I'd urge you to give one or two of them a try on your own site. Let's get into it!
+tags: ['tooling', 'web vitals']
 ---
 Ohhhh it's Friday 13th .... spooky. It's the middle of November, and there've been a few glimmers of hope, positivity, normality in the past couple of weeks. Hopefully, they're good omens for 2021.
 

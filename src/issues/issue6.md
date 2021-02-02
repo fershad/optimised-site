@@ -4,6 +4,7 @@ title: Optimising images - Serving images
 description: A guide to some techniques that can help with optimising, compressing & serving images.
 date: 2020-12-25 15:30
 excerpt: In this issue, we'll continue our look at serving optimised images on the web. This week we'll be looking at some of the techniques you can use in your code, or plugins that you can use for WordPress.
+tags: ['images', 'tooling']
 ---
 This will be the last newsletter of 2020. I hope that during this holiday period you've been able to stay connected with those dearest to you.
 

@@ -5,6 +5,7 @@ description: What are Core Web Vitals? What might adding them to the signalling 
 date: 2020-11-27 15:30
 excerpt: What are Core Web Vitals? What might adding them to the signalling mix for search mean for SEO? And, what can you do to check & prepare your site?
 externalCanonical: https://www.fershad.com/blog/posts/core-web-vitals-google-search/
+tags: ['web vitals']
 ---
 As promised last time, this issue of Optimised will focus on Google's recent announcement that, come May 2021, Core Web Vitals will be added to the signal mix for search. What are Core Web Vitals? What might Google's announcement mean for the web? And, what can you do to check & prepare your site? Stick around to find out!
 
