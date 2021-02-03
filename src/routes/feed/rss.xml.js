@@ -1,6 +1,19 @@
 import {getAllIssues} from '../../../utils/getAll'
 import { baseURL } from '../../../utils/baseURL'
 
+const xml_special_to_escaped_one_map = {
+  '&': '&amp;',
+  '"': '&quot;',
+  '<': '&lt;',
+  '>': '&gt;'
+};
+
+function encodeXml(string) {
+  return string.replace(/([\&"<>])/g, function(str, item) {
+      return xml_special_to_escaped_one_map[item];
+  });
+};
+
 {/* Image for the feed. Can add it after the lastBuildDate <image>
 <url>${baseURL}/profile-pic-small.jpg</url>
 <title><![CDATA[David's Blog]]></title>
@@ -12,14 +25,15 @@ const renderXmlRssFeed = (issues) => `<?xml version="1.0" encoding="UTF-8" ?>
 <channel>
     <title><![CDATA[Optimised Newsletter]]></title>
     <link>${baseURL}</link>
+    <atom:link href="https://${baseURL}/feed/rss.xml" rel="self" type="application/rss+xml" />
   <description><![CDATA[A fortnightly email about website performance.]]></description>
   <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     ${issues.map(issue => `
         <item>
-            <title>${issue.title}</title>
+            <title>${encodeXml(issue.title)}</title>
       <link>${baseURL}/${issue.slug}</link>
       <guid isPermaLink="false">${baseURL}/${issue.slug}</guid>
-            <description><![CDATA[${issue.description}]]></description>
+            <description><![CDATA[${encodeXml(issue.description)}]]></description>
             <pubDate>${new Date(issue.date).toUTCString()}</pubDate>
         </item>
     `).join('\n')}
