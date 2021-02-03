@@ -40,9 +40,10 @@
   input[type="email"] {
     border: 2px dashed var(--text-color);
     padding-left: var(--size-300);
-    width: 100%;
-    max-width: 30ch;
+    max-width: 100%;
+    /* max-width: 30ch; */
     display: inline-block;
+    flex: 1 1 auto;
     /* background: var(--color-secondary-alt); */
   }
 
@@ -76,13 +77,22 @@
     font-weight: 700;
     margin-inline-start: var(--size-400);
     box-shadow: 0px 4px var(--color-primary-alt);
+    flex: 1 1 auto;
   }
 
-  input[type="submit"]:hover {
+  input[type="submit"]:hover,
+  input[type="submit"]:focus {
     background-size: 100% 4px;
     background-position: 50% 100%, 50% 0%;
     box-shadow: 4px 4px var(--color-primary-alt);
+    overflow: visible;
   }
+
+  /* input[type="submit"]:focus {
+    background-size: 100% 4px;
+    background-position: 50% 100%, 50% 0%;
+    box-shadow: 0px 0px 0px 4px var(--color-primary-alt);
+  } */
 
   .input-wrapper {
     display: flex;
@@ -90,5 +100,10 @@
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
+  }
+
+  .input-wrapper > *:focus {
+    outline: var(--color-primary) dotted calc(var(--size-300) * 0.2);
+    outline-offset: calc(var(--size-300) * 0.25);
   }
 </style>
