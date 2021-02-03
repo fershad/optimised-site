@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-  <!-- <Fathom siteCode="GYXRKGAO" /> -->
+  <Fathom siteCode="GYXRKGAO" />
 </svelte:head>
 
 <Header {segment} />

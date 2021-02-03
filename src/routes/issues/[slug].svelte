@@ -15,6 +15,7 @@
 
 <script>
   import { baseURL } from "../../../utils/baseURL";
+  const dayjs = require("dayjs");
 
   export let issue;
   let canonicalURL;
@@ -30,9 +31,13 @@
   <link rel="canonical" href={canonicalURL} />
 </svelte:head>
 
-<div class="content">
+<section class="content">
+  <p class="heading">
+    Issue #{issue.issue}
+  </p>
+  <p>{dayjs(issue.date).format("MMMM D, YYYY")}</p>
   {@html issue.html}
-</div>
+</section>
 
 <style>
   /*

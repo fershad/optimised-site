@@ -1,5 +1,5 @@
 <section id="subscribe">
-  <h2>Subscribe</h2>
+  <p class="heading">Subscribe</p>
   <p>
     Receive fortnightly website optimisation tips, insights, and articles
     directly to your inbox. <br />Alternately, you can receive updates using

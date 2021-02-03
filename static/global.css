@@ -172,7 +172,8 @@ h4,
 h5,
 .h5,
 h6,
-.h6 {
+.h6,
+.heading {
   font-weight: 900;
   font-family: var(--heading-font);
   line-height: 1.1;
@@ -192,7 +193,8 @@ h1,
 }
 
 h2,
-.h2 {
+.h2,
+.heading {
   font-size: var(--size-700);
 }
 
@@ -304,7 +306,7 @@ section:first-child {
   margin-top: var(--size-major);
 }
 
-section h2 {
+section .heading {
   display: inline-block;
   height: auto;
   width: auto;

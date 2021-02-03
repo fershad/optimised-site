@@ -12,6 +12,8 @@ In this issue of Optimised we'll be looking at third-party resources. These are 
 
 Ironically, for a newsletter focused on performance and speed, I find myself writing this issue from a rural part of southern Taiwan. I'm here to slow down a little, take stock of things, and just reset. With everything 2020 has thrown our way, having the chance to take a break like this is appreciated more than ever! I hope you've also had a chance to look after your physical and mental wellbeing through this rough as heck year.
 
+## What are third-party resources
+
 Nearly every site on the internet loads at least one third-party asset. The 2019 Web Almanac identified that [93% of sites include at least one third-party resource](https://almanac.httparchive.org/en/2019/third-parties#data). These third-party assets do everything from serving fonts and JavaScript libraries, to featuring ads, gathering analytics, and even delivering content to users.
 
 Third-party assets allow developers to quickly pull in the latest versions of common web resources (like jQuery). This frees them from the hassle of having to keep libraries updated and lets them get on with other parts of site building. For a long time they were also viewed as delivering performance boosts to websites due to caching of assets from third-party hosts (this is no longer the case as Chrome joins Safari in using HTTP cache keys to [prevent user tracking](https://www.stefanjudis.com/notes/say-goodbye-to-resource-caching-across-sites-and-domains/)).
@@ -30,7 +32,7 @@ Okay, so a full outage on the third-party provider's end is something that's tot
 
 Requesting a third-party asset first requires the browser to make a connection to the external domain *before* it can start downloading the asset. You can kick-off this connection early by using `rel="preconnect"` link tags early on in your document. Use these sparingly though since they do consume bandwidth. An example for Google Fonts would look like:
 
-```
+```html
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 ```
 

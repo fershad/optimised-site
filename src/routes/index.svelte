@@ -21,7 +21,7 @@
 </svelte:head>
 
 <section>
-  <h2>Archive</h2>
+  <p class="heading">Archive</p>
   <ul role="list">
     {#each issues as issue}
       <!-- we're using the non-standard `rel=prefetch` attribute to
