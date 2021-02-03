@@ -40,8 +40,8 @@
   input[type="email"] {
     border: 2px dashed var(--text-color);
     padding-left: var(--size-300);
-    max-width: 100%;
-    /* max-width: 30ch; */
+    width: 100%;
+    max-width: 30rem;
     display: inline-block;
     flex: 1 1 auto;
     /* background: var(--color-secondary-alt); */
@@ -65,7 +65,7 @@
 
   input[type="submit"] {
     padding-bottom: 2px;
-    max-width: 100%;
+    max-width: 30rem;
     display: inline-block;
     position: relative;
     color: var(--color-light);
@@ -75,9 +75,9 @@
     transition: background-color 0.4s ease-in-out, color 0.25s ease-in,
       outline 0.25s, box-shadow 0.2s ease-in-out;
     font-weight: 700;
-    margin-inline-start: var(--size-400);
+    /* margin-block-start: var(--size-400); */
     box-shadow: 0px 4px var(--color-primary-alt);
-    flex: 1 1 auto;
+    flex: 1 0 auto;
   }
 
   input[type="submit"]:hover,
@@ -100,9 +100,14 @@
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
+    margin: calc((var(--size-300) * -1) * 0.5);
   }
 
-  .input-wrapper > *:focus {
+  .input-wrapper > * {
+    margin: calc(var(--size-300) * 0.5);
+  }
+
+  .input-wrapper > input[type="submit"]:focus {
     outline: var(--color-secondary) dotted calc(var(--size-300) * 0.2);
     outline-offset: calc(var(--size-300) * 0.5);
   }

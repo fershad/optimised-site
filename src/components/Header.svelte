@@ -5,7 +5,7 @@
 </script>
 
 <header class="text-center wrapper">
-  <h1>Optimised</h1>
+  <p class="title">Optimised</p>
   <p class="subtag">
     Tips, insights, and articles to help you boost your site's performance.
   </p>
@@ -13,7 +13,7 @@
 </header>
 
 <style>
-  h1 {
+  .title {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;

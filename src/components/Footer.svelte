@@ -27,12 +27,4 @@
     text-align: center;
     margin: 0 auto;
   }
-
-  p a {
-    font-family: var(--heading-font);
-    font-size: calc(100% * 0.95);
-    font-weight: 700;
-    /* background-size: 2ch 4px; */
-    /* background-position: 50% 100%; */
-  }
 </style>
