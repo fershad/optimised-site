@@ -22,7 +22,7 @@
 <nav role="navigation">
   <ul>
     <li>
-      <a aria-current={segment === undefined ? "page" : undefined} href="."
+      <a aria-current={segment === undefined ? "page" : undefined} href="/"
         >Archive</a
       >
     </li>
