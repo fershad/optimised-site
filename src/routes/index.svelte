@@ -29,13 +29,13 @@
 			the user hovers over the link or taps it, instead of
 			waiting for the 'click' event -->
       <li class="article">
-        <div class="details">
-          <small
-            ><strong data-color="secondary">Issue #{issue.issue}</strong> | {dayjs(
-              issue.date
-            ).format("MMMM D, YYYY")}</small
+        <small class="details"
+          ><strong class="issueNo" data-color="secondary"
+            >Issue #{issue.issue}</strong
           >
-        </div>
+          | {dayjs(issue.date).format("MMMM D, YYYY")}</small
+        >
+
         <a rel="prefetch" href="issues/{issue.slug}">{issue.title}</a>
         <!-- <div class="title">
           <div class="tags">
@@ -56,7 +56,7 @@
   }
   .article {
     margin: var(--size-500) 0;
-    padding-bottom: var(--size-400);
+    padding: var(--size-400) 0;
   }
 
   .article:not(:last-child) {
@@ -100,7 +100,12 @@
   }
 
   .details {
-    margin-bottom: -0.55rem;
+    margin-bottom: calc(var(--size-300) * 0.25);
+    display: block;
+  }
+
+  .details > .issueNo {
+    font-family: var(--heading-font);
   }
 
   @media (min-width: 36rem) {

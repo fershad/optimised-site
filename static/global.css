@@ -308,6 +308,7 @@ section h2 {
 
 a,
 a:visited {
+  font-weight: 700;
   padding-bottom: 2px;
   position: relative;
   color: var(--color-primary);
