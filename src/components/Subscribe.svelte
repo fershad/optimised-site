@@ -3,7 +3,7 @@
   <p>
     Receive fortnightly website optimisation tips, insights, and articles
     directly to your inbox. <br />Alternately, you can receive updates using
-    <a href="">RSS</a>.
+    <a href="/feed/rss.xml">RSS</a>.
   </p>
   <form
     action="https://buttondown.email/api/emails/embed-subscribe/fershad"

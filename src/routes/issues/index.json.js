@@ -1,5 +1,4 @@
 import {getAllIssues} from '../../../utils/getAll'
-import { title } from 'process';
 
 function sortIssues(Issues) {
 	return Issues.sort( (issue1, issue2) => {

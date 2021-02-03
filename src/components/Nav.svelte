@@ -29,7 +29,7 @@
     <li>
       <a href="#subscribe" on:click|preventDefault={scrollTo}>Subscribe</a>
     </li>
-    <li><a href="">RSS</a></li>
+    <li><a href="/feed/rss.xml">RSS</a></li>
     <li><button>🌙</button></li>
   </ul>
 </nav>
