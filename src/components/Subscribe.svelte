@@ -3,7 +3,9 @@
   <p>
     Receive fortnightly website optimisation tips, insights, and articles
     directly to your inbox. <br />Alternately, you can receive updates using
-    <a href="/feed/rss.xml">RSS</a>.
+    <a href="/feed/rss.xml" onclick="window.fathom.trackGoal('SZV8WIPB', 0);"
+      >RSS</a
+    >.
   </p>
   <form
     action="https://buttondown.email/api/emails/embed-subscribe/fershad"
