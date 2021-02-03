@@ -103,7 +103,7 @@
   }
 
   .input-wrapper > *:focus {
-    outline: var(--color-primary) dotted calc(var(--size-300) * 0.2);
-    outline-offset: calc(var(--size-300) * 0.25);
+    outline: var(--color-secondary) dotted calc(var(--size-300) * 0.2);
+    outline-offset: calc(var(--size-300) * 0.5);
   }
 </style>
