@@ -6,11 +6,13 @@ date: 2020-12-25 15:30
 excerpt: In this issue, we'll continue our look at serving optimised images on the web. This week we'll be looking at some of the techniques you can use in your code, or plugins that you can use for WordPress.
 tags: ['images', 'tooling']
 ---
+# **Optimising images - Serving images**
+
 This will be the last newsletter of 2020. I hope that during this holiday period you've been able to stay connected with those dearest to you.
 
 In this issue, we'll continue our look at serving optimised images on the web. This week we'll be looking at some of the techniques you can use in your code, or plugins that you can use for WordPress. If you need a recap on the last email you can [find it here](https://www.fershad.com/optimised/issue/5/optimising-images-reducing-image-size/).
 
-# **Optimising images - Serving images**
+***
 
 Okay, so you've gone ahead and optimised your images. You've taken entire megabytes off them by compressing them, and you've even made a WebP version. We could stop here, but we're not going to.
 

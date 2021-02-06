@@ -12,6 +12,8 @@ In this issue of Optimised we'll be looking at third-party resources. These are 
 
 Ironically, for a newsletter focused on performance and speed, I find myself writing this issue from a rural part of southern Taiwan. I'm here to slow down a little, take stock of things, and just reset. With everything 2020 has thrown our way, having the chance to take a break like this is appreciated more than ever! I hope you've also had a chance to look after your physical and mental wellbeing through this rough as heck year.
 
+***
+
 ## What are third-party resources
 
 Nearly every site on the internet loads at least one third-party asset. The 2019 Web Almanac identified that [93% of sites include at least one third-party resource](https://almanac.httparchive.org/en/2019/third-parties#data). These third-party assets do everything from serving fonts and JavaScript libraries, to featuring ads, gathering analytics, and even delivering content to users.
@@ -35,8 +37,6 @@ Requesting a third-party asset first requires the browser to make a connection t
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 ```
-
-Copy
 
 ### **Use minified assets**
 

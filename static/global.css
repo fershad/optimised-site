@@ -88,12 +88,13 @@ select {
   --base-size: 1rem;
 
   --color-dark: #1b2431;
+  --color-dark-alt: #383b3f;
   --color-light: #fdfdfe;
   --color-light-alt: #edf6f9;
   --color-primary: #006d77;
-  --color-primary-alt: #83c5be;
+  --color-primary-alt: #83c5be6e;
   --color-secondary: #c56933;
-  --color-secondary-alt: #e29578;
+  --color-secondary-alt: #e295786e;
 
   --background-color: var(--color-light-alt);
   --text-color: var(--color-dark);

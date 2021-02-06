@@ -6,13 +6,15 @@ date: 2020-11-13 15:30
 excerpt: This issue of Optimised will introduce you to a few tools you can use to test and track website performance. I'd urge you to give one or two of them a try on your own site. Let's get into it!
 tags: ['tooling', 'web vitals']
 ---
+# **Tools to measure website performance**
+
 Ohhhh it's Friday 13th .... spooky. It's the middle of November, and there've been a few glimmers of hope, positivity, normality in the past couple of weeks. Hopefully, they're good omens for 2021.
 
 Earlier this week Google announced that from May 2021 Core Web Vitals (page experience signals) will be added to the mix of UX signals that feed Google's search algorithm. You can read the announce on [Google's blog](https://webmasters.googleblog.com/2020/11/timing-for-page-experience.html). This is a *very big deal*, and so in the next issue (Nov. 27th) I'll go deeper into what Core Web Vitals are, and what Google's announcement means for SEO strategies.
 
 This issue of Optimised will introduce you to a few tools you can use to test and track website performance. I'd urge you to give one or two of them a try on your own site. Let's get into it!
 
-# **Tools to measure website performance**
+***
 
 Before we get into the collection of tools below, let's get something clear - ***Your business goals are the ultimate measure of site performance***. While I advocate faster, lighter websites that shouldn't be a goal that we pursue blindly. At the end of the day, every optimisation you make (or decide not the make) should be assessed and measured against both technical metrics, and whether it helps you achieve better business results.
 

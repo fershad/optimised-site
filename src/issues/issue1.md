@@ -6,11 +6,13 @@ date: 2020-10-16 15:30
 excerpt: Welcome to the first issue of Optimised. To kick things off we'll be taking a quick look at why website performance matters from both a company and customer perspective.
 tags: ['why']
 ---
-# **Issue 1 - Yeah okay, but why?**
+# **Issue 1 - Yeah okay, but why?
 
 Welcome to the first issue of Optimised.
 
 Before we get into this issue I'll take the chance to quickly explain how each issue will be structured (being the first issue and all). Each email will have a primary topic and resources related to that topic. I hope that this structure will allow you to easily refer back to these emails and find material should you need to later. I'll also share an article or two that I feel are worth checking out. Let's get cracking!
+
+***
 
 ## **Website performance matters. Yeah okay, but why?**
 

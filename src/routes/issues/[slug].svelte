@@ -31,46 +31,54 @@
   <link rel="canonical" href={canonicalURL} />
 </svelte:head>
 
-<section class="content">
+<section>
   <p class="heading">
     Issue #{issue.issue}
   </p>
-  <p>{dayjs(issue.date).format("MMMM D, YYYY")}</p>
-  {@html issue.html}
+  <p class="bold" data-color="secondary">
+    {dayjs(issue.date).format("MMMM D, YYYY")}
+  </p>
+  <article>
+    {@html issue.html}
+  </article>
 </section>
 
 <style>
-  /*
-		By default, CSS is locally scoped to the component,
-		and any unused styles are dead-code-eliminated.
-		In this page, Svelte can't know which elements are
-		going to appear inside the {{{post.html}}} block,
-		so we have to use the :global(...) modifier to target
-		all elements inside .content
-	*/
-  .content :global(h2) {
-    font-size: 1.4em;
-    font-weight: 500;
+  article :global(p a) {
+    /* background-position: 0% 100%;
+    background-size: 100% 4px; */
+    font-family: var(--heading-font);
   }
 
-  .content :global(pre) {
-    background-color: #f9f9f9;
+  article :global(code:not(article pre code)) {
+    background-color: #83c5be36;
+    color: var(--color-primary);
+    border-radius: var(--size-300);
+    font-size: var(--size-400);
+    padding: calc(var(--size-300) / 2) var(--size-300);
+  }
+
+  article :global(p a:hover) {
+    background-image: linear-gradient(
+      var(--color-primary),
+      var(--color-primary)
+    );
+  }
+  article :global(pre) {
+    background: var(--color-light-alt);
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     padding: 0.5em;
-    border-radius: 2px;
+    border-radius: calc(var(--size-300) / 2);
     overflow-x: auto;
+    max-width: 75ch;
   }
 
-  .content :global(pre) :global(code) {
-    background-color: transparent;
-    padding: 0;
+  article :global(ul, article ol) {
+    padding-left: var(--size-300);
+    margin: var(--size-300) var(--size-700) var(--size-500);
   }
 
-  .content :global(ul) {
-    line-height: 1.5;
-  }
-
-  .content :global(li) {
-    margin: 0 0 0.5em 0;
+  article :global(h1) {
+    color: var(--color-primary);
   }
 </style>

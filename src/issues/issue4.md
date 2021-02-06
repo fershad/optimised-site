@@ -7,9 +7,11 @@ excerpt: What are Core Web Vitals? What might adding them to the signalling mix 
 externalCanonical: https://www.fershad.com/blog/posts/core-web-vitals-google-search/
 tags: ['web vitals']
 ---
+# **Core Web Vitals & Google's Performance Update**
+
 As promised last time, this issue of Optimised will focus on Google's recent announcement that, come May 2021, Core Web Vitals will be added to the signal mix for search. What are Core Web Vitals? What might Google's announcement mean for the web? And, what can you do to check & prepare your site? Stick around to find out!
 
-# **Core Web Vitals & Google's Performance Update**
+***
 
 A couple of weeks ago Google put out a [short blog post](https://developers.google.com/search/blog/2020/11/timing-for-page-experience) to announce something rather significant. Core Web Vitals metrics will be added to the page experience signals mix as part of the May 2021 search update. That's six months notice for a change that could have SEO ramifications as large as those felt when Google started prioritising sites for mobile-friendliness (another page experience signal) back in 2015.
 

@@ -6,11 +6,13 @@ date: 2020-12-11 15:30
 excerpt: When it comes to optimising images, the easiest place to start is with the image files themselves. With modern image formats, compression tools, and online services it's easy to shave megabytes off the total size of a web page.
 tags: ['images', 'tooling']
 ---
+# **Optimising images - Reducing image size**
+
 The next two issues of this newsletter will be all about images. What a way to end the year!
 
 For most web pages out there images are their heaviest assets, slowing down page loading times & impacting Core Web Vitals like LCP & CLS. This makes them one of the first places you should look at if you're first starting to think about optimising your website. There are a few things you can do to reduce the impact of images on page performance. Today, we'll take a look at optimising image files, and in a couple of weeks we'll shift focus to look at some strategies you can apply in your site's markup.
 
-# **Optimising images - Reducing image size**
+***
 
 When it comes to optimising images, the easiest place to start is with the image files themselves. With modern image formats, compression tools, and online services it's easy to shave megabytes off the total size of a web page.
 

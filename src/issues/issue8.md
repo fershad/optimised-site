@@ -7,11 +7,13 @@ excerpt: Embedding content from Twitter or YouTube is pretty commonplace these d
 externalCanonical: https://www.fershad.com/blog/posts/optimising-embedded-content
 tags: ['third-party', 'lazy-loading']
 ---
+# Optimising embedded content
+
 Hello again. It's been another eventful couple of weeks since the last email. Personally, I've been working on a side project that's aiming to track clean energy generation in Taiwan. It's been interesting looking into the different energy tech that's around. I've also been spending time looking at various ways to reduce the carbon footprint of the website.
 
 A website's carbon footprint isn't something people think about, but it goes hand in hand with performance. An optimised website is, more often than not, one that's also less energy-intensive. I could talk all day about this, and there'll be at least one issue of this newsletter touching on the topic. If you'd like to know more about the relationship between websites and carbon emissions just reach out to me. Now, onto this week's topic.
 
-# Optimising embedded content
+***
 
 This week I want to cover a few ways you can optimise pages that have Twitter/YouTube content embeds. The idea for this newsletter stems from a tweet by Matt Hobbs in which he points out just how much bloat an embedded tweet can add to a webpage.
 

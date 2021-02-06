@@ -7,11 +7,13 @@ excerpt: This issue will be all about icons. We'll look at the different options
 externalCanonical: https://www.fershad.com/blog/posts/web-icons-in-2021/
 tags: ['icons', 'svg']
 ---
+# Web icons in 2021
+
 It's 2021. We made it! We're only a few days in, and change takes time, but I hope your new year has started off well.
 
 This issue will be all about icons. We'll look at the different options that you can consider, and why you really should be using SVG in 2021.
 
-# Web icons in 2021
+***
 
 In modern web apps icons are heavily leaned on by designers to convey state, functions, or actions. Even if you've got a simple website you'll most likely want to include some links to social media platforms, or maybe contact information. Icons come in handy here too, making content & links stand out visually from the rest of the page. The strategies I cover in this issue are best suited to websites that need just a few icons sprinkled around the site rather than larger web apps (which tend to lean more heavily on icons).
 
