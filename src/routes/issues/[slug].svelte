@@ -15,7 +15,7 @@
 
 <script>
   import { baseURL } from "../../../utils/baseURL";
-  const dayjs = require("dayjs");
+  import dayjs from "dayjs";
 
   export let issue;
   let canonicalURL;

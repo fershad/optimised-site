@@ -9,7 +9,7 @@
 
 <script>
   export let issues;
-  const dayjs = require("dayjs");
+  import dayjs from "dayjs";
 </script>
 
 <svelte:head>
@@ -36,7 +36,7 @@
           | {dayjs(issue.date).format("MMMM D, YYYY")}</small
         >
 
-        <a rel="prefetch" href="issues/{issue.slug}">{issue.title}</a>
+        <a rel="prefetch" href="/issues/{issue.slug}">{issue.title}</a>
         <!-- <div class="title">
           <div class="tags">
             {#each issue.tags as tag}
