@@ -4,6 +4,7 @@ import marked from 'marked';
 import grayMatter from 'gray-matter'
 import slugify from 'slugify'
 
+
 export const getAllIssues = (filesPath) => {
 	const data = fs.readdirSync(filesPath).map((fileName) => {
 		const issue = fs.readFileSync(path.resolve(filesPath, fileName), "utf-8")
