@@ -21,16 +21,19 @@
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
     background-image: linear-gradient(
-        90deg,
-        var(--color-primary-alt),
-        var(--color-primary-alt)
+        var(--color-secondary-alt),
+        var(--color-secondary-alt)
       ),
-      linear-gradient(var(--color-primary), var(--color-primary));
+      linear-gradient(var(--color-secondary), var(--color-secondary)),
+      linear-gradient(var(--color-primary), var(--color-primary)),
+      linear-gradient(var(--color-primary-alt), var(--color-primary-alt));
     background-repeat: no-repeat;
-    background-size: 100% 0.3em, min(5ch, 75%) 0.3em;
+    background-size: 1.5ch 0.3em, 3ch 0.3em, min(5ch, 75%) 0.3em, 100% 0.3em;
     background-position: 0 90%;
     margin: 0 auto var(--size-600) auto;
     font-size: var(--size-major);
+    font-family: var(--heading-font);
+    font-weight: 900;
   }
 
   header {

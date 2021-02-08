@@ -70,23 +70,44 @@
     max-width: 30rem;
     display: inline-block;
     position: relative;
-    color: var(--color-light);
+    color: var(--color-primary);
     cursor: pointer;
     border: none;
-    background: var(--color-primary);
-    transition: background-color 0.4s ease-in-out, color 0.25s ease-in,
-      outline 0.25s, box-shadow 0.2s ease-in-out;
+    /* border-radius: var(--size-300); */
+    /* background: var(--color-light-alt); */
+    background-image: linear-gradient(
+        var(--color-primary-alt),
+        var(--color-primary-alt)
+      ),
+      linear-gradient(var(--color-primary-alt), var(--color-primary-alt)),
+      linear-gradient(var(--color-primary), var(--color-primary)),
+      linear-gradient(var(--color-secondary), var(--color-secondary)),
+      linear-gradient(var(--color-secondary-alt), var(--color-secondary-alt));
+    background-repeat: no-repeat;
+    background-size: 100% calc(100% - 0.3rem), 1.5ch 0.3rem, 3ch 0.3rem,
+      min(5ch, 75%) 0.3rem, 100% 0.3rem;
+    background-position: 100% 0%, 0% 100%, 0% 100%, 0% 100%, 0% 100%;
+    transition: background-image 0.3s ease-in-out,
+      background-size 0.4s ease-in-out, color 0.3s ease-out, outline 0.25s;
     font-weight: 700;
     /* margin-block-start: var(--size-400); */
-    box-shadow: 0px 4px var(--color-primary-alt);
     flex: 1 0 auto;
   }
 
   input[type="submit"]:hover,
   input[type="submit"]:focus {
-    background-size: 100% 4px;
-    background-position: 50% 100%, 50% 0%;
-    box-shadow: 4px 4px var(--color-primary-alt);
+    color: var(--color-light-alt);
+    background-image: linear-gradient(
+        var(--color-primary),
+        var(--color-primary)
+      ),
+      linear-gradient(var(--color-primary-alt), var(--color-primary-alt)),
+      linear-gradient(var(--color-primary), var(--color-primary)),
+      linear-gradient(var(--color-secondary), var(--color-secondary)),
+      linear-gradient(var(--color-secondary-alt), var(--color-secondary-alt));
+    background-size: 100% calc(100% - 4px), calc(100% - 5ch) 4px,
+      calc(100% - 3ch) 4px, calc(100% - 1.5ch) 4px, 100% 4px;
+    background-position: 100% 0%, 0% 100%, 0% 100%, 0% 100%, 0% 100%;
     overflow: visible;
   }
 

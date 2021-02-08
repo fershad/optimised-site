@@ -67,12 +67,6 @@
     padding: calc(var(--size-300) / 2) var(--size-300);
   }
 
-  article :global(p a:hover) {
-    background-image: linear-gradient(
-      var(--color-primary),
-      var(--color-primary)
-    );
-  }
   article :global(pre) {
     background: var(--color-light-alt);
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
@@ -89,5 +83,26 @@
 
   article :global(h1) {
     color: var(--color-primary);
+  }
+
+  article :global(.callout) {
+    margin-top: calc(var(--flow-space) + ((0.5rem + 2em) / 2));
+    margin-left: auto;
+    margin-right: auto;
+    max-width: min(70ch, 90%);
+    padding: calc(1ex + 1.15rem) var(--size-400) 0;
+    border: 2px solid var(--color-secondary);
+    background: var(--color-secondary-alt);
+    position: relative;
+  }
+
+  article :global(.callout .title) {
+    position: absolute;
+    background: var(--color-secondary);
+    color: var(--color-light);
+    top: calc(((0.5rem + 2ex) * -1));
+    left: var(--size-400);
+    position: absolute;
+    padding: 0.25rem var(--size-500);
   }
 </style>

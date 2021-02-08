@@ -2,10 +2,11 @@
   import Nav from "./Nav.svelte";
   const date = new Date();
   const year = date.getFullYear();
+  export let segment;
 </script>
 
 <footer class="wrapper">
-  <Nav />
+  <Nav {segment} />
   <p>
     {year} <a href="//fershad.com">Fershad Irani</a>. <br /> All rights reserved.
   </p>

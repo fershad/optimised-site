@@ -17,7 +17,7 @@
   <Subscribe />
 </main>
 
-<Footer />
+<Footer {segment} />
 
 <style>
 </style>

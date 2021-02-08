@@ -271,7 +271,10 @@ strong[data-color="secondary"],
 header.wrapper,
 footer.wrapper {
   display: grid;
-  grid-template-columns: auto clamp(36rem, 80vw, 72rem) auto;
+  grid-template-columns: min(1fr, var(--size-500)) clamp(36rem, 80vw, 72rem) min(
+      1fr,
+      var(--size-500)
+    );
   position: relative;
   overflow-y: hidden;
   height: 100%;
@@ -331,10 +334,12 @@ a:visited {
       var(--color-primary-alt),
       var(--color-primary-alt)
     ),
-    linear-gradient(var(--color-primary), var(--color-primary));
-  background-position: 0% 100%;
+    linear-gradient(var(--color-primary), var(--color-primary)),
+    linear-gradient(var(--color-secondary), var(--color-secondary)),
+    linear-gradient(var(--color-secondary-alt), var(--color-secondary-alt));
   background-repeat: no-repeat;
-  background-size: 100% 4px, min(5ch, 75%) 4px;
+  background-size: 1.5ch 0.3rem, 3ch 0.3rem, min(5ch, 75%) 0.3rem, 100% 0.3rem;
+  background-position: 0% 100%;
   transition: background-size 0.4s ease-in-out, color 0.25s ease-in,
     outline 0.25s;
   text-decoration: none;
@@ -344,10 +349,9 @@ a:visited {
 
 a:focus,
 a[aria-current="page"] {
-  color: var(--color-secondary);
   background-image: linear-gradient(
-    var(--color-secondary-alt),
-    var(--color-secondary-alt)
+    var(--color-secondary),
+    var(--color-secondary)
   );
 }
 
@@ -363,7 +367,9 @@ a:focus {
 a:hover,
 a:focus,
 a[aria-current="page"] {
-  background-size: 100% 4px;
+  color: var(--color-secondary);
+  background-size: calc(100% - 5ch) 4px, calc(100% - 3ch) 4px,
+    calc(100% - 1.5ch) 4px, 100% 4px;
   background-position: 0% 100%;
   /* text-decoration-color: var(--color-secondary-alt); */
 }
