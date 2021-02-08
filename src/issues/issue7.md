@@ -67,14 +67,12 @@ You can even add SVGs to a sprite, and easily call them from within your code. F
 
 ## **Articles**
 
-**[How to run a WebPageTest test](https://nooshu.github.io/blog/2020/12/31/how-to-run-a-webpagetest-test/#mainnavigation)**
-
+**[How to run a WebPageTest test](https://nooshu.github.io/blog/2020/12/31/how-to-run-a-webpagetest-test/#mainnavigation)**  
 I'm including just one article this week, but boy is it a good one! Matt Hobbs has put together a comprehensive rundown of various options available when using WebPageTest to test for page performance. Definitely a resource worth bookmarking 🔖.
 
 --- 
 
 The next issue of Optimised will be in your inbox on January 22nd. In the meantime, I'd really appreciate it if you could share this email with a friend. As always if you've got any feedback or specific topics you want to be covered then just reply to this email.
 
-Keep safe, stay well.
-
+Keep safe, stay well.  
 Fershad.

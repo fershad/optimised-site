@@ -83,5 +83,5 @@ This email's already long enough so I've not included any extra articles this we
 
 As always if you've got any feedback or specific topics you want covered then just reply to this email. If you know anyone who'd benefit from this email, go ahead and share it with them!
 
-Keep safe, stay well.
+Keep safe, stay well.<br>
 Fershad.

@@ -57,8 +57,7 @@ Simon Hearne has a [very detailed blog post](https://simonhearne.com/2020/core-
 
 ## **Article**
 
-**[BBC World Service & Web Performance](https://medium.com/@chris-hinds/bbc-world-service-web-performance-26b08f7abfcc)**
-
+**[BBC World Service & Web Performance](https://medium.com/@chris-hinds/bbc-world-service-web-performance-26b08f7abfcc)**  
 How the BBC World Service migrated 31 million weekly readers to an isomorphic react app and improved page performance by up to 83%.
 
 ---
@@ -67,5 +66,5 @@ The next issue of Optimised will be in your inbox on December 11th. In the meant
 
 As always if you've got any feedback or specific topics you want to be covered then just reply to this email.
 
-Keep safe, stay well. 
+Keep safe, stay well. <br>
 Fershad.

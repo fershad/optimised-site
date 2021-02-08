@@ -17,11 +17,11 @@ A website's carbon footprint isn't something people think about, but it goes han
 
 This week I want to cover a few ways you can optimise pages that have Twitter/YouTube content embeds. The idea for this newsletter stems from a tweet by Matt Hobbs in which he points out just how much bloat an embedded tweet can add to a webpage.
 
-> LCP: 600ms slower
-> 2.7MB more JS!
-> 25 more requests
-> LH score dropped 50%
-> *Matt Hobbs, Twitter ([Link](https://twitter.com/TheRealNooshu/status/1350578919389470721))*
+> LCP: 600ms slower  
+2.7MB more JS!  
+25 more requests  
+LH score dropped 50%  
+***Matt Hobbs**, [Twitter](https://twitter.com/TheRealNooshu/status/1350578919389470721)*
 
 Embedding content hosted on a third-party is a great way to keep visitors engaged, without them having to leave the site. However, as with most third-party resources we load, there are costs both in terms of extra network requests, file size, as well as performance penalties.
 
@@ -34,10 +34,10 @@ We're going to look at a few different methods you can apply to Twitter & YouTub
 If you want to keep things very simple, just remove the `<script>` tag that's tacked onto the end of the standard Twitter embed script. It looks like this `<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>` and you'll find it at the very end of the code Twitter generates for you when you want to embed a tweet.
 
 ```html
+<!-- Twitter embed with script tag -->
 <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">Bernie...go home already <a href="https://t.co/Ok1WpgjgJS">pic.twitter.com/Ok1WpgjgJS</a></p>&mdash; The Daily Show (@TheDailyShow) <a href="https://twitter.com/TheDailyShow/status/1352074243911999489?ref_src=twsrc%5Etfw">January 21, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
 
-```html
+<!-- Twitter embed without script tag -->
 <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">Bernie...go home already <a href="https://t.co/Ok1WpgjgJS">pic.twitter.com/Ok1WpgjgJS</a></p>&mdash; The Daily Show (@TheDailyShow) <a href="https://twitter.com/TheDailyShow/status/1352074243911999489?ref_src=twsrc%5Etfw">January 21, 2021</a></blockquote>
 ```
 
@@ -107,6 +107,5 @@ I've been learning a heap about Cloudflare Workers recently as part of a small s
 
 The next issue of Optimised will be in your inbox on February (ALREADY!?) 5th. In the meantime, I'd really appreciate it if you could share this email with a friend. As always if you've got any feedback or specific topics you want to be covered then just reply to this email.
 
-Keep safe, stay well.
-
+Keep safe, stay well.<br>
 Fershad.

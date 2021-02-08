@@ -52,12 +52,17 @@ The good thing about proper prioritising is that you'll see performance and user
 
 ## **Articles**
 
-**[The Real Cost of Poor Website Quality](https://www.bcg.com/publications/2020/real-cost-poor-website-quality)**This study is the only one I've come across that looks at how poor website performance/quality can harm the efficiency of marketing spend. It's another take on the *why* we went through above, looking at it through the lens of business efficiency.
+**[The Real Cost of Poor Website Quality](https://www.bcg.com/publications/2020/real-cost-poor-website-quality)**  
+This study is the only one I've come across that looks at how poor website performance/quality can harm the efficiency of marketing spend. It's another take on the *why* we went through above, looking at it through the lens of business efficiency.
 
-**[The why of website optimisation](https://www.fershad.com/blog/posts/website-optimisation-increase-conversions-engagement/)** **(shameless plug)**I recently published a series of five blog posts on my website going through some of the reasons you'd want to optimise your website. It covers some topics that we've covered in this newsletter, and others like reducing the environmental impact of your website.
+**[The why of website optimisation](https://www.fershad.com/blog/posts/website-optimisation-increase-conversions-engagement/)** **(shameless plug)**  
+I recently published a series of five blog posts on my website going through some of the reasons you'd want to optimise your website. It covers some topics that we've covered in this newsletter, and others like reducing the environmental impact of your website.
+
+---
 
 Phew, that was a lot. Not every newsletter will be this long, but knowing "why" is kinda an important thing. The next issue of Optimised will be in your inbox on October 30th.
 
 In the meantime, if you've got any feedback or specific topics you want covered then just reply to this email. If you know anyone who'd benefit from this email, go ahead and share it with them!
 
-Keep safe, stay well.Fershad.
+Keep safe, stay well.<br>
+Fershad.

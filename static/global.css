@@ -145,10 +145,10 @@ p {
 
 blockquote {
   margin: var(--size-400) 0 var(--size-400) 0;
-  max-width: 75ch;
-  padding-left: var(--size-400);
-  /* border-left: 10px solid var(--color-ocean-blue);
-  color: var(--color-ocean-blue); */
+  max-width: calc(75ch - var(--size-400));
+  border-left: var(--size-500) var(--color-primary) solid;
+  background: var(--color-light-alt);
+  padding: var(--size-500) var(--size-400) var(--size-400);
   font-style: italic;
 }
 
@@ -328,12 +328,13 @@ a:visited {
   position: relative;
   color: var(--color-primary);
   background-image: linear-gradient(
-    var(--color-primary-alt),
-    var(--color-primary-alt)
-  );
+      var(--color-primary-alt),
+      var(--color-primary-alt)
+    ),
+    linear-gradient(var(--color-primary), var(--color-primary));
   background-position: 0% 100%;
   background-repeat: no-repeat;
-  background-size: 2ch 4px;
+  background-size: 100% 4px, min(5ch, 75%) 4px;
   transition: background-size 0.4s ease-in-out, color 0.25s ease-in,
     outline 0.25s;
   text-decoration: none;
@@ -365,4 +366,8 @@ a[aria-current="page"] {
   background-size: 100% 4px;
   background-position: 0% 100%;
   /* text-decoration-color: var(--color-secondary-alt); */
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1.25rem);
 }

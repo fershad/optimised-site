@@ -89,13 +89,15 @@ What this will do is send the image from my site to Cloudinary along with inform
 
 ## **Articles**
 
-**[Beyond fast with new performance features](https://www.youtube.com/watch?v=Z6wjUOSh9Tk)**Google's 2020 Chrome Developer's Summit is on this week, so there's a heap of fascinating content coming out of that. In this video, Jake Archibald features some very new features and proposal aimed at improving web performance. The `<portal>` element looks especially cool.
+**[Beyond fast with new performance features](https://www.youtube.com/watch?v=Z6wjUOSh9Tk)**  
+Google's 2020 Chrome Developer's Summit is on this week, so there's a heap of fascinating content coming out of that. In this video, Jake Archibald features some very new features and proposal aimed at improving web performance. The `<portal>` element looks especially cool.
 
-**[Web Almanac 2020 - Performance](https://almanac.httparchive.org/en/2020/performance)**The 2020 Web Almanac was published this week. I've linked above to the Performance section which this year is focused on Core Web Vitals. It's worth checking out the other sections too, there are heaps of insights across the board.
+**[Web Almanac 2020 - Performance](https://almanac.httparchive.org/en/2020/performance)**  
+The 2020 Web Almanac was published this week. I've linked above to the Performance section which this year is focused on Core Web Vitals. It's worth checking out the other sections too, there are heaps of insights across the board.
 
 ---
 
 The next issue of Optimised will be in your inbox on December 25th. In the meantime, I'd really appreciate it if you could share this email with a friend. As always if you've got any feedback or specific topics you want to be covered then just reply to this email.
 
-Keep safe, stay well. 
+Keep safe, stay well. <br>
 Fershad.

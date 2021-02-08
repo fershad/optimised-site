@@ -38,12 +38,21 @@
   <p class="bold" data-color="secondary">
     {dayjs(issue.date).format("MMMM D, YYYY")}
   </p>
-  <article>
+  <article class="flow">
     {@html issue.html}
   </article>
 </section>
 
 <style>
+  article {
+    --flow-space: 2rem;
+  }
+
+  @media (min-width: 48rem) {
+    article {
+      --flow-space: 2.5rem;
+    }
+  }
   article :global(p a) {
     /* background-position: 0% 100%;
     background-size: 100% 4px; */
@@ -70,7 +79,7 @@
     padding: 0.5em;
     border-radius: calc(var(--size-300) / 2);
     overflow-x: auto;
-    max-width: 75ch;
+    max-width: min(55rem, 100%);
   }
 
   article :global(ul, article ol) {

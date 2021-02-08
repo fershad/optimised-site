@@ -21,13 +21,14 @@
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
     background-image: linear-gradient(
-      90deg,
-      var(--color-primary-alt),
-      var(--color-primary-alt)
-    );
+        90deg,
+        var(--color-primary-alt),
+        var(--color-primary-alt)
+      ),
+      linear-gradient(var(--color-primary), var(--color-primary));
     background-repeat: no-repeat;
-    background-size: 100% 0.3em;
-    background-position: 0 100%;
+    background-size: 100% 0.3em, min(5ch, 75%) 0.3em;
+    background-position: 0 90%;
     margin: 0 auto var(--size-600) auto;
     font-size: var(--size-major);
   }

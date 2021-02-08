@@ -112,8 +112,7 @@ There's a WordPress plugin for almost everything you'd want to do, and image opt
 
 Addy Osmani looks at techniques that developers can implement to delay the loading of non-critical resources until the time when a user needs to interact with them. This is can be a great performance win if you're relying on third-party resources like chat widgets, sharing modals and the like.
 
-**[Conditional JavaScript](https://umaar.com/dev-tips/242-considerate-javascript/)**
-
+**[Conditional JavaScript](https://umaar.com/dev-tips/242-considerate-javascript/)**  
 While Addy's article above talks about delaying resource load until it's required, Umar Hansa takes a different look at things. In his dev tips post he goes into methods developers can implement to selectively load resources on a user's device based on certain conditions - like connection speed or battery level.
 
 ---
@@ -122,5 +121,5 @@ The next issue of Optimised will be in your inbox on January 8th, 2021. Yes, 202
 
 Enjoy your holidays if you have them.
 
-Keep safe, stay well. 
+Keep safe, stay well. <br>
 Fershad.

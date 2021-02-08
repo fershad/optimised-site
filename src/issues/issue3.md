@@ -86,9 +86,11 @@ The internet consumes a lot of electricity. 416.2TWh per year to be precise. To 
 
 Here's a couple of articles that caught my eye while I tiptoed around the web in the past fortnight.
 
-**[CO2 emissions on the web](https://dannyvankooten.com/website-carbon-emissions/)**Developer Danny van Kooten talks through the large, positive, environmental impact made through shaving 20kB off a WordPress plugin he authored.
+**[CO2 emissions on the web](https://dannyvankooten.com/website-carbon-emissions/)**  
+Developer Danny van Kooten talks through the large, positive, environmental impact made through shaving 20kB off a WordPress plugin he authored.
 
-**[Standing on Our Own Two Feet](https://letsencrypt.org/2020/11/06/own-two-feet.html)**SSL certificates are vital to secure data transmission on the web. From September next year Let's Encrypt (a popular certificate provider) will be using its own root certificate. As a result users on older Android phones might be blocked off from large swathes of the web. In this article, the Let's Encrypt team explain their decision, the potential impacts, and how you can start planning for this change with your website's visitors.
+**[Standing on Our Own Two Feet](https://letsencrypt.org/2020/11/06/own-two-feet.html)**  
+SSL certificates are vital to secure data transmission on the web. From September next year Let's Encrypt (a popular certificate provider) will be using its own root certificate. As a result users on older Android phones might be blocked off from large swathes of the web. In this article, the Let's Encrypt team explain their decision, the potential impacts, and how you can start planning for this change with your website's visitors.
 
 ---
 
@@ -96,5 +98,5 @@ The next issue of Optimised will be in your inbox on November 27th. In the meant
 
 As always if you've got any feedback or specific topics you want covered then just reply to this email.
 
-Keep safe, stay well.
+Keep safe, stay well.<br>
 Fershad.
