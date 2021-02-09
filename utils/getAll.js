@@ -3,6 +3,7 @@ import fs from 'fs';
 import marked from 'marked';
 import grayMatter from 'gray-matter'
 import slugify from 'slugify'
+import dayjs from "dayjs";
 
 
 export const getAllIssues = (filesPath) => {
@@ -27,9 +28,13 @@ export const getAllIssues = (filesPath) => {
 			strict: true
 		})}`
 
+		const formattedDate = dayjs(data.date).format("MMMM D, YYYY");
+
+
 		// Builds data
 		return {
 			...data,
+			formattedDate,
 			slug,
 			html
 		}

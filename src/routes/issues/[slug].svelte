@@ -15,7 +15,8 @@
 
 <script>
   import { baseURL } from "../../../utils/baseURL";
-  import dayjs from "dayjs";
+  import "highlight.js/styles/solarized-dark.css";
+  import hljs from "highlight.js/";
 
   export let issue;
   let canonicalURL;
@@ -36,7 +37,7 @@
     Issue #{issue.issue}
   </p>
   <p class="bold" data-color="secondary">
-    {dayjs(issue.date).format("MMMM D, YYYY")}
+    {issue.formattedDate}
   </p>
   <article class="flow">
     {@html issue.html}
@@ -53,7 +54,7 @@
       --flow-space: 2.5rem;
     }
   }
-  article :global(p a) {
+  article :global(a) {
     /* background-position: 0% 100%;
     background-size: 100% 4px; */
     font-family: var(--heading-font);
