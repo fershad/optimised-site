@@ -1,5 +1,6 @@
 exports.handler = async (event, context, callback) => {
   const { AIRTABLE_API } = process.env;
+  const fetch = require('node-fetch');
 
   // Allowed domain origins
   let headers = {
