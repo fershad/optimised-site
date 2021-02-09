@@ -1,21 +1,12 @@
 <script>
   import Nav from "./Nav.svelte";
-  import { onMount } from "svelte";
-
-  let Badge;
 
   const date = new Date();
   const year = date.getFullYear();
   export let segment;
-
-  onMount(async () => {
-    const module = await import("./carbonBadge.svelte");
-    Badge = module.default;
-  });
 </script>
 
 <footer class="wrapper">
-  <svelte:component this={Badge} />
   <Nav {segment} />
   <p>
     {year} <a href="//fershad.com">Fershad Irani</a>. <br /> All rights reserved.
