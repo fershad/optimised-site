@@ -31,7 +31,8 @@ Well, we'll find out in May 2021, won't we? But hey, let's speculate for a bit.
 
 Google's been paying more attention to page experience for some time now. That was spearheaded by the shift to mobile-first indexing back in 2015. In recent times it's also been playing around with having page experience indicators in the Chrome browser, and they've even indicated plans to start testing similar indicators directly in search results.
 
-> We believe that providing information about the quality of a web page’s experience can be helpful to users in choosing the search result that they want to visit. ... We plan to test this [visual indicators] soon and if the testing is successful, it will launch in May 2021 and we’ll share more details on the progress of this in the coming months.Jeffrey Jose, Google Product Manager on Search
+> We believe that providing information about the quality of a web page’s experience can be helpful to users in choosing the search result that they want to visit. ... We plan to test this [visual indicators] soon and if the testing is successful, it will launch in May 2021 and we’ll share more details on the progress of this in the coming months.  
+> Jeffrey Jose, Google Product Manager on Search
 
 So all signs point to Google doubling-down on page experience for the foreseeable future. The changes in May next year *could* see sites that have neglected site performance and page experience dropping down Google search results. The addition of visual page experience indicators alongside search results could have the same impact, with users able to choose to navigate to better-performing pages.
 

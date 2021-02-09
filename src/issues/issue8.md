@@ -21,7 +21,7 @@ This week I want to cover a few ways you can optimise pages that have Twitter/Yo
 2.7MB more JS!  
 25 more requests  
 LH score dropped 50%  
-***Matt Hobbs**, [Twitter](https://twitter.com/TheRealNooshu/status/1350578919389470721)*
+**--  Matt Hobbs**, [Twitter](https://twitter.com/TheRealNooshu/status/1350578919389470721)
 
 Embedding content hosted on a third-party is a great way to keep visitors engaged, without them having to leave the site. However, as with most third-party resources we load, there are costs both in terms of extra network requests, file size, as well as performance penalties.
 
@@ -43,7 +43,10 @@ If you want to keep things very simple, just remove the `<script>` tag that's ta
 
 The scripts above are with & without the `<script>` tag respectively. I ran a quick test on my local machine & found that comparing the two code snippets above, the one without the `<script>` tag came in a whopping 2.8MB smaller.
 
-It's worth noting that this method isn't great for tweets with images (the image won't display). I'd very, very strongly recommend using it for tweets that are pure text though.
+<div class="callout">
+<p class="h3 title">Tip</p>
+<p>It's worth noting that this method isn't great for tweets with images (the image won't display). I'd very, very strongly recommend using it for tweets that are pure text though.</p>
+</div>
 
 ### Replace with an image
 
@@ -88,7 +91,10 @@ This [sick little trick](https://css-tricks.com/lazy-load-embedded-youtube-video
 
 Using this trick I was able to get the YouTube embed size down to 18kB on initial page load. Adding `loading=lazy` onto this iframe would bring that initial hit down to 0kB if the asset was further down the page.
 
-Be sure to replace the the YouTube video code in the code above - it appears in 3 places. You should also replace the title & alt fields with relevant text.
+<div class="callout">
+<p class="h3 title">Tip</p>
+<p>Be sure to replace the the YouTube video code in the code above - it appears in 3 places. You should also replace the title & alt fields with relevant text.</p>
+</div>
 
 ## Resources
 
@@ -98,9 +104,7 @@ Be sure to replace the the YouTube video code in the code above - it appears in 
 - **[Lazy load embedded YouTube videos](https://css-tricks.com/lazy-load-embedded-youtube-videos/)** - Arthur Corenzan's technique for creating lightweight YouTube embeds using placeholder images.
 
 ## Articles
-
-**[Going Serverless With Cloudflare Workers](https://www.smashingmagazine.com/2019/04/cloudflare-workers-serverless/)**
-
+**[Going Serverless With Cloudflare Workers](https://www.smashingmagazine.com/2019/04/cloudflare-workers-serverless/)**  
 I've been learning a heap about Cloudflare Workers recently as part of a small side project I'm building. They're extremely powerful things which allow you to execute code on edge nodes (servers located very close to a user), and even allow you to intercept page requests and apply transformations on the fly. Definitely something I'll be tapping into more this year.
 
 ---

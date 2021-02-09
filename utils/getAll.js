@@ -22,7 +22,7 @@ export const getAllIssues = (filesPath) => {
 				return hljs.highlight(validLanguage, code).value;
 			  },
 		});
-		const slug = `${slugify(data.title, {
+		const slug = `${slugify(`issue-${issue.issue}-${data.title}`, {
 			remove: /[*+~.()'"!:@]/g,
 			lower: true,
 			strict: true

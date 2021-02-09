@@ -39,13 +39,14 @@ It's worth noting that the online tools I've listed here do limit the number of 
 
 I'll start this section with a huge caveat. Browser support for image formats varies, especially when looking at the modern image formats mentioned below. I've put links with each format to the website Can I Use which gives you a visual breakdown of support based on the browser version.
 
-If your site requires support for Internet Explorer users then you can skip over this section as neither format mentioned is supported by IE11.
+<div class="callout">
+<p class="h3 title">Tip</p>
+<p>If your site requires support for Internet Explorer users then you can skip over this section as neither format mentioned is supported by IE11.</p>
+</div>
 
 ### **WebP**
 
-[Can I Use?](https://caniuse.com/?search=webp)
-
-WebP recently go support in Safari (macOS 11+) which means it's now supported by all the major browser engines 🎉 . WebP has long been promoted by Google as a recommended image format for the web. According to them, it can reduce file size by 19% - 64% over JPG or PNG.
+WebP ([Can I Use?](https://caniuse.com/?search=webp)) recently go support in Safari (macOS 11+) which means it's now supported by all the major browser engines 🎉 . WebP has long been promoted by Google as a recommended image format for the web. According to them, it can reduce file size by 19% - 64% over JPG or PNG.
 
 WebP can be used on standard images, as well as images that have transparency. So you can use it on your site to replace all your images if you're feeling up to it. Of course, if you have visitors coming in on older versions of Safari, Chrome or Firefox then you should still keep the JPG/PNG versions to show as a fallback. We'll get more into this next issue, but I've written up [a post about this](https://www.fershad.com/blog/posts/reduce-page-weight-with-picture-tag/) if you just can't wait.
 
@@ -57,9 +58,7 @@ WebP can be used on standard images, as well as images that have transparency. S
 
 ### **AVIF (AV1)**
 
-[Can I Use?](https://caniuse.com/?search=avif)
-
-AVIF is the newest image format on the block, and boy does it shrink images. [Jake Archibald has a terrifically in-depth article](https://jakearchibald.com/2020/avif-has-landed/) about the new format & how it stacks up with other formats across a range of use cases. In the article, he shows that using AVIF a 2.5MB image of an F1 car can be crunched down to a mere 18kb.
+AVIF ([Can I Use?](https://caniuse.com/?search=avif)) is the newest image format on the block, and boy does it shrink images. [Jake Archibald has a terrifically in-depth article](https://jakearchibald.com/2020/avif-has-landed/) about the new format & how it stacks up with other formats across a range of use cases. In the article, he shows that using AVIF a 2.5MB image of an F1 car can be crunched down to a mere 18kb.
 
 Support is currently very limited - Chrome (Desktop), Opera & Firefox (behind flags). That said, if you're keen for some lightweight images then you can start serving AVIF using the fallback method I touched on above.
 

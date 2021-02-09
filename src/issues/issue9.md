@@ -1,0 +1,89 @@
+---
+issue: 9
+title: Resource hints - Part 1
+description: A brief primer about resource hints. What they are, where, when and how to use them.
+date: 2021-02-05 15:30
+excerpt: A brief primer about resource hints. What they are, where, when and how to use them. We'll cover dns-prefetch and preconnect this week, and preload and prefetch in the next issue.
+tags: ['resource-hints']
+---
+# Resource hints - Part 1
+
+This week I started working on a new website for this newsletter. It's not completely ready yet, but by the time the next issue is out, it should be online. For the time being, it is just going to be an archive, but I might expand it out to include my own blog posts & articles later on.
+
+This week's issue will be the first in another two-parter all about resource hints.
+
+***
+
+As you might be able to guess by the name, resource hints allow developers to indicate to the browser that particular network connections or files might be important for the current (or future) page.
+
+They come in the form of a single line of HTML code that you place within the HEAD of your page. They may be small, but they have the potential to improve site performance immensely. That said, if overused they can also degrade performance. I'm going to focus on the four [most commonly used resource hints](https://almanac.httparchive.org/en/2020/resource-hints#hints-adoption) - `dns-prefetch`, `preconnect`, `preload`, and `prefetch`.
+
+- `dns-prefetch` - resolves the IP address for a given domain ahead of time.
+- `preconnect` - resolves the IP address + opens a TCP/TLS connection for a given domain.
+- `preload` - instructs that particular resources be downloaded early.
+- `prefetch` - downloads resources that might be needed for subsequent navigations.
+
+These definitions might not mean much now, but once you understand how each of these can be used they'll serve as a quick refresher if you ever need it.
+
+We'll cover `dns-prefetch` and `preconnect` this week, and `preload` and `prefetch` in the next issue.
+
+### DNS-Prefetch
+
+`dns-prefetch` is handy if you're using third-party resources on your site. For example, if you're hosting your images on Cloudinary, using Fathom for your website analytics, and you've got a YouTube embed on the page. Connecting to each of these providers starts with IP resolution for their domain. This operation can between 80 - 300ms (sometimes longer) for each domain. Normally this would happen when the browser first comes across a resource from an external domain. However, using `dns-prefetch` you can tell the browser that it would be a good idea to start this process early. By doing this the IP resolution step will be (most likely) complete by the time the browser first comes across an external resource from that domain.
+
+**What it looks like**  
+Using YouTube as an example, you'd include this line early on in the HEAD of your page
+
+```html
+<link rel="dns-prefetch" href="https://www.youtube.com">
+```
+
+**When to use it**  
+- If you're using resources hosted on an external domain, and especially if you're using multiple resources from one domain on the same page (e.g. a page with multiple images hosted on Cloudinary).
+- `dns-prefetch` has [browser support](https://caniuse.com/link-rel-dns-prefetch) all the way back to IE10, so it's useful if you're having to support legacy browsers.
+
+**Gotchas**  
+- Google Chrome has a *limit of 6* in-flight DNS requests, so be judicious in which domains you use `dns-prefetch` for. Prioritise domains that host important resources for your site's Largest Contentful Paint (LCP).
+
+### Preconnect
+
+`preconnect` gives you the same IP resolution as `dns-prefetch` but goes a step further by 'warming up' the connection as well. What this means is that on top of resolving the IP of the domain, `preconnect` also prompts the browser to establish a TCP/TLS connection with the domain. This means that when a browser first comes across an external resource it can simply start downloading it, rather than first having to establish a connection. There's a saving of somewhere in the range of 100ms here for each domain, though it does vary.
+
+**What it looks like**  
+Sticking with the YouTube example above, you can including this line early in the HEAD of your page.
+
+```html
+<link rel="preconnect" href="https://www.youtube.com">
+```
+
+**When to use it**  
+Same as `dns-prefetch` though [browser support](https://caniuse.com/link-rel-preconnect) is not as broad (IE & Firefox don't support `preconnect`). That said, you can use `preconnect` with `dns-prefetch` as a fallback by just putting them one after another in your code.
+
+```html
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://www.youtube.com">
+```
+
+**Gotchas**  
+- `preconnect` is best used only for resources early in the page load. This is because the browser will close the connection after 10 seconds if it's unused.
+- Using `preconnect` can put load on device CPU so try to limit requests (common practice is 3, no more than 6).
+
+## Resources
+
+- **[Establish network connections early to improve perceived page speed](https://web.dev/preconnect-and-dns-prefetch/)** - This web.dev post is a general introduction to `dns-prefetch` and `preconnect` resource hints.
+- **[The Web Almanac 2020 - Resource Hints](https://almanac.httparchive.org/en/2020/resource-hints)** - The 2020 Web Almanac chapter on resource hints gives an insight into the adoption and usage of resource hints across the internet.
+
+## Articles
+
+**[The unreasonable effectiveness of simple HTML](https://shkspr.mobi/blog/2021/01/the-unreasonable-effectiveness-of-simple-html/)**  
+Terence Eden gives us a reminder that not all visitors to our websites will be on the latest smartphone or laptop. This post is a short read and a reminder of how important it can be to keep websites accessible.
+
+**[Moving BBC Online to the cloud](https://www.bbc.co.uk/blogs/internet/entries/8673fe2a-e876-45fc-9a5f-203c049c9f9c)**  
+The first in a multi-part series from the BBC's Design & Engineering team that details how they modernised and simplified, the delivery of the BBC's huge online presence.
+
+***
+
+The next issue of Optimised will be in your inbox on February 19th (with a new website to boot!). In the meantime, I'd really appreciate it if you could share this email with a friend. As always if you've got any feedback or specific topics you want to be covered then just reply to this email.
+
+Keep safe, stay well.  
+Fershad.

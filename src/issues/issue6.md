@@ -32,14 +32,15 @@ To add lazy-loading to images within your code all you need to do is put the `l
 <img src="/your-cool-image.jpg" loading="lazy" alt="Make your images accessibly, fam" height="100" width="100">
 ```
 
-Copy
-
 If you're running a WordPress site then [Kinsta have a solid post](https://kinsta.com/blog/wordpress-lazy-load/) that goes through a few plugins you can look to add to your site.
 
-### **Tips & Gotchas**
-
-- To prevent layout shift as lazy-loaded images are rendered be sure to add the height and width attributes to the image. This helps the browser understand the aspect-ratio of the image, and how much space to set aside for it. Jen Simmons has a [great video explaining this](https://www.youtube.com/watch?v=4-d_SoCHeWE&feature=youtu.be).
-- You can also use lazy-loading techniques for iframes (think YouTube embeds). I've written about that in [a blog post](https://www.fershad.com/blog/posts/lazy-loading-embedded-iframes/).
+<div class="callout">
+<p class="h3 title">Tips & Gotchas</p>
+<ul>
+<li>To prevent layout shift as lazy-loaded images are rendered be sure to add the height and width attributes to the image. This helps the browser understand the aspect-ratio of the image, and how much space to set aside for it. Jen Simmons has a <a href="https://www.youtube.com/watch?v=4-d_SoCHeWE&feature=youtu.be">great video explaining this</a>.</li>
+<li>You can also use lazy-loading techniques for iframes (think YouTube embeds). I've written about that in <a href="https://www.fershad.com/blog/posts/lazy-loading-embedded-iframes/">a blog post</a>.</li>
+</ul>
+</div>
 
 ## **Responsive-loading**
 
@@ -55,7 +56,11 @@ If you're hosting images yourself (i.e. alongside your web page files) then you 
 The code in your HTML would look something like the below.
 
 ```html
-<picture> <source srcset="img/example.avif" type="image/avif"> <source srcset="img/example.webp" type="image/webp"> <img src="img/example.jpg" alt="This will be the fallback image"> </picture>
+<picture> 
+  <source srcset="img/example.avif" type="image/avif"> 
+  <source srcset="img/example.webp" type="image/webp"> 
+  <img src="img/example.jpg" alt="This will be the fallback image"> 
+</picture>
 ```
 
 **Serving smaller sized images for smaller screens**
@@ -81,7 +86,8 @@ Add the `sizes` attribute to the image tag, with a tiny bit of CSS:
 <img srcset="
   img/example-large.jpg 1280w,
   img/example-regular.jpg 640w,
-  img/example-small.jpg 320w"/>
+  img/example-small.jpg 320w"
+  sizes="(min-width: 600px) 640w, 320w/>
 ```
 
 What this says to the browser is - when the viewport width is > 600px use the 640px wide image, otherwise use the 320px version. The browser is smart enough to work out if it should use the retina variant.
@@ -108,8 +114,7 @@ There's a WordPress plugin for almost everything you'd want to do, and image opt
 
 ## **Articles**
 
-**[The Import on Interaction Pattern](https://addyosmani.com/blog/import-on-interaction/)**
-
+**[The Import on Interaction Pattern](https://addyosmani.com/blog/import-on-interaction/)**  
 Addy Osmani looks at techniques that developers can implement to delay the loading of non-critical resources until the time when a user needs to interact with them. This is can be a great performance win if you're relying on third-party resources like chat widgets, sharing modals and the like.
 
 **[Conditional JavaScript](https://umaar.com/dev-tips/242-considerate-javascript/)**  

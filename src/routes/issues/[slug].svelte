@@ -90,7 +90,7 @@
     margin-top: calc(var(--flow-space) + ((0.5rem + 2em) / 2));
     margin-left: auto;
     margin-right: auto;
-    max-width: min(70ch, 90%);
+    max-width: clamp(70ch, 90%, 100%);
     padding: calc(1ex + 1.15rem) var(--size-400) 0;
     border: 2px solid var(--color-secondary);
     background: var(--color-secondary-alt);
@@ -105,5 +105,9 @@
     left: var(--size-400);
     position: absolute;
     padding: 0.25rem var(--size-500);
+  }
+
+  article :global(ul > li, ol > li) {
+    margin-bottom: var(--size-300);
   }
 </style>

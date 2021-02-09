@@ -24,9 +24,7 @@ Below are some tools you can use on your own website to check performance agains
 
 Not surprisingly Google has several tools that can be used to test and track website performance metrics.
 
-### **Google Lighthouse**
-
-[https://developers.google.com/web/tools/lighthouse/](https://developers.google.com/web/tools/lighthouse/)
+### [**Google Lighthouse**](https://developers.google.com/web/tools/lighthouse/)
 
 Lighthouse is an automated set of audits that can be run against any public web page. It returns results for performance, accessibility, technical SEO, best practice, and progressive web apps.
 
@@ -34,17 +32,15 @@ There are a few ways to use Lighthouse audits, ranging from a user-friendly webs
 
 Lighthouse is at the heart of a lot of web page performance measuring tools on the internet, and it can even be used by dev teams as part of a CI/CD workflow to check for performance regressions before pages go live.
 
-### **Measure from Web.dev**
+### [**Measure from Web.dev**](https://web.dev/measure/)
 
-[https://web.dev/measure/](https://web.dev/measure/)
 
 Web.dev is an easy tool that generates a simplified Lighthouse audit report for a web page. You'll be presented with summary results, some key metrics, and a few actionable improvement suggestions. You can get a more detailed report by clicking on the View Report link at the top of the audit results.
 
 I'd recommend this tool if you're looking for headline metrics to share with non-technical members of your organisation.
 
-### **Page Speed Insight**
+### [**Page Speed Insight**](https://developers.google.com/speed/pagespeed/insights/)
 
-[https://developers.google.com/speed/pagespeed/insights/](https://developers.google.com/speed/pagespeed/insights/)
 
 Page Speed Insight (PSI) is built on the Lighthouse Performance audit. PSI presents separate results for both mobile & desktop versions of sites, with mobile being the default (in line with Google's mobile-first indexing initiative).
 
@@ -64,21 +60,15 @@ If you're using Google Analytics on your site you can get see website performanc
 
 You can also see real-world data for Google's Core Web Vitals metrics from within the Google Search Console. You'll be presented with data split by mobile and desktop experiences. This data is again based on CrUX though, so if you've got a low-traffic site you're unlikely to see data in here.
 
-## **WebPageTest**
-
-[https://webpagetest.org/](https://webpagetest.org/)
+## [**WebPageTest**](https://webpagetest.org/)
 
 WebPageTest allows you to run speed tests from multiple locations around the globe using real browsers (IE and Chrome) and at real consumer connection speeds. Using WebPageTest you'll get an extremely detailed set of results to dive into. Unlike some of the Google tools I've mentioned above, you'll need some degree of technical understanding to parse and interpret the results presented.
 
-## **SpeedCurve**
-
-[https://speedcurve.com/](https://speedcurve.com/)
+## [**SpeedCurve**](https://speedcurve.com/)
 
 SpeedCurve's goal is to deliver metrics that give a true insight into what users are experiencing. What makes SpeedCurve great is that it allows you to set up performance monitoring for your website. It captures both synthetic test results, as well as real user experience data and presents the information on a slick visual dashboard. Unlike the other tools presented here, SpeedCurve is a paid service, starting from $114 per month.
 
-## **Website Carbon**
-
-[https://www.websitecarbon.com/](https://www.websitecarbon.com/)
+## [**Website Carbon**](https://www.websitecarbon.com/)
 
 The internet consumes a lot of electricity. 416.2TWh per year to be precise. To give you some perspective, that’s more than the entire United Kingdom. Website Carbon Calculator allows you to visualise the carbon impact of a web page by analysing the green-rating of website hosts and web page size. It's a different take on web performance testing, but one that I definitely hope more companies put a focus on in the very near future.
 
