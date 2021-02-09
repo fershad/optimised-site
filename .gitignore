@@ -6,3 +6,5 @@ yarn-error.log
 .env
 .vscode
 .eslintrc
+# Local Netlify folder
+.netlify

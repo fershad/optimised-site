@@ -50,7 +50,7 @@
 
   // This bit saves a record of the carbon measurement. Useful for tracking the total carbon footprint of the website.
   async function recordCarbon(site, carbon) {
-    const url = `https://optimised.email/?site=${site}&c=${carbon}`;
+    const url = `https://optimised.email/.netlify/functions/recordCarbon?site=${site}&c=${carbon}`;
 
     const resp = await fetch(url);
     if (!resp.ok) {
