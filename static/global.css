@@ -330,48 +330,82 @@ a:visited {
   padding-bottom: 2px;
   position: relative;
   color: var(--color-primary);
-  background-image: linear-gradient(
-      var(--color-primary-alt),
-      var(--color-primary-alt)
-    ),
-    linear-gradient(var(--color-primary), var(--color-primary)),
-    linear-gradient(var(--color-secondary), var(--color-secondary)),
-    linear-gradient(var(--color-secondary-alt), var(--color-secondary-alt));
-  background-repeat: no-repeat;
-  background-size: 1.5ch 0.3rem, 3ch 0.3rem, min(5ch, 75%) 0.3rem, 100% 0.3rem;
-  background-position: 0% 100%;
   transition: background-size 0.4s ease-in-out, color 0.25s ease-in,
     outline 0.25s;
-  text-decoration: none;
-  /* text-decoration-thickness: 2px; */
-  /* text-decoration-color: var(--color-primary-alt); */
+  /* text-decoration: none; */
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-primary-alt);
 }
 
 a:focus,
 a[aria-current="page"] {
-  background-image: linear-gradient(
-    var(--color-secondary),
-    var(--color-secondary)
-  );
+  text-decoration-color: var(--color-secondary);
 }
 
 a[aria-current="page"] {
   cursor: default;
+  color: var(--color-secondary);
+  background-image: none;
+  text-decoration: none;
 }
 
 a:focus {
-  outline: currentColor dotted calc(var(--size-300) * 0.2);
+  outline: var(--color-secondary) dotted calc(var(--size-300) * 0.2);
   outline-offset: calc(var(--size-300) * 0.25);
 }
 
 a:hover,
-a:focus,
-a[aria-current="page"] {
-  color: var(--color-secondary);
-  background-size: calc(100% - 5ch) 4px, calc(100% - 3ch) 4px,
-    calc(100% - 1.5ch) 4px, 100% 4px;
-  background-position: 0% 100%;
-  /* text-decoration-color: var(--color-secondary-alt); */
+a:focus {
+  text-decoration-color: var(--color-primary);
+}
+
+@supports (background-image: url(foo.jpg), url(bar.jpg)) {
+  a,
+  a:visited {
+    background-image: linear-gradient(
+        var(--color-primary-alt),
+        var(--color-primary-alt)
+      ),
+      linear-gradient(var(--color-primary), var(--color-primary)),
+      linear-gradient(var(--color-secondary), var(--color-secondary)),
+      linear-gradient(var(--color-secondary-alt), var(--color-secondary-alt)),
+      linear-gradient(var(--color-primary), var(--color-primary));
+    background-repeat: no-repeat;
+    background-position: 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 0%;
+    background-size: min(1.5ch, 15%) 0.3rem, min(3ch, 30%) 0.3rem,
+      min(5ch, 75%) 0.3rem, 100% 0.3rem, 0% calc(100% - 0.3rem);
+    z-index: 0;
+    padding: 4px;
+    text-decoration: none;
+    /* background-position: 0% 100%; */
+  }
+
+  a:hover,
+  a:focus {
+    color: var(--color-light);
+    background-size: calc(100% - 5ch) 4px, calc(100% - 3ch) 4px,
+      calc(100% - 1.5ch) 4px, 100% 4px, 100% calc(100% - 0.3rem);
+    background-position: 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 0%;
+    text-decoration: none;
+    /* text-decoration-color: var(--color-secondary-alt); */
+  }
+
+  /* a::after {
+    content: "";
+    width: 0;
+    height: calc(100% - 4px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background: var(--color-primary);
+    transition: width 0.4s ease-in-out;
+    z-index: -1;
+  }
+
+  a:hover::after {
+    width: 100%;
+  } */
 }
 
 .flow > * + * {
