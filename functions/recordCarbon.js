@@ -1,9 +1,7 @@
 exports.handler = async (event, context, callback) => {
   // Allowed domain origins
-  var allowed = ['https://optimised.email'];
-
   let headers = {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': 'https://optimised.email',
     'Access-Control-Allow-Methods': 'GET, HEAD, POST, OPTIONS',
     'Access-Control-Allow-Headers': '*'
   };
