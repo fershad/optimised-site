@@ -6,7 +6,7 @@ body {
   line-height: 1.5;
   color: var(--text-color);
   overflow-x: hidden;
-  background: var(--background-color);
+  background: #212121;
   font-family: var(--body-font);
 }
 
