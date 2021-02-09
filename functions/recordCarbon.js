@@ -1,4 +1,6 @@
 exports.handler = async (event, context, callback) => {
+  const { AIRTABLE_API } = process.env;
+
   // Allowed domain origins
   let headers = {
     'Access-Control-Allow-Origin': 'https://optimised.email',
