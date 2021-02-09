@@ -6,15 +6,7 @@ exports.handler = async (event, context, callback) => {
     'Access-Control-Allow-Headers': '*'
   };
 
-  // If domain is not allowed, return error code
-  if (!allowed.includes(event.headers.origin)) {
-    callback(null, {
-      statusCode: 403,
-      body: 'Requests from this domain are not allowed.',
-      headers: headers
-    })
-  }
-  
+   
   let carbon = parseFloat(event.queryStringParameters.c)
   let site = event.queryStringParameters.site
   
