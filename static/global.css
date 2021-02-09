@@ -395,6 +395,24 @@ a:focus {
     text-decoration: none;
     /* text-decoration-color: var(--color-secondary-alt); */
   }
+
+  article hr {
+    background-image: linear-gradient(
+            var(--color-primary-alt),
+            var(--color-primary-alt)
+          ),
+          linear-gradient(var(--color-primary), var(--color-primary)),
+          linear-gradient(var(--color-secondary), var(--color-secondary)),
+          linear-gradient(var(--color-secondary-alt), var(--color-secondary-alt));
+        background-repeat: no-repeat;
+        background-position: 0% 100%, 25% 100%, 50% 100%, 75% 100%;
+        background-size: 35px 100%;
+        height: var(--size-600);
+        border: none;
+        width: 200px;
+        margin-block: var(--size-700);
+      }
+  }
 }
 
 .flow > * + * {
