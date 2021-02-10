@@ -9,6 +9,19 @@
 
 <script>
   export let issues;
+  import Fathom from "../components/Fathom.svelte";
+
+  import { onMount } from "svelte";
+
+  onMount(async () => {
+    const wcb = document.querySelector("#wcb-wrapper");
+    const removeChilds = (parent) => {
+      while (parent.lastChild) {
+        parent.removeChild(parent.lastChild);
+      }
+    };
+    removeChilds(wcb);
+  });
 </script>
 
 <svelte:head>
@@ -17,6 +30,9 @@
     name="description"
     content="Fortnightly insights into the ways website performance and optimisation can help your customers, your business, and the planet. Subscribe today, and start optimising."
   />
+  <!-- <Fathom siteCode="GYXRKGAO" /> -->
+  <script type="module" src="/carbon-badge.mjs" async></script>
+  <script nomodule="" src="/carbon-badge.js" async></script>
 </svelte:head>
 
 <section>

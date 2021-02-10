@@ -16,7 +16,7 @@
 <script>
   import { baseURL } from "../../../utils/baseURL";
   import "highlight.js/styles/solarized-dark.css";
-  import hljs from "highlight.js/";
+  import Fathom from "../../components/Fathom.svelte";
 
   export let issue;
   let canonicalURL;
@@ -24,12 +24,26 @@
   issue.externalCanonical
     ? (canonicalURL = issue.externalCanonical)
     : (canonicalURL = `${baseURL}/issues/${issue.slug}`);
+
+  import { onMount } from "svelte";
+  onMount(async () => {
+    const wcb = document.querySelector("#wcb-wrapper");
+    const removeChilds = (parent) => {
+      while (parent.lastChild) {
+        parent.removeChild(parent.lastChild);
+      }
+    };
+    removeChilds(wcb);
+  });
 </script>
 
 <svelte:head>
   <title>{issue.title} - Optimised</title>
   <meta name="description" content={issue.description} />
   <link rel="canonical" href={canonicalURL} />
+  <!-- <Fathom siteCode="GYXRKGAO" /> -->
+  <script type="module" src="/carbon-badge.mjs" async></script>
+  <script nomodule="" src="/carbon-badge.js" async></script>
 </svelte:head>
 
 <section>
