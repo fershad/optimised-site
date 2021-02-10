@@ -116,5 +116,17 @@ export default {
 
 		preserveEntrySignatures: false,
 		onwarn,
+	},
+	
+	carbon: {
+		input: 'src/carbon-badge.js',
+	output: [
+		{ file: 'static/carbonBadge.js', 'format': 'es' },
+		{ file: 'static/carbonBadge.js', 'format': 'umd' }
+	],
+	plugins: [
+		svelte(),
+		resolve()
+	]
 	}
 };

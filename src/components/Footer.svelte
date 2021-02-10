@@ -7,6 +7,7 @@
 </script>
 
 <footer class="wrapper">
+  <div id="wcb-wrapper" />
   <Nav {segment} />
   <p>
     {year} <a href="//fershad.com">Fershad Irani</a>. <br /> All rights reserved.

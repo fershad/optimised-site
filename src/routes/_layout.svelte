@@ -8,6 +8,8 @@
 
 <svelte:head>
   <Fathom siteCode="GYXRKGAO" />
+  <script type="module" src="/carbon-badge.mjs" async></script>
+  <script nomodule="" src="/carbon-badge.js" async></script>
 </svelte:head>
 
 <Header {segment} />
