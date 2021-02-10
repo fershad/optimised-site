@@ -41,7 +41,7 @@
   <title>{issue.title} - Optimised</title>
   <meta name="description" content={issue.description} />
   <link rel="canonical" href={canonicalURL} />
-  <!-- <Fathom siteCode="GYXRKGAO" /> -->
+  <Fathom siteCode="GYXRKGAO" />
   <script type="module" src="/carbon-badge.mjs" async></script>
   <script nomodule="" src="/carbon-badge.js" async></script>
 </svelte:head>
