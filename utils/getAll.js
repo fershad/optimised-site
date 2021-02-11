@@ -29,12 +29,14 @@ export const getAllIssues = (filesPath) => {
 		})}`
 
 		const formattedDate = dayjs(data.date).format("MMMM D, YYYY");
+		const nextIssue = dayjs(data.date).add(2, 'week').format("MMMM D, YYYY");
 
 
 		// Builds data
 		return {
 			...data,
 			formattedDate,
+			nextIssue,
 			slug,
 			html
 		}

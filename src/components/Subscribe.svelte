@@ -70,14 +70,14 @@
     max-width: 30rem;
     display: inline-block;
     position: relative;
-    color: var(--color-primary);
+    color: var(--color-light-alt);
     cursor: pointer;
     border: none;
     /* border-radius: var(--size-300); */
     /* background: var(--color-light-alt); */
     background-image: linear-gradient(
-        var(--color-primary-alt),
-        var(--color-primary-alt)
+        var(--color-primary),
+        var(--color-primary)
       ),
       linear-gradient(var(--color-primary-alt), var(--color-primary-alt)),
       linear-gradient(var(--color-primary), var(--color-primary)),
