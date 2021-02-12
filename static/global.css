@@ -87,6 +87,7 @@ select {
 
   --color-dark: #1b2431;
   --color-dark-alt: #212121;
+  --color-dark-light: #3d3d3d;
   --color-light: #fdfdfe;
   --color-light-alt: #edf6f9;
   --color-primary: #006d77;
@@ -120,6 +121,8 @@ select {
   --block-background: var(--color-light);
   --link-color: var(--color-primary);
   --article-title-color: var(--color-primary);
+  --code-background: var(--color-light-alt);
+  --code-text: var(--color-primary);
 }
 
 @media (max-width: 36rem) {
@@ -146,6 +149,8 @@ select {
     --block-background: var(--color-dark-alt);
     --link-color: var(--color-light-alt);
     --article-title-color: var(--color-light-alt);
+    --code-background: var(--color-dark-light);
+    --code-text: var(--color-light-alt);
   }
 }
 
@@ -155,6 +160,8 @@ select {
   --block-background: var(--color-dark-alt);
   --link-color: var(--color-light-alt);
   --article-title-color: var(--color-light-alt);
+  --code-background: var(--color-dark-light);
+  --code-text: var(--color-light-alt);
 }
 
 body {

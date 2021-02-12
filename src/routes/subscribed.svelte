@@ -80,15 +80,15 @@
   }
 
   article :global(code:not(article pre code)) {
-    background-color: #83c5be36;
-    color: var(--color-primary);
+    background: var(--code-background);
+    color: var(--code-text);
     border-radius: var(--size-300);
     font-size: var(--size-400);
     padding: calc(var(--size-300) / 2) var(--size-300);
   }
 
   article :global(pre) {
-    background: var(--color-light-alt);
+    background: var(--code-background);
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     padding: 0.5em;
     border-radius: calc(var(--size-300) / 2);
@@ -102,7 +102,7 @@
   }
 
   article :global(h1) {
-    color: var(--color-primary);
+    color: var(--article-title-color);
   }
 
   article :global(.callout) {
