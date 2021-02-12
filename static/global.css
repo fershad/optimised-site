@@ -119,6 +119,7 @@ select {
   --color-mode: "light";
   --block-background: var(--color-light);
   --link-color: var(--color-primary);
+  --article-title-color: var(--color-primary);
 }
 
 @media (max-width: 36rem) {
@@ -144,6 +145,7 @@ select {
     --text-color: var(--color-light);
     --block-background: var(--color-dark-alt);
     --link-color: var(--color-light-alt);
+    --article-title-color: var(--color-light-alt);
   }
 }
 
@@ -152,6 +154,7 @@ select {
   --text-color: var(--color-light);
   --block-background: var(--color-dark-alt);
   --link-color: var(--color-light-alt);
+  --article-title-color: var(--color-light-alt);
 }
 
 body {

@@ -97,7 +97,7 @@
   }
 
   article :global(h1) {
-    color: var(--color-primary);
+    color: var(--article-title-color);
   }
 
   article :global(.callout) {
