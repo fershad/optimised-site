@@ -22,7 +22,7 @@
     padding: var(--size-700) var(--size-400);
     overflow: visible;
     row-gap: var(--size-700);
-    background: var(--color-light);
+    background: var(--block-background);
     border-top: 2px solid;
   }
 

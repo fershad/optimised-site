@@ -70,7 +70,7 @@
     max-width: 30rem;
     display: inline-block;
     position: relative;
-    color: var(--color-light-alt);
+    color: var(--color-light);
     cursor: pointer;
     border: none;
     /* border-radius: var(--size-300); */
@@ -96,7 +96,7 @@
 
   input[type="submit"]:hover,
   input[type="submit"]:focus {
-    color: var(--color-light-alt);
+    color: var(--color-light);
     background-image: linear-gradient(
         var(--color-primary),
         var(--color-primary)
