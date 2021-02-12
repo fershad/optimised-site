@@ -26,7 +26,7 @@
 </svelte:head>
 
 <section>
-  <h1 class="heading">Thanks for your time</h1>
+  <h1 class="heading">You've unsubscribed</h1>
   <p>
     Thanks for letting me into your inbox with this newsletter. I hope that you
     picked up some valuable insights and information during your subscription.

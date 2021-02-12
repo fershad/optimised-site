@@ -114,6 +114,9 @@ select {
   --size-800: calc(var(--base-size) * 3.15);
   --size-900: calc(var(--base-size) * 4.2);
   --size-major: calc(var(--base-size) * 5.6);
+
+  /* For the light/dark mode toggle */
+  --color-mode: "light";
 }
 
 @media (max-width: 36rem) {
@@ -127,6 +130,32 @@ select {
     --size-900: calc(var(--base-size) * 3.15);
     --size-major: calc(var(--base-size) * 4.2);
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: "dark";
+  }
+
+  :root:not([data-user-color-scheme]) {
+    --background: var(--color-dark);
+    --text-color: var(--color-light);
+    /* --button-icon: var(--icon-sun);
+    --button-icon-filter: var(--icon-sun-filter);
+    --button-background: var(--color-light);
+    --button-color: var(--color-dark);
+    --border-color: var(--color-light-alpha); */
+  }
+}
+
+[data-user-color-scheme="dark"] {
+  --background: var(--color-dark);
+  --text-color: var(--color-light);
+  /* --button-icon: var(--icon-sun);
+  --button-icon-filter: var(--icon-sun-filter);
+  --button-background: var(--color-light-alpha);
+  --button-color: var(--color-dark);
+  --border-color: var(--color-light-alpha); */
 }
 
 body {
@@ -414,4 +443,16 @@ a:focus {
 
 .flow > * + * {
   margin-top: var(--flow-space, 1.25rem);
+}
+
+.visually-hidden {
+  display: block;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(1px);
+  white-space: nowrap;
+  position: absolute;
 }

@@ -17,6 +17,8 @@
       behavior: "auto",
     });
   }
+
+  import Toggle from "./darkToggle.svelte";
 </script>
 
 <nav role="navigation">
@@ -34,7 +36,7 @@
         >RSS</a
       >
     </li>
-    <li><button>🌙</button></li>
+    <li><Toggle /></li>
   </ul>
 </nav>
 
