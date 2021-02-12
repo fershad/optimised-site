@@ -31,7 +31,7 @@ We're going to look at a few different methods you can apply to Twitter & YouTub
 
 ### Drop the script tag
 
-If you want to keep things very simple, just remove the `<script>` tag that's tacked onto the end of the standard Twitter embed script. It looks like this `<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>` and you'll find it at the very end of the code Twitter generates for you when you want to embed a tweet.
+If you want to keep things very simple, just remove the `<script>` tag that's tacked onto the end of the standard Twitter embed script. It looks like this `<script async src="https://.../widgets.js" charset="utf-8"></script>` and you'll find it at the very end of the code Twitter generates for you when you want to embed a tweet.
 
 ```html
 <!-- Twitter embed with script tag -->
@@ -63,10 +63,10 @@ As a final step, when publishing the image on your site be sure to add ALT text 
 We've seen that it's possible to lazy-load images, but did you know that the same `loading=lazy` attribute can also be added to `<iframe>` tags?
 
 ```html
+<!-- YouTube embed without lazy-loading -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YM3KszYmn58" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-```
 
-```html
+<!-- YouTube embed with lazy-loading -->
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/YM3KszYmn58" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 

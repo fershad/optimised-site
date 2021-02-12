@@ -32,7 +32,7 @@ But what if you're not selling anything? What if your website is focused on cont
 I'd like to present another way to think about website performance. **Think of website performance as a digital form of customer service**. In a lot of cases your website is the first impression you'll leave on a potential customer, client, partner or investor - and first impressions count. People will come to your website with a specific goal in mind - likely they're seeking some type of information. The *best possible* experience for them would be to land on your site and be able to find the information they're after as quickly as possible. From there they can decide to hang around on your site, sign up for updates etc.
 
 <div class="callout">
-<p class="h3 title">A hypothetical example</p>
+<p class="h3 title">Consider this ...</p>
 <p>Think about walking into a shop to buy a specific phone. You'd want to walk in and check out that phone as quickly as possible. Once you've had a chance to look at it, you might start asking the salesclerk about other options, alternate colours etc. If you had a good experience in store, you'd probably recommend it to your friends, or even go back yourself.</p>
 <p>On the other hand, you wouldn't like it if your path to the phone you want to see was blocked by boxes, or the salesclerks in the shop bombarded you with details their new membership plan from the moment you walked in. Depending on your mood you might walk out of the store. You'd probably not recommend it to friends and you'd be less likely to go back.<p>
 <p>That's a real-world example, but the same ideas carry over into the digital space.</p>
@@ -45,7 +45,7 @@ The good thing about proper prioritising is that you'll see performance and user
 ## **Resources**
 
 - [WPO Stats](https://wpostats.com/) - Case studies demonstrating the impact of web performance optimization (WPO) on user experience and business metrics.
-- [Deloitte's](https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html) *[Milliseconds Make Millions](https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html)* [Study](https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html) - A look at how website performance gains play out across a number of industries.
+- [Deloitte's *Milliseconds Make Millions* Study](https://www2.deloitte.com/ie/en/pages/consulting/articles/milliseconds-make-millions.html) - A look at how website performance gains play out across a number of industries.
 - [Using page speed in mobile search ranking](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html) - A blog post from Google (2018) introducing the algorithm update known as *The Speed Update*.
 - [Web Vitals](https://web.dev/vitals/) - A guide from Google's dev team introducing the user experience metrics that form Web Vitals and Core Web Vitals.
 

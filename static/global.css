@@ -174,6 +174,7 @@ body {
 p {
   margin-bottom: 1.15rem;
   max-width: 75ch;
+  line-height: 1.8;
 }
 
 blockquote {
@@ -183,6 +184,16 @@ blockquote {
   background: var(--color-light-alt);
   padding: var(--size-500) var(--size-400) var(--size-400);
   font-style: italic;
+  color: var(--color-dark);
+}
+
+blockquote > p > a:not([class]) {
+  color: var(--color-primary);
+}
+
+blockquote > p > a:not([class]):hover,
+blockquote > p > a:not([class]):focus {
+  color: var(--color-light-alt);
 }
 
 @media (min-width: 48rem) {
