@@ -1,5 +1,5 @@
 exports.handler = async (event, context, callback) => {
-  const { AIRTABLE_API } = process.env;
+  const { AIRTABLE_API, AIRTABLE_TOTAL_CARBON_RECORD_ID } = process.env;
   const fetch = require('node-fetch');
 
   // Allowed domain origins
