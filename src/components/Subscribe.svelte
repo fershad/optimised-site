@@ -28,7 +28,7 @@
     <p>
       This newsletter is powered by <a
         href="https://buttondown.email"
-        target="_blank">Buttondown.</a
+        target="_blank" rel="noopener">Buttondown.</a
       >
     </p>
   </form>
