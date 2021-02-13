@@ -15,7 +15,7 @@
   <div id="wcb-wrapper" />
   <Nav {segment} {area} />
   <p>
-    {year} <a href="//fershad.com">Fershad Irani</a>. <br /> All rights reserved.
+    2020-{year} <a href="//fershad.com">Fershad Irani</a>. <br /> All rights reserved.
   </p>
   <div id="social">
     <a aria-label="Twitter logo" href="//twitter.com/fershad">
