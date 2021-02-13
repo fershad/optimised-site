@@ -17,6 +17,7 @@
   import { baseURL } from "../../../utils/baseURL";
   import "highlight.js/styles/solarized-dark.css";
   import Fathom from "../../components/Fathom.svelte";
+  // import SaveOffline from "../../components/saveOffline.svelte";
 
   export let issue;
   let canonicalURL;
@@ -53,6 +54,7 @@
   <p class="bold" data-color="secondary">
     {issue.formattedDate}
   </p>
+  <!-- <SaveOffline /> -->
   <article class="flow">
     {@html issue.html}
   </article>
