@@ -4,6 +4,7 @@
     // this file is called [slug].svelte
     const res = await this.fetch(`issues/${params.slug}.json`);
     const data = await res.json();
+    console.log(data);
 
     if (res.status === 200) {
       return { issue: data };
@@ -58,6 +59,24 @@
   <article class="flow">
     {@html issue.html}
   </article>
+  <ul class="next-prev">
+    {#if issue.prevIssue}
+      <li>
+        <a rel="prefetch" href="/issues/{issue.prevIssue.slug}"
+          >Previous issue <br /> #{issue.prevIssue.issue} - {issue.prevIssue
+            .title}</a
+        >
+      </li>
+    {/if}
+    {#if issue.nextIssue}
+      <li>
+        <a rel="prefetch" href="/issues/{issue.nextIssue.slug}"
+          >Next issue <br /> #{issue.nextIssue.issue} - {issue.nextIssue
+            .title}</a
+        >
+      </li>
+    {/if}
+  </ul>
 </section>
 
 <style>
@@ -126,4 +145,22 @@
   article :global(ul > li, ol > li) {
     margin-bottom: var(--size-300);
   }
+
+  ul.next-prev {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  ul.next-prev li {
+    margin-bottom: var(--size-500);
+    margin-inline-end: var(--size-300);
+  }
+
+  /* ul.next-prev li:nth-child(2) {
+    text-align: right;
+  } */
 </style>

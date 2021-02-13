@@ -40,7 +40,7 @@
   <h1 class="heading">Thanks for subscribing</h1>
   <p>
     Thanks for subscribing to Optmised. The next newsletter will be sent out on <strong
-      >{latest.nextIssue}</strong
+      >{latest.nextIssueDate}</strong
     >. Sit tight, it's not too far away!
   </p>
   <p>

@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 
 
 export const getAllIssues = (filesPath) => {
-	const data = fs.readdirSync(filesPath).map((fileName) => {
+	const data = fs.readdirSync(filesPath).map((fileName, index, elements) => {
 		const issue = fs.readFileSync(path.resolve(filesPath, fileName), "utf-8")
 		// Parse frontmatter
 		const {data, content} = grayMatter(issue)
@@ -29,17 +29,46 @@ export const getAllIssues = (filesPath) => {
 		})}`
 
 		const formattedDate = dayjs(data.date).format("MMMM D, YYYY");
-		const nextIssue = dayjs(data.date).add(2, 'week').format("MMMM D, YYYY");
+		const nextIssueDate = dayjs(data.date).add(2, 'week').format("MMMM D, YYYY");
+		let nextIssue;
+		let prevIssue;
+
+		if (elements[index + 1]) {
+			const nextIssueRaw = elements[index + 1];
+			nextIssue = getNextPrev(nextIssueRaw, filesPath)
+		}
+
+		if (elements[index - 1]) {
+			const prevIssueRaw = elements[index - 1];
+			prevIssue = getNextPrev(prevIssueRaw, filesPath)
+		}
 
 
 		// Builds data
 		return {
 			...data,
 			formattedDate,
-			nextIssue,
+			nextIssueDate,
 			slug,
-			html
+			html,
+			nextIssue,
+			prevIssue
 		}
 	})
 	return data;
+}
+
+const getNextPrev = (otherIssue, filesPath) => {
+	const issueFile = fs.readFileSync(path.resolve(filesPath, otherIssue), "utf-8")
+	const {data } = grayMatter(issueFile);
+
+			const slug = `${slugify(`issue-${data.issue}-${data.title}`, {
+				remove: /[*+~.()'"!:@]/g,
+				lower: true,
+				strict: true
+			})}`;
+
+			const { issue, title} = data;
+
+			return { slug, issue, title };
 }
