@@ -33,6 +33,9 @@
       <a href="#subscribe" on:click|preventDefault={scrollTo}>Subscribe</a>
     </li>
     <li>
+      <a href="/about">About</a>
+    </li>
+    <li>
       <a href="/feed/rss.xml" onclick="window.fathom.trackGoal('SZV8WIPB', 0);"
         >RSS</a
       >
