@@ -71,6 +71,7 @@
 <div class="userToggle">
   <button
     role="switch"
+aria-checked={!themeAria} 
     aria-label="Change site theme."
     on:click={() => {
       applySetting(toggleSetting());
