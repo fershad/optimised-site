@@ -27,15 +27,15 @@
         >Archive</a
       >
     </li>
-    <li>
-      <a href="/about">About</a>
-    </li>
-    <li><a href="/carbon">Carbon</a></li>
     {#if !area || area !== "footer"}
       <li>
         <a href="#subscribe" on:click|preventDefault={scrollTo}>Subscribe</a>
       </li>
     {/if}
+    <li>
+      <a href="/about">About</a>
+    </li>
+    <li><a href="/carbon">Carbon</a></li>
   </ul>
 </nav>
 

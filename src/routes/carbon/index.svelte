@@ -1,17 +1,34 @@
 <!-- Runs before the component is created -->
 <script context="module">
   export async function preload({ params, query }) {
-    const res = await this.fetch(`carbon.json`);
-    const carbon = await res.json();
+    let res = await this.fetch(
+      "https://optimised.email/.netlify/functions/getTotalCarbon"
+    );
+    let progress;
+    let carbon;
+
+    try {
+      carbon = await res.json();
+    } catch {
+      res = await this.fetch(`carbon.json`);
+      console.log("using precached");
+      carbon = await res.json();
+    }
+
     let totalCarbon = new Number(carbon.fields.Carbon).toFixed(2);
     let lastUpdate = new Date(carbon.fields.lastUpdated);
-    return { totalCarbon, lastUpdate };
+    progress = "done";
+    return { totalCarbon, lastUpdate, progress };
   }
 </script>
 
 <script>
   export let totalCarbon;
   export let lastUpdate;
+  export let progress;
+
+  import { fade } from "svelte/transition";
+
   import Fathom from "../../components/Fathom.svelte";
 
   import { onMount } from "svelte";
@@ -43,8 +60,14 @@
   <p>
     The total estimated carbon footprint of this website over its lifetime is:
   </p>
-  <p class="bold h3">{totalCarbon} grams</p>
-  <small>Last update: {lastUpdate}</small>
+  {#if progress === "done"}
+    <div transition:fade>
+      <p class="bold h3">{totalCarbon} grams</p>
+      <small>Last update: {lastUpdate}</small>
+    </div>
+  {:else}
+    <p class="bold h3" transition:fade>Fetching data ...</p>
+  {/if}
 </section>
 
 <section class="flow">
