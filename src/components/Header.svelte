@@ -7,7 +7,7 @@
 <header class="text-center wrapper">
   <p class="title">Optimised</p>
   <p class="subtag">
-    Tips, insights, and articles to help you boost your site's performance.
+    Tips, insights, and articles to help boost your website's performance.
   </p>
   <Nav {segment} />
 </header>

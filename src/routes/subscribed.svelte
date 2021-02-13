@@ -129,8 +129,4 @@
   article :global(ul > li, ol > li) {
     margin-bottom: var(--size-300);
   }
-
-  section:not(:first-of-type) {
-    margin-top: calc(2em + var(--size-500));
-  }
 </style>

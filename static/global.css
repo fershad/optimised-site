@@ -354,6 +354,10 @@ section:first-child {
   margin-top: var(--size-major);
 }
 
+section:not(:first-of-type) {
+  margin-top: calc(60px + var(--size-700));
+}
+
 section .heading {
   display: inline-block;
   height: auto;

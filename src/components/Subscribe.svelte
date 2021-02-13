@@ -35,10 +35,6 @@
 </section>
 
 <style>
-  #subscribe {
-    margin-top: calc(2em + var(--size-500));
-  }
-
   input[type="email"] {
     border: 2px dashed var(--text-color);
     padding-left: var(--size-300);
