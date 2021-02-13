@@ -4,7 +4,6 @@
   import Footer from "../components/Footer.svelte";
   export let segment;
 
-  let { hideHeader, hideFooter } = false;
   let showSubscription = true;
 
   if (
