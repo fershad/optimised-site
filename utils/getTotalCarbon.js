@@ -1,4 +1,5 @@
 const fetch = require('node-fetch')
+import dayjs from "dayjs";
 
 require('dotenv').config()
 const { AIRTABLE_API, AIRTABLE_TOTAL_CARBON_RECORD_ID } = process.env;
@@ -16,6 +17,8 @@ export const getTotalCarbon = async () => {
 	  // Fetch from airtable
 	const data = await fetch(url, options)
 	const result = await data.json()
+
+	// const formattedUpdate = dayjs(result.fields.lastUpdated).format("MMMM D, YYYY");
 
 	return result;
 }
