@@ -3,6 +3,7 @@
   import Twitter from "./svgs/twitterLogo.svelte";
   import Github from "./svgs/githubLogo.svelte";
   import Kofi from "./svgs/kofiLogo.svelte";
+  import Email from "./svgs/email.svelte";
 
   const date = new Date();
   const year = date.getFullYear();
@@ -29,6 +30,9 @@
     </a>
     <a aria-label="Kofi logo" href="https://ko-fi.com/fershad">
       <Kofi />
+    </a>
+    <a aria-label="Contact me by email" href="mailto:optimised@fershad.com">
+      <Email />
     </a>
   </div>
 </footer>
