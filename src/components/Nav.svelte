@@ -1,5 +1,6 @@
 <script>
   export let segment;
+  export let area;
   //   let behavior = "smooth";
 
   //   // Grab the prefers reduced media query.
@@ -36,7 +37,10 @@
         >RSS</a
       >
     </li>
-    <li><Toggle /></li>
+    {#if !area || area !== "footer"}
+      <!-- content here -->
+      <li><Toggle /></li>
+    {/if}
   </ul>
 </nav>
 

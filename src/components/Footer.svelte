@@ -4,11 +4,13 @@
   const date = new Date();
   const year = date.getFullYear();
   export let segment;
+
+  let area = "footer";
 </script>
 
 <footer class="wrapper">
   <div id="wcb-wrapper" />
-  <Nav {segment} />
+  <Nav {segment} {area} />
   <p>
     {year} <a href="//fershad.com">Fershad Irani</a>. <br /> All rights reserved.
   </p>
