@@ -123,6 +123,9 @@ select {
   --article-title-color: var(--color-primary);
   --code-background: var(--color-light-alt);
   --code-text: var(--color-primary);
+  --svg-stroke-color: var(--text-color);
+  --svg-fill-color: var(--color-dark-light);
+  --toggle-background-color: var(--color-primary-alt);
 }
 
 @media (max-width: 36rem) {
@@ -151,6 +154,8 @@ select {
     --article-title-color: var(--color-light-alt);
     --code-background: var(--color-dark-light);
     --code-text: var(--color-light-alt);
+    --svg-fill-color: var(--color-light-alt);
+    --toggle-background-color: var(--color-dark-light);
   }
 }
 
@@ -162,6 +167,8 @@ select {
   --article-title-color: var(--color-light-alt);
   --code-background: var(--color-dark-light);
   --code-text: var(--color-light-alt);
+  --svg-fill-color: var(--color-light-alt);
+  --toggle-background-color: var(--color-dark-light);
 }
 
 body {

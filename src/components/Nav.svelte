@@ -18,8 +18,6 @@
       behavior: "auto",
     });
   }
-
-  import Toggle from "./darkToggle.svelte";
 </script>
 
 <nav role="navigation">
@@ -30,19 +28,13 @@
       >
     </li>
     <li>
-      <a href="#subscribe" on:click|preventDefault={scrollTo}>Subscribe</a>
-    </li>
-    <li>
       <a href="/about">About</a>
     </li>
-    <li>
-      <a href="/feed/rss.xml" onclick="window.fathom.trackGoal('SZV8WIPB', 0);"
-        >RSS</a
-      >
-    </li>
+    <li><a href="#">Carbon</a></li>
     {#if !area || area !== "footer"}
-      <!-- content here -->
-      <li><Toggle /></li>
+      <li>
+        <a href="#subscribe" on:click|preventDefault={scrollTo}>Subscribe</a>
+      </li>
     {/if}
   </ul>
 </nav>
@@ -51,6 +43,7 @@
   nav ul {
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     /* gap: var(--size-600); */
     padding: 0;
@@ -59,6 +52,7 @@
 
   nav ul li:not(:last-child) {
     margin-inline-end: var(--size-600);
+    margin-block-end: var(--size-600);
   }
   nav a {
     font-weight: 700;

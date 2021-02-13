@@ -1,6 +1,7 @@
 <script>
   // export let segment;
   import Nav from "./Nav.svelte";
+  import Toggle from "./darkToggle.svelte";
   export let segment;
 </script>
 
@@ -10,6 +11,7 @@
     Tips, insights, and articles to help boost your website's performance.
   </p>
   <Nav {segment} />
+  <Toggle />
 </header>
 
 <style>

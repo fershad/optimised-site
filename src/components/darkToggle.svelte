@@ -1,15 +1,16 @@
 <script>
-  import { onMount, afterUpdate, beforeUpdate } from "svelte";
+  import { onMount } from "svelte";
+  import Moon from "./svgs/Moon.svelte";
 
   const STORAGE_KEY = "user-color-scheme";
   const COLOR_MODE_KEY = "--color-mode";
 
   let modeToggleButton;
   let modeToggleText = "light";
+  let themeAria = true;
   let modeStatusElement;
 
   onMount(async () => {
-    // modeToggleText = getCSSCustomProp(COLOR_MODE_KEY);
     applySetting();
   });
 
@@ -27,7 +28,7 @@
 
   const setButtonLabelAndStatus = (currentSetting) => {
     modeToggleText = currentSetting === "dark" ? "light" : "dark";
-    modeStatusElement.innerText = `Color mode is now "${currentSetting}"`;
+    currentSetting === "dark" ? (themeAria = false) : (themeAria = true);
   };
 
   const applySetting = (passedSetting) => {
@@ -46,6 +47,7 @@
 
   const toggleSetting = () => {
     let currentSetting = localStorage.getItem(STORAGE_KEY);
+    themeAria = !themeAria;
 
     switch (currentSetting) {
       case null:
@@ -66,18 +68,51 @@
   };
 </script>
 
-<div class="user-toggle">
-  <div role="status" class="visually-hidden" bind:this={modeStatusElement} />
+<div class="userToggle">
   <button
-    class="toggle-button"
+    role="switch"
+    aria-label="Change site theme."
     on:click={() => {
       applySetting(toggleSetting());
     }}
   >
-    <span class="toggle-button__text">{modeToggleText}</span>
-    <span class="toggle-button__icon" aria-hidden="true" />
+    <span aria-label="Light theme" aria-checked={themeAria}>Light</span>
+    <span aria-label="Dark theme" aria-checked={!themeAria}>Dark</span>
   </button>
 </div>
 
 <style>
+  button {
+    background: var(--toggle-background-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: calc(var(--size-300) / 2);
+    font: inherit;
+    font-size: inherit;
+  }
+
+  button:focus {
+    outline: var(--color-secondary) dotted calc(var(--size-300) * 0.2);
+    outline-offset: calc(var(--size-300) * 0.25);
+  }
+
+  button :global(svg) {
+    transform: rotate(30deg) scale(-0.5);
+  }
+
+  [role="switch"] [aria-checked="true"] {
+    background: var(--color-primary);
+    color: var(--color-light);
+    cursor: default;
+  }
+
+  button span {
+    padding: 0.1rem 0.3rem;
+    border-radius: calc(var(--size-300) / 2);
+    cursor: pointer;
+  }
+
+  button span:first-child {
+    margin-inline-end: var(--size-300);
+  }
 </style>
