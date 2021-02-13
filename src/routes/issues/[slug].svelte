@@ -4,7 +4,6 @@
     // this file is called [slug].svelte
     const res = await this.fetch(`issues/${params.slug}.json`);
     const data = await res.json();
-    console.log(data);
 
     if (res.status === 200) {
       return { issue: data };
@@ -18,6 +17,7 @@
   import { baseURL } from "../../../utils/baseURL";
   import "highlight.js/styles/solarized-dark.css";
   import Fathom from "../../components/Fathom.svelte";
+  import ShareButton from "../../components/ShareButton.svelte";
   // import SaveOffline from "../../components/saveOffline.svelte";
 
   export let issue;
@@ -60,10 +60,11 @@
     {@html issue.html}
   </article>
   <ul class="next-prev">
+    <li><ShareButton /></li>
     {#if issue.prevIssue}
       <li>
         <a rel="prefetch" href="/issues/{issue.prevIssue.slug}"
-          >Previous issue <br /> #{issue.prevIssue.issue} - {issue.prevIssue
+          >Previous issue: <br /> #{issue.prevIssue.issue} - {issue.prevIssue
             .title}</a
         >
       </li>
@@ -71,7 +72,7 @@
     {#if issue.nextIssue}
       <li>
         <a rel="prefetch" href="/issues/{issue.nextIssue.slug}"
-          >Next issue <br /> #{issue.nextIssue.issue} - {issue.nextIssue
+          >Next issue: <br /> #{issue.nextIssue.issue} - {issue.nextIssue
             .title}</a
         >
       </li>
@@ -162,5 +163,10 @@
 
   /* ul.next-prev li:nth-child(2) {
     text-align: right;
+  } */
+  /* 
+  ul.next-prev li:not(:last-child):not(:first-child) {
+    border-bottom: 2px dashed;
+    padding-bottom: var(--size-500);
   } */
 </style>
