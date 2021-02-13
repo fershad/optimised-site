@@ -1,11 +1,28 @@
 <!-- Runs before the component is created -->
 <script context="module">
   export async function preload({ params, query }) {
-    let res = await this.fetch(
-      "https://optimised.email/.netlify/functions/getTotalCarbon"
-    );
+    let res;
     let progress;
     let carbon;
+
+    try {
+      res = await this.fetch(
+        "https://optimised.email/.netlify/functions/getTotalCarbon"
+      );
+    } catch {
+      try {
+        carbon = await res.json();
+      } catch {
+        res = await this.fetch(`carbon.json`);
+        console.log("using precached");
+        carbon = await res.json();
+      }
+
+      let totalCarbon = new Number(carbon.fields.Carbon).toFixed(2);
+      let lastUpdate = new Date(carbon.fields.lastUpdated);
+      progress = "done";
+      return { totalCarbon, lastUpdate, progress };
+    }
 
     try {
       carbon = await res.json();
@@ -61,12 +78,13 @@
     The total estimated carbon footprint of this website over its lifetime is:
   </p>
   {#if progress === "done"}
-    <div transition:fade>
+    <div in:fade>
       <p class="bold h3">{totalCarbon} grams</p>
-      <small>Last update: {lastUpdate}</small>
+      <small>Last update: <time datetime={lastUpdate}>{lastUpdate}</time></small
+      >
     </div>
   {:else}
-    <p class="bold h3" transition:fade>Fetching data ...</p>
+    <p class="bold h3" in:fade>Fetching data ...</p>
   {/if}
 </section>
 
@@ -107,6 +125,10 @@
       <li>
         It does not take into account the emissions associated with website
         development.
+      </li>
+      <li>
+        It does not include emissions that result from composing and sending the
+        email newsletter.
       </li>
     </ul>
   </div>

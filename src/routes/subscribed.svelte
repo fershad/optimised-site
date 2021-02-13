@@ -55,7 +55,7 @@
     Issue #{latest.issue}
   </p>
   <p class="bold" data-color="secondary">
-    {latest.formattedDate}
+    <time datetime={latest.date}>{latest.formattedDate}</time>
   </p>
   <article class="flow">
     {@html latest.html}

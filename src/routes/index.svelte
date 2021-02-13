@@ -48,7 +48,7 @@
           ><strong class="issueNo" data-color="secondary"
             >Issue #{issue.issue}</strong
           >
-          | {issue.formattedDate}</small
+          | <time datetime={issue.date}>{issue.formattedDate}</time></small
         >
 
         <a rel="prefetch" href="/issues/{issue.slug}">{issue.title}</a>
