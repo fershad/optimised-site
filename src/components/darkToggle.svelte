@@ -115,4 +115,8 @@
   button span:first-child {
     margin-inline-end: var(--size-300);
   }
+
+  :global(.no-js) .userToggle {
+    display: none;
+  }
 </style>

@@ -1,12 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta name="theme-color" content="#333333">
 	<link rel='alternate' type='application/rss+xml' title="RSS Feed for Optimised Newsletter" href='/feed/rss.xml' />
-
+	<script>
+		document.documentElement.classList.remove('no-js');
+	</script>
 	%sapper.base%
 
 	<link rel="stylesheet" href="global.css">
