@@ -59,8 +59,8 @@
   <article class="flow">
     {@html issue.html}
   </article>
+  <ShareButton />
   <ul class="next-prev">
-    <li><ShareButton /></li>
     {#if issue.prevIssue}
       <li>
         <a rel="prefetch" href="/issues/{issue.prevIssue.slug}"
@@ -154,6 +154,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    margin-top: var(--size-500);
   }
 
   ul.next-prev li {
