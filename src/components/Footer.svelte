@@ -18,13 +18,16 @@
     {year} <a href="//fershad.com">Fershad Irani</a>. <br /> All rights reserved.
   </p>
   <div id="social">
-    <a href="//twitter.com/fershad">
+    <a aria-label="Twitter logo" href="//twitter.com/fershad">
       <Twitter />
     </a>
-    <a href="https://github.com/fershad/optimised-site">
+    <a
+      aria-label="Github logo"
+      href="https://github.com/fershad/optimised-site"
+    >
       <Github />
     </a>
-    <a href="https://ko-fi.com/fershad">
+    <a aria-label="Kofi logo" href="https://ko-fi.com/fershad">
       <Kofi />
     </a>
   </div>
