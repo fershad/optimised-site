@@ -26,7 +26,10 @@ exports.handler = async (event, context, callback) => {
     "records": [{
       "fields": {
         "URL": site,
-        "Carbon": carbon
+        "Carbon": carbon,
+        "Total Carbon": [
+          AIRTABLE_TOTAL_CARBON_RECORD_ID
+        ]
       }
     }, ]
   }
