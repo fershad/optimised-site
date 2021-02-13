@@ -2,9 +2,11 @@
   // export let segment;
   import Nav from "./Nav.svelte";
   import Toggle from "./darkToggle.svelte";
+  import SkipLink from "../components/skipLink.svelte";
   export let segment;
 </script>
 
+<SkipLink />
 <header class="text-center wrapper">
   <p class="title">Optimised</p>
   <p class="subtag">

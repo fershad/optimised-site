@@ -18,7 +18,7 @@
 
 <Header {segment} />
 
-<main class="wrapper">
+<main class="wrapper" id="main-content">
   <slot />
   {#if showSubscription}
     <Subscribe />
