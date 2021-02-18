@@ -18,7 +18,10 @@
     "node-fetch": "^2.6.1",
     "polka": "next",
     "sirv": "^1.0.0",
-    "slugify": "^1.4.6"
+    "slugify": "^1.4.6",
+    "chrome-aws-lambda": "^2.1.1",
+    "puppeteer-core": "^2.1.1",
+    "waait": "^1.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
