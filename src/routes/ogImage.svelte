@@ -32,7 +32,7 @@
 
   h1 {
     grid-row: 1;
-    grid-column: 1/-1;
+    grid-column: 1/-2;
     justify-self: center;
     align-self: center;
     box-decoration-break: clone;
