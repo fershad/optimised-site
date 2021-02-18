@@ -24,7 +24,9 @@ async function getScreenshot(url) {
   const browser = await puppeteer.launch(options);
   const page = await browser.newPage();
   await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1.5 });
-  await page.goto(url);
+  await page.goto(url, {
+		waitUntil: 'networkidle'
+	});
   await wait(1000);
   const buffer = await page.screenshot({ type: 'png' });
   const base64Image = buffer.toString('base64');

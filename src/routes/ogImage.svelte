@@ -2,12 +2,13 @@
   import { onMount } from "svelte";
   let title;
   let issue;
+  let url;
 
   onMount(async () => {
     if (!window.location.href) {
       return null;
     }
-    const url = new URL(window.location.href);
+    url = new URL(window.location.href);
     title = url.searchParams.get("title");
     issue = url.searchParams.get("issue");
   });
