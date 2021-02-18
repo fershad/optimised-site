@@ -23,8 +23,10 @@
 <nav role="navigation">
   <ul>
     <li>
-      <a aria-current={segment === undefined ? "page" : undefined} href="/"
-        >Archive</a
+      <a
+        rel="external"
+        aria-current={segment === undefined ? "page" : undefined}
+        href="/">Archive</a
       >
     </li>
     {#if !area || area !== "footer"}
@@ -33,13 +35,17 @@
       </li>
     {/if}
     <li>
-      <a aria-current={segment === "about" ? "page" : undefined} href="/about"
-        >About</a
+      <a
+        rel="external"
+        aria-current={segment === "about" ? "page" : undefined}
+        href="/about">About</a
       >
     </li>
     <li>
-      <a aria-current={segment === "carbon" ? "page" : undefined} href="/carbon"
-        >Carbon</a
+      <a
+        rel="external"
+        aria-current={segment === "carbon" ? "page" : undefined}
+        href="/carbon">Carbon</a
       >
     </li>
   </ul>
