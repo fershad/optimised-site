@@ -33,9 +33,15 @@
       </li>
     {/if}
     <li>
-      <a href="/about">About</a>
+      <a aria-current={segment === "about" ? "page" : undefined} href="/about"
+        >About</a
+      >
     </li>
-    <li><a href="/carbon">Carbon</a></li>
+    <li>
+      <a aria-current={segment === "carbon" ? "page" : undefined} href="/carbon"
+        >Carbon</a
+      >
+    </li>
   </ul>
 </nav>
 
