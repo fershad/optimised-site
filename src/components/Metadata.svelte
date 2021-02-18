@@ -20,7 +20,7 @@
     )
   ).toString();
 
-  const ogImage = `${baseURL}/.netlify/functions/ogimage?${thumbnailQuery}`;
+  const ogImage = `${baseURL}/.netlify/functions/ogImage?${thumbnailQuery}`;
 </script>
 
 <svelte:head>
