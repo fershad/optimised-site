@@ -25,7 +25,7 @@ async function getScreenshot(url) {
   const page = await browser.newPage();
   await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1.5 });
   await page.goto(url, {
-		waitUntil: 'networkidle'
+		waitUntil: 'networkidle2'
 	});
   await wait(1000);
   const buffer = await page.screenshot({ type: 'png' });
