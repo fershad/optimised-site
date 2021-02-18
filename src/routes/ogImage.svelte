@@ -1,17 +1,8 @@
 <script>
-  import { onMount } from "svelte";
-  let title;
-  let issue;
-  let url;
-
-  onMount(async () => {
-    if (!window.location.href) {
-      return null;
-    }
-    url = new URL(window.location.href);
-    title = url.searchParams.get("title");
-    issue = url.searchParams.get("issue");
-  });
+  import { stores } from "@sapper/app";
+  const { page } = stores();
+  let title = $page.query.title;
+  let issue = $page.query.issue;
 </script>
 
 <svelte:head>
