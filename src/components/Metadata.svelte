@@ -8,6 +8,19 @@
   import { stores } from "@sapper/app";
   const { page } = stores();
   export let pageCanonical;
+  export let issueNo;
+
+  const thumbnailData = {
+    title: pageTitle,
+    issue: issueNo,
+  };
+  const thumbnailQuery = new URLSearchParams(
+    Object.fromEntries(
+      Object.entries(thumbnailData).filter(([key, val]) => val !== undefined)
+    )
+  ).toString();
+
+  const ogImage = `${baseURL}/.netlify/functions/ogimage?${thumbnailQuery}`;
 </script>
 
 <svelte:head>
@@ -23,19 +36,19 @@
   <meta property="og:url" content="{baseURL}{$page.path}" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={pageTitle} />
-  <meta property="og:image" content="https://example.com/image.jpg" />
+  <meta property="og:image" content={ogImage} />
   <meta property="og:image:alt" content="" />
   <meta property="og:description" content={pageDescription} />
   <meta property="og:site_name" content="Optimised" />
   <meta property="og:locale" content="en_GB" />
   <meta property="article:author" content="Fershad Irani" />
 
-  <meta name="twitter:card" content="summary" />
+  <!-- <meta name="twitter:card" content="summary" /> -->
   <meta name="twitter:creator" content="@fershad" />
   <meta name="twitter:url" content="{baseURL}{$page.path}" />
   <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={pageDescription} />
-  <meta name="twitter:image" content="https://example.com/image.jpg" />
+  <meta name="twitter:image" content={ogImage} />
   <meta name="twitter:image:alt" content="" />
 
   <meta name="twitter:dnt" content="on" />

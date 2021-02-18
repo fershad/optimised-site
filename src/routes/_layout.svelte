@@ -5,17 +5,25 @@
   export let segment;
 
   let showSubscription = true;
+  let showHeaderFooter = true;
 
   if (
     segment === "subscribed" ||
     segment === "unsubscribed" ||
-    segment === "generate-image"
+    segment === "ogImage"
   ) {
     showSubscription = false;
   }
+
+  if (segment === "ogImage") {
+    showHeaderFooter = false;
+  }
 </script>
 
-<Header {segment} />
+{#if showHeaderFooter}
+  <!-- content here -->
+  <Header {segment} />
+{/if}
 
 <main class="wrapper" id="main-content">
   <slot />
@@ -24,7 +32,9 @@
   {/if}
 </main>
 
-<Footer {segment} />
+{#if showHeaderFooter}
+  <Footer {segment} />
+{/if}
 
 <style>
 </style>

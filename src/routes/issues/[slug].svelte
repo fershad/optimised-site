@@ -38,9 +38,10 @@
 
   export let pageTitle = issue.title;
   export let pageDescription = issue.description;
+  export let issueNo = issue.issue;
 </script>
 
-<Metadata {pageTitle} {pageDescription} {pageCanonical} />
+<Metadata {pageTitle} {pageDescription} {pageCanonical} {issueNo} />
 
 <svelte:head>
   <link rel="author" href="https://www.fershad.com/about" />
