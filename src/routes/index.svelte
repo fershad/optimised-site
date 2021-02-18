@@ -24,7 +24,7 @@
   });
   import Metadata from "../components/Metadata.svelte";
 
-  export let pageTitle = "A fortnightly email about website performance";
+  export let pageTitle = "A newsletter about website performance";
   export let pageDescription =
     "Fortnightly insights into the ways website performance and optimisation can help your customers, your business, and the planet. Subscribe today, and start optimising.";
 </script>
