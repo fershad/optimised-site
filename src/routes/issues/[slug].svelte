@@ -21,11 +21,7 @@
   // import SaveOffline from "../../components/saveOffline.svelte";
 
   export let issue;
-  let canonicalURL;
-
-  issue.externalCanonical
-    ? (canonicalURL = issue.externalCanonical)
-    : (canonicalURL = `${baseURL}/issues/${issue.slug}`);
+  export let pageCanonical = issue.externalCanonical;
 
   import { onMount } from "svelte";
   onMount(async () => {
@@ -37,12 +33,23 @@
     };
     removeChilds(wcb);
   });
+
+  import Metadata from "../../components/Metadata.svelte";
+
+  export let pageTitle = issue.title;
+  export let pageDescription = issue.description;
 </script>
 
+<Metadata {pageTitle} {pageDescription} {pageCanonical} />
+
 <svelte:head>
-  <title>{issue.title} - Optimised</title>
-  <meta name="description" content={issue.description} />
-  <link rel="canonical" href={canonicalURL} />
+  <link rel="author" href="https://www.fershad.com/about" />
+  {#if issue.prevIssue}
+    <link rel="prev" href="{baseURL}/issues/{issue.prevIssue.slug}" />
+  {/if}
+  {#if issue.nextIssue}
+    <link rel="next" href="{baseURL}/issues/{issue.nextIssue.slug}" />
+  {/if}
   <Fathom siteCode="GYXRKGAO" />
   <script type="module" src="/carbon-badge.mjs" async></script>
   <script nomodule="" src="/carbon-badge.js" async></script>
@@ -63,7 +70,7 @@
   <ul class="next-prev">
     {#if issue.prevIssue}
       <li>
-        <a rel="prefetch" href="/issues/{issue.prevIssue.slug}"
+        <a rel="external" href="/issues/{issue.prevIssue.slug}"
           >Previous issue: <br /> #{issue.prevIssue.issue} - {issue.prevIssue
             .title}</a
         >
@@ -71,7 +78,7 @@
     {/if}
     {#if issue.nextIssue}
       <li>
-        <a rel="prefetch" href="/issues/{issue.nextIssue.slug}"
+        <a rel="external" href="/issues/{issue.nextIssue.slug}"
           >Next issue: <br /> #{issue.nextIssue.issue} - {issue.nextIssue
             .title}</a
         >

@@ -59,14 +59,15 @@
     };
     removeChilds(wcb);
   });
+  import Metadata from "../../components/Metadata.svelte";
+
+  export let pageTitle = "Carbon";
+  export let pageDescription =
+    "Information about the total carbon emissions of the Optimised website.";
 </script>
 
+<Metadata {pageTitle} {pageDescription} />
 <svelte:head>
-  <title>Optimised - A fortnightly email about website performance</title>
-  <meta
-    name="description"
-    content="Fortnightly insights into the ways website performance and optimisation can help your customers, your business, and the planet. Subscribe today, and start optimising."
-  />
   <Fathom siteCode="GYXRKGAO" />
   <script type="module" src="/carbon-badge.mjs" async></script>
   <script nomodule="" src="/carbon-badge.js" async></script>

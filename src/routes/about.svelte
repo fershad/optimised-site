@@ -12,7 +12,20 @@
     };
     removeChilds(wcb);
   });
+
+  import Metadata from "../components/Metadata.svelte";
+
+  export let pageTitle = "About";
+  export let pageDescription =
+    "More about Optimised, the fortnightly newsletter about how website performance and optimisation can help your customers, your business, and the planet.";
 </script>
+
+<Metadata {pageTitle} {pageDescription} />
+
+<svelte:head>
+  <script type="module" src="/carbon-badge.mjs" async></script>
+  <script nomodule="" src="/carbon-badge.js" async></script>
+</svelte:head>
 
 <section class="flow">
   <h1 class="heading">About Optimised</h1>

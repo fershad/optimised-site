@@ -11,6 +11,10 @@
 	</script>
 	%sapper.base%
 
+	<!-- This contains the contents of the <svelte:head> component, if
+		 the current page has one -->
+	%sapper.head%
+
 	<link rel="stylesheet" href="global.css">
 	<link rel="manifest" href="manifest.json" crossorigin="use-credentials">
 	<link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -26,9 +30,6 @@
 	     lazily loaded when it precaches secondary pages -->
 	%sapper.styles%
 
-	<!-- This contains the contents of the <svelte:head> component, if
-	     the current page has one -->
-	%sapper.head%
 </head>
 
 <body>
