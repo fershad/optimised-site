@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "cross-env NODE_ENV=production sapper build --legacy",
-    "export": "cross-env NODE_ENV=production sapper export --legacy",
+    "export": "cross-env NODE_ENV=production sapper export --entry '/ ogImage' --legacy",
     "start": "node __sapper__/build"
   },
   "dependencies": {
