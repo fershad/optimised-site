@@ -28,7 +28,7 @@
     margin: 0;
     display: grid;
     /* grid-template-columns: repeat(3, 1fr); */
-    grid-template-rows: 1fr auto 60px;
+    grid-template-rows: auto auto 60px;
   }
 
   h1 {
@@ -58,7 +58,7 @@
     height: var(--size-600);
     border: none;
     width: 200px;
-    margin-block: var(--size-700);
+    /* margin-block: var(--size-700); */
     grid-row: 2/3;
     display: block;
     /* grid-column: 1/-1; */
