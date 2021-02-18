@@ -1,7 +1,7 @@
 <!-- Runs before the component is created -->
 <script context="module">
   export async function preload({ params, query }) {
-    const res = await this.fetch(`issues.json`);
+    const res = await this.fetch(`issues/summary.json`);
     const issues = await res.json();
     return { issues };
   }

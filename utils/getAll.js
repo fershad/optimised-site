@@ -58,6 +58,30 @@ export const getAllIssues = (filesPath) => {
 	return data;
 }
 
+export const getAllSummary = (filesPath) => {
+	const data = fs.readdirSync(filesPath).map((fileName, index, elements) => {
+		const issue = fs.readFileSync(path.resolve(filesPath, fileName), "utf-8")
+		// Parse frontmatter
+		const {data} = grayMatter(issue)
+
+		const slug = `${slugify(`issue-${data.issue}-${data.title}`, {
+			remove: /[*+~.()'"!:@]/g,
+			lower: true,
+			strict: true
+		})}`
+
+		const formattedDate = dayjs(data.date).format("MMMM D, YYYY");
+
+		// Builds data
+		return {
+			...data,
+			formattedDate,
+			slug
+		}
+	})
+	return data;
+}
+
 const getNextPrev = (otherIssue, filesPath) => {
 	const issueFile = fs.readFileSync(path.resolve(filesPath, otherIssue), "utf-8")
 	const {data } = grayMatter(issueFile);
