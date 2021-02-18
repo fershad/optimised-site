@@ -4,10 +4,10 @@
   let issue;
 
   onMount(async () => {
-    if (!location.href) {
+    if (!window.location.href) {
       return null;
     }
-    const url = new URL(location.href);
+    const url = new URL(window.location.href);
     title = url.searchParams.get("title");
     issue = url.searchParams.get("issue");
   });
