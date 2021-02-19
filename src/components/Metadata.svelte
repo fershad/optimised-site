@@ -43,7 +43,7 @@
   <meta property="og:locale" content="en_GB" />
   <meta property="article:author" content="Fershad Irani" />
 
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:creator" content="@fershad" />
   <meta name="twitter:url" content="{baseURL}{$page.path}" />
   <meta name="twitter:title" content={pageTitle} />
