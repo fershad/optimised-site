@@ -7,7 +7,18 @@ import dayjs from "dayjs";
 
 
 export const getAllIssues = (filesPath) => {
-	const data = fs.readdirSync(filesPath).map((fileName, index, elements) => {
+	const files = fs.readdirSync(filesPath);
+	files.sort(function (a, b) {
+		a.replace(/\.[^/.]+$/, "");
+		b.replace(/\.[^/.]+$/, "");
+
+		const numA = parseInt(a);
+		const numB = parseInt(b);
+
+		return numA - numB;
+	});
+
+	const data = files.map((fileName, index, elements) => {
 		const issue = fs.readFileSync(path.resolve(filesPath, fileName), "utf-8")
 		// Parse frontmatter
 		const {data, content} = grayMatter(issue)
