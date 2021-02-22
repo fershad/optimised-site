@@ -37,7 +37,7 @@
 </svelte:head>
 
 <section>
-  <h1 class="heading">Thanks for subscribing</h1>
+  <h1 class="heading">Subscribed</h1>
   <p>
     Thanks for subscribing to Optmised. The next newsletter will be sent out on <strong
       >{latest.nextIssueDate}</strong

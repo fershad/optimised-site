@@ -48,7 +48,7 @@
 </section>
 
 <section class="flow">
-  <h2 class="heading">Who's behind Optimised?</h2>
+  <h2 class="heading">Who am I?</h2>
   <p>
     Optimised is written by me, <a href="//fershad.com">Fershad Irani</a>. I'm a
     web performance and sustainability consultant based in Taipei, Taiwan.
