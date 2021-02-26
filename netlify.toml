@@ -3,3 +3,10 @@ functions = "./functions"
 
 [[plugins]]
 package = "@netlify/plugin-functions-install-core"
+
+  [plugins.inputs]
+  exclude=[
+      "/subscribed",
+      "/unsubscribed",
+      "/ogImage"
+  ]
