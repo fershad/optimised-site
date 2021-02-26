@@ -7,7 +7,7 @@ package = "@netlify/plugin-functions-install-core"
   [plugins.inputs]
   buildDir = "__sapper__/export"
   exclude=[
-      "./__sapper__/export/subscribed/index.html",
-      "./__sapper__/export/unsubscribed/index.html",
-      "./__sapper__/export/ogImage/index.html"
+      "**/**/subscribed/index.html",
+      "**/**/unsubscribed/index.html",
+      "**/**/ogImage/index.html"
   ] 
