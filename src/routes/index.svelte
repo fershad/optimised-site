@@ -9,7 +9,12 @@
 
 <script>
   export let issues;
+  export let currentTime = new Date();
   import Fathom from "../components/Fathom.svelte";
+
+  const getIssueDate = (issue) => {
+    return new Date(issue);
+  };
 
   import { onMount } from "svelte";
 
@@ -45,24 +50,27 @@
 			tell Sapper to load the data for the page as soon as
 			the user hovers over the link or taps it, instead of
 			waiting for the 'click' event -->
-      <li class="article">
-        <small class="details"
-          ><strong class="issueNo" data-color="secondary"
-            >Issue #{issue.issue}</strong
+      {#if getIssueDate(issue.date) < currentTime}
+        <!-- content here -->
+        <li class="article">
+          <small class="details"
+            ><strong class="issueNo" data-color="secondary"
+              >Issue #{issue.issue}</strong
+            >
+            | <time datetime={issue.date}>{issue.formattedDate}</time></small
           >
-          | <time datetime={issue.date}>{issue.formattedDate}</time></small
-        >
 
-        <a rel="prefetch" href="/issues/{issue.slug}">{issue.title}</a>
-        <!-- <div class="title">
-          <div class="tags">
-            {#each issue.tags as tag}
-              <span class="tag">{tag}</span>
-            {/each}
-          </div>
-        </div> -->
-        <p>{issue.excerpt}</p>
-      </li>
+          <a rel="prefetch" href="/issues/{issue.slug}">{issue.title}</a>
+          <!-- <div class="title">
+             <div class="tags">
+               {#each issue.tags as tag}
+                 <span class="tag">{tag}</span>
+               {/each}
+             </div>
+           </div> -->
+          <p>{issue.excerpt}</p>
+        </li>
+      {/if}
     {/each}
   </ul>
 </section>
