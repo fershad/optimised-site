@@ -33,6 +33,8 @@
       <li>
         <a href="#subscribe" on:click|preventDefault={scrollTo}>Subscribe</a>
       </li>
+    {/if}
+    {#if !area || area !== "header"}
       <li>
         <a
           rel="external"
