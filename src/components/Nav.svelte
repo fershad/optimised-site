@@ -33,21 +33,21 @@
       <li>
         <a href="#subscribe" on:click|preventDefault={scrollTo}>Subscribe</a>
       </li>
+      <li>
+        <a
+          rel="external"
+          aria-current={segment === "about" ? "page" : undefined}
+          href="/about">About</a
+        >
+      </li>
+      <li>
+        <a
+          rel="external"
+          aria-current={segment === "carbon" ? "page" : undefined}
+          href="/carbon">Carbon</a
+        >
+      </li>
     {/if}
-    <li>
-      <a
-        rel="external"
-        aria-current={segment === "about" ? "page" : undefined}
-        href="/about">About</a
-      >
-    </li>
-    <li>
-      <a
-        rel="external"
-        aria-current={segment === "carbon" ? "page" : undefined}
-        href="/carbon">Carbon</a
-      >
-    </li>
   </ul>
 </nav>
 
