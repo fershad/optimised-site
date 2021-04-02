@@ -1,6 +1,6 @@
 <script context="module">
   export async function preload({ params, query }) {
-    const res = await this.fetch(`issues.json`);
+    const res = await this.fetch(`issues/published.json`);
     const issues = await res.json();
     const latest = issues[0];
     return { latest };
