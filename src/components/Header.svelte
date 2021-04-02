@@ -4,6 +4,7 @@
   import Toggle from "./darkToggle.svelte";
   import SkipLink from "../components/skipLink.svelte";
   export let segment;
+  let area = "header";
 </script>
 
 <SkipLink />
@@ -12,7 +13,7 @@
   <p class="subtag">
     Tips, insights, and articles to help boost your website's performance.
   </p>
-  <Nav {segment} />
+  <Nav {segment} {area} />
   <Toggle />
 </header>
 
