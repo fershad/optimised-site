@@ -14,3 +14,8 @@ package = "@netlify/plugin-sitemap"
       "**/**/unsubscribed/index.html",
       "**/**/ogImage/index.html"
   ] 
+
+[[headers]]
+  for ="/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"
