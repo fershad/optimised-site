@@ -96,6 +96,7 @@
   @media (min-width: 48rem) {
     article {
       --flow-space: 2.5rem;
+      overflow-x: auto;
     }
   }
   article :global(a) {
