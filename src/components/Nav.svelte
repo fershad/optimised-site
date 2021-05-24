@@ -29,19 +29,19 @@
         href="/">Archive</a
       >
     </li>
+    <li>
+      <a
+        rel="external"
+        aria-current={segment === "series" ? "page" : undefined}
+        href="/series">Series</a
+      >
+    </li>
     {#if !area || area !== "footer"}
       <li>
         <a href="#subscribe" on:click|preventDefault={scrollTo}>Subscribe</a>
       </li>
     {/if}
     {#if !area || area !== "header"}
-      <li>
-        <a
-          rel="external"
-          aria-current={segment === "about" ? "page" : undefined}
-          href="/about">About</a
-        >
-      </li>
       <li>
         <a
           rel="external"
