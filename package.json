@@ -9,6 +9,7 @@
     "start": "node __sapper__/build"
   },
   "dependencies": {
+    "chrome-aws-lambda": "^2.1.1",
     "compression": "^1.7.1",
     "dayjs": "^1.10.4",
     "dotenv": "^8.2.0",
@@ -17,10 +18,9 @@
     "marked": "^1.2.8",
     "node-fetch": "^2.6.1",
     "polka": "next",
+    "puppeteer-core": "^2.1.1",
     "sirv": "^1.0.0",
     "slugify": "^1.4.6",
-    "chrome-aws-lambda": "^2.1.1",
-    "puppeteer-core": "^2.1.1",
     "waait": "^1.0.5"
   },
   "devDependencies": {
