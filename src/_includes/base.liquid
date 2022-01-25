@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <link rel="preconnect" href="https://cdn.usefathom.com">
+  {% assign title = 'Archive' %}
+  {% assign description = 'Fortnightly insights into the ways website performance and optimisation can help your customers, your business, and the planet. Subscribe today, and start optimising.' %}
+  {% include 'partials/metadata' %}
   <script async src="/js/instant-page.mjs" type="module"></script>
   <script async nomodule="" src="/js/instant-page.js"></script>
   <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
@@ -22,7 +25,7 @@
 
   {% include 'partials/header' %}
   <main id="main-content" class="wrapper">{{ content }}</main>
-  <aside class="full-width" data-highlighted="accent">
+  <aside class="full-width" data-highlighted="dark">
     <div class="wrapper">
       <h2 class="h3">
         Subscribe

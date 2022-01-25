@@ -50,6 +50,6 @@
   }
 
   :global(progress.reading-progress-bar[value]::-webkit-progress-value) {
-    background-color: var(--color-primary);
+    background-color: var(--color-accent-dark);
   }
 </style>

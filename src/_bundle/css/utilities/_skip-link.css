@@ -27,4 +27,5 @@
   border: solid 2px var(--color-accent);
   color: var(--dark-text);
   outline-color: var(--light-background);
+  text-shadow: none;
 }

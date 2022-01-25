@@ -12,7 +12,7 @@ module.exports = {
     },
     contact: {
         title: 'Contact',
-        link: `${baseURL}/contact/`,
+        link: `mailto:itsfish@fershad.com`,
         footerOnly: true,
     },
 };

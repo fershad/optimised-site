@@ -1,0 +1,18 @@
+---
+layout: base
+progressBar: true
+---
+<article class="post flow" id="post-content">
+    <h1 class="heading">{{ title }}</h1>
+    <aside class="flow">
+        <p>
+            <span class="heading">Published:</span>
+            <time datetime="{{ published | w3DateFilter }}">{{ published | dateFilter | upcase }}</time>
+        </p>
+        <div id="share-text"></div>
+    </aside>
+    <div class="flow">{{ content }}</div>
+</article>
+
+<script async src="/js/share-text.mjs" type="module"></script>
+<script async nomodule="" src="/js/share-text.js"></script>
