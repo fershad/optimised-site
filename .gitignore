@@ -8,3 +8,5 @@ yarn-error.log
 .eslintrc
 # Local Netlify folder
 .netlify
+_dev
+_site

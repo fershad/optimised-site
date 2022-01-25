@@ -6,7 +6,7 @@ description: "Hey, I'm Fershad. I help environmentally conscious companies ensur
 performance, and have a low carbon impact."
 ---
 <ul>
-    {% for issue in collections.issue %}
+    {% for issue in collections.issue reversed %}
     {% assign title = issue.data.title %}
     {% assign content = issue.data.description %}
     {% assign timestamp = issue.data.published %}

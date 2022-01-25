@@ -21,7 +21,32 @@
   {% endif %}
 
   {% include 'partials/header' %}
-  <main id="main-content" class="wrapper flow">{{ content }}</main>
+  <main id="main-content" class="wrapper">{{ content }}</main>
+  <aside class="full-width" data-highlighted="accent">
+    <div class="wrapper">
+      <h2 class="h3">
+        Subscribe
+      </h2>
+      <p>Receive fortnightly website optimisation tips, insights, and articles directly to your inbox.
+        Alternately, you can receive updates using <a href="{{site.baseURL}}/feed/rss.xml"
+          onclick="window.fathom.trackGoal('SZV8WIPB', 0);">RSS</a></p>
+      <div>
+        <form action="https://buttondown.email/api/emails/embed-subscribe/fershad" method="post" target="popupwindow"
+          onsubmit="window.open('https://buttondown.email/fershad', 'popupwindow')" class="embeddable-buttondown-form">
+          <label for="bd-email">Your email</label>
+          <div class="input-wrapper">
+            <input type="email" name="email" id="bd-email" placeholder="you@email.com" />
+            <input type="hidden" value="1" name="embed" />
+            <input type="submit" value="Subscribe" />
+          </div>
+          <p>
+            This newsletter is powered by <a href="https://buttondown.email" target="_blank"
+              rel="noopener">Buttondown.</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </aside>
   {% include 'partials/footer' %}
 
 
