@@ -1,25 +1,17 @@
-{% if ogTitle %}
-    {% assign text = ogTitle %}
-{% else %}
-    {% assign ogTitle = title %}
-{% endif %}
+{% assign ogTitle = title %}
 
-{% if ogType %}
-    {% assign type = ogContent %}
-{% else %}
-    {% assign type = "website" %}
-{% endif %}
+{% assign type = "website" %}
 
 {% assign currentUrl = site.baseURL + page.url %}
 {% unless description %}
-    {% assign description = summary %}
+{% assign description = summary %}
 {% endunless %}
 
 <!-- FB OG -->
 <meta property="og:url" content="{{ site.baseURL }}{{ page.url }}">
 <meta property="og:type" content="{{ type }}">
 <meta property="og:title" content="{{ ogTitle }}">
-<meta content="https://res.cloudinary.com/itsfish/w_1200,f_auto/l_text:Georgia_80_bold_center:{{ ogTitle | encodeURI }},co_rgb:F4F9F4,c_fit,w_900,y_-70//v1620462670/fi_og_image.jpg" property="og:image">
+<meta content="https://optimised.email/ogImage.jpg" property="og:image">
 <!-- <meta property="og:image:alt" content=""> -->
 <meta property="og:description" content="{{ description }}">
 <meta property="og:site_name" content="{{ site.title }}">
@@ -31,6 +23,5 @@
 <meta name="twitter:url" content="{{ site.baseURL }}{{ page.url }}">
 <meta name="twitter:title" content="{{ ogTitle }}">
 <meta name="twitter:description" content="{{ description}}">
-<meta
-content="https://res.cloudinary.com/itsfish/w_1200,f_auto/l_text:Georgia_80_bold_center:{{ ogTitle | encodeURI }},co_rgb:F4F9F4,c_fit,w_900,y_-70//v1620462670/fi_og_image.jpg" name="twitter:image">
+<meta content="https://optimised.email/ogImage.jpg" name="twitter:image">
 <!-- <meta name="twitter:image:alt" content=""> -->
