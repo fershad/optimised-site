@@ -16,5 +16,38 @@ title: '{{ title }}'
     <div class="flow">{{ content }}</div>
 </article>
 
+<section>
+    <div class="fluid-grid two">
+        {% unless issue == 1 %}
+        {% assign prevIssueNumber = issue | minus: 1 %}
+        {% for item in collections.issue %}
+        {% if forloop.index == prevIssueNumber %}
+        {% assign prev = item %}
+        <div class="prev">
+            <p class="h4">Previous</p>
+            <p><a href="{{ site.baseUrl}}/issues/{{prev.data.issue}}/">{{prev.data.title}}</a></p>
+            <p>{{ prev.data.description }}</p>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endunless %}
+        {% assign totalIssues = collections.issue | size %}
+        {% unless issue == totalIssues %}
+        {% assign nextIssueNumber = issue | plus: 1 %}
+        {% for item in collections.issue %}
+        {% if forloop.index == nextIssueNumber %}
+        {% assign next = item %}
+        <div class="next">
+            <p class="h4">Next</p>
+            <p><a href="{{ site.baseUrl}}/issues/{{next.data.issue}}/">{{next.data.title}}</a></p>
+            <p>{{ next.data.description }}</p>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endunless %}
+
+    </div>
+</section>
+
 <script async src="/js/share-text.mjs" type="module"></script>
 <script async nomodule="" src="/js/share-text.js"></script>
