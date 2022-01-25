@@ -11,13 +11,14 @@ const {
 } = require('./src/_11ty/shortcode/image')
 const analytics = require('./src/_11ty/shortcode/analytics')
 const noindex = require('./src/_11ty/shortcode/noindex')
-// const sitemap = require("@quasibit/eleventy-plugin-sitemap");
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const readTimeFilter = require('./src/_11ty/filter/readTimeFilter.js');
 const wordCountFilter = require('./src/_11ty/filter/wordCountFilter.js');
 const dateFilter = require('./src/_11ty/filter/dateFilter.js');
 const w3DateFilter = require('./src/_11ty/filter/w3DateFilter.js');
 const encodeURI = require('./src/_11ty/filter/uriEncodeComponent.js');
 const xmlFiltersPlugin = require('eleventy-xml-plugin');
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const fse = require('fs-extra');
 require('dotenv').config()
 
@@ -82,12 +83,14 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addTransform('dev-styles', devStyles);
   }
 
-  // eleventyConfig.addPlugin(sitemap, {
-  //   sitemap: {
-  //     hostname: "https://www.fershad.com",
-  //   },
-  // });
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://optimised.email",
+    },
+  });
 
+  eleventyConfig.addPlugin(pluginRss);
+  
   eleventyConfig.setBrowserSyncConfig({
     files: ['_dev/img/*']
   });
