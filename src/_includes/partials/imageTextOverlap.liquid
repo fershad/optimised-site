@@ -2,14 +2,24 @@
     <div class="content">
         {% if timestamp %}
         <div class="postInfo">
-            <span>Published on
-            </span>
-            <time datetime="{{ timestamp | w3DateFilter }}">{{ timestamp | dateFilter | upcase }}</time>
+            <strong class="issueNo" data-color="secondary">Issue #{{issueNo}}</strong>
+            | <time datetime="{{ timestamp | w3DateFilter }}">{{ timestamp | dateFilter | upcase }}</time>
         </div>
         {% endif %}
+        {% if issueLength %}
+        <div class="postInfo">
+            <strong class="issueNo" data-color="secondary">{{ issueLength }} Issues</strong>
+        </div>
+        {% endif %}
+        {% unless slug %}
         <h3 class="heading">
             <a href="{{site.baseURL}}/issues/{{issueNo}}/">{{ title }}</a>
         </h3>
+        {% else %}
+        <h3 class="heading">
+            <a href="{{site.baseURL}}/series/{{slug}}/">{{ title }}</a>
+        </h3>
+        {% endunless %}
         <p>{{ content }}</p>
     </div>
 </article>

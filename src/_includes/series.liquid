@@ -1,0 +1,24 @@
+---
+layout: base
+progressBar: true
+title: '{{ title }}'
+description: '{{ description }}'
+---
+<h1>Series: {{ title }}</h1>
+<p>{{excerpt}}</p>
+<p class="bold" data-color="">
+    This series has {{issues | size}} issues.
+</p>
+{% for issue in issues %}
+{% for item in collections.issue %}
+{% if item.data.issue == issue %}
+{% assign this_issue = item %}
+{% assign title = this_issue.data.title %}
+{% assign content = this_issue.data.description %}
+{% assign timestamp = this_issue.data.published %}
+{% assign issueNo = this_issue.data.issue %}
+{% include 'partials/imageTextOverlap' %}
+{% endif %}
+{% endfor %}
+
+{% endfor %}

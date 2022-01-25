@@ -114,3 +114,7 @@ input[type="email"] {
   .input-wrapper > * {
     margin: calc(var(--size-300) * 0.5);
   }
+
+  .article-list ul {
+    padding: 0;
+  }

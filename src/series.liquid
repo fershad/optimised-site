@@ -1,0 +1,14 @@
+---
+title: Series
+layout: base
+ogTitle: "Web Sustainability & Performance"
+description: "A collection of the series we've covered in the Optimised newsletter."
+---
+
+{% for issue in collections.series %}
+{% assign title = issue.data.title %}
+{% assign content = issue.data.description %}
+{% assign issueLength = issue.data.issues | size %}
+{% assign slug = issue.data.slug %}
+{% include 'partials/imageTextOverlap' %}
+{% endfor %}

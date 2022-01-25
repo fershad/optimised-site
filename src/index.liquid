@@ -6,12 +6,10 @@ description: "Fortnightly insights into the ways website performance and optimis
 business, and the planet. Subscribe today, and start optimising."
 ---
 
-<ul>
-    {% for issue in collections.issue reversed %}
-    {% assign title = issue.data.title %}
-    {% assign content = issue.data.description %}
-    {% assign timestamp = issue.data.published %}
-    {% assign issueNo = issue.data.issue %}
-    {% include 'partials/imageTextOverlap' %}
-    {% endfor %}
-</ul>
+{% for issue in collections.issue reversed %}
+{% assign title = issue.data.title %}
+{% assign content = issue.data.description %}
+{% assign timestamp = issue.data.published %}
+{% assign issueNo = issue.data.issue %}
+{% include 'partials/imageTextOverlap' %}
+{% endfor %}
