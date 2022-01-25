@@ -6,7 +6,7 @@ description: "Fortnightly insights into the ways website performance and optimis
 business, and the planet. Subscribe today, and start optimising."
 ---
 
-{% for issue in collections.issuesDescending reversed %}
+{% for issue in issuesDescending %}
 {% assign title = issue.data.title %}
 {% assign content = issue.data.description %}
 {% assign timestamp = issue.data.published %}
