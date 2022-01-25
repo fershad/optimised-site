@@ -77,10 +77,10 @@ input[type="email"] {
     max-width: 30rem;
     display: inline-block;
     position: relative;
-    color: var(--light-text);
+    color: var(--dark-text);
     cursor: pointer;
     border: 2px var(--color-accent-dark) solid;
-    background: var(--color-dark);
+    background: var(--color-accent-dark);
     /* border-radius: var(--size-300); */
     /* background: var(--color-light-alt); */
     font-weight: 700;
