@@ -20,3 +20,7 @@
 <meta name="description" content="{{ description }}" />
 <link rel="canonical" href="{{ site.baseURL }}{{ page.url }}" />
 <meta name="theme-color" content="#212121">
+
+{% if noIndex %}
+<meta name="robots" content="noindex,nofollow" />
+{% endif %}

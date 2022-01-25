@@ -1,0 +1,36 @@
+---
+title: Thanks for subscribing to Optimised
+layout: base
+description: "Fortnightly insights into the ways website performance and optimisation can help your customers, your
+business, and the planet. Subscribe today, and start optimising."
+noIndex: true
+---
+
+<section>
+    <h1 class="heading">Subscribed</h1>
+    <p>
+        Thanks for subscribing to Optmised. The next newsletter will be sent out on soon. Sit tight, it's not too far
+        away!
+    </p>
+    <p>
+        In the meantime, you can read the last newsletter below or head over to the <a href="/">archive page</a> to see
+        previous issues.
+    </p>
+</section>
+<hr>
+{% assign latest = collections.issue | last %}
+<article class="post flow" id="post-content">
+    <h1 class="heading">{{ latest.data.title }}</h1>
+    <aside class="flow">
+        <p>
+            <span class="heading">Published:</span>
+            <time
+                datetime="{{ latest.data.published | w3DateFilter }}">{{ latest.data.published | dateFilter | upcase }}</time>
+        </p>
+        <div id="share-text"></div>
+    </aside>
+    <div class="flow">{{ latest.templateContent }}</div>
+</article>
+
+<script async src="/js/share-text.mjs" type="module"></script>
+<script async nomodule="" src="/js/share-text.js"></script>
