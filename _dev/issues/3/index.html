@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1><strong>Tools to measure website performance</strong></h1>
+<p>Ohhhh it's Friday 13th .... spooky. It's the middle of November, and there've been a few glimmers of hope, positivity, normality in the past couple of weeks. Hopefully, they're good omens for 2021.</p>
+<p>Earlier this week Google announced that from May 2021 Core Web Vitals (page experience signals) will be added to the mix of UX signals that feed Google's search algorithm. You can read the announce on <a href="https://webmasters.googleblog.com/2020/11/timing-for-page-experience.html">Google's blog</a>. This is a <em>very big deal</em>, and so in the next issue (Nov. 27th) I'll go deeper into what Core Web Vitals are, and what Google's announcement means for SEO strategies.</p>
+<p>This issue of Optimised will introduce you to a few tools you can use to test and track website performance. I'd urge you to give one or two of them a try on your own site. Let's get into it!</p>
+<hr>
+<p>Before we get into the collection of tools below, let's get something clear - <em><strong>Your business goals are the ultimate measure of site performance</strong></em>. While I advocate faster, lighter websites that shouldn't be a goal that we pursue blindly. At the end of the day, every optimisation you make (or decide not the make) should be assessed and measured against both technical metrics, and whether it helps you achieve better business results.</p>
+<p>Below are some tools you can use on your own website to check performance against both technical and user experience metrics. All the tools I've listed below present results in a form that's easily digestible for non-technical users, while also providing more details that can be shared with developers.</p>
+<h2><strong>Tools from Google</strong></h2>
+<p>Not surprisingly Google has several tools that can be used to test and track website performance metrics.</p>
+<h3><a href="https://developers.google.com/web/tools/lighthouse/"><strong>Google Lighthouse</strong></a></h3>
+<p>Lighthouse is an automated set of audits that can be run against any public web page. It returns results for performance, accessibility, technical SEO, best practice, and progressive web apps.</p>
+<p>There are a few ways to use Lighthouse audits, ranging from a user-friendly website through to command line and code tools. What's more, anyone can run Lighthouse audits from <a href="https://developers.google.com/web/tools/lighthouse/#devtools">within your Chrome web browser</a>.</p>
+<p>Lighthouse is at the heart of a lot of web page performance measuring tools on the internet, and it can even be used by dev teams as part of a CI/CD workflow to check for performance regressions before pages go live.</p>
+<h3><a href="https://web.dev/measure/"><strong>Measure from Web.dev</strong></a></h3>
+<p>Web.dev is an easy tool that generates a simplified Lighthouse audit report for a web page. You'll be presented with summary results, some key metrics, and a few actionable improvement suggestions. You can get a more detailed report by clicking on the View Report link at the top of the audit results.</p>
+<p>I'd recommend this tool if you're looking for headline metrics to share with non-technical members of your organisation.</p>
+<h3><a href="https://developers.google.com/speed/pagespeed/insights/"><strong>Page Speed Insight</strong></a></h3>
+<p>Page Speed Insight (PSI) is built on the Lighthouse Performance audit. PSI presents separate results for both mobile &amp; desktop versions of sites, with mobile being the default (in line with Google's mobile-first indexing initiative).</p>
+<p>PSI presents up-to three levels of data:</p>
+<ul>
+<li>Field Data: For each test, PSI will query Google's Chrome User Experience Report (CrUX) dataset, and if enough data is available for the page being tested you'll see these results. These results are gold since they give you a look at how real users are experiencing your site.</li>
+<li>Origin Summary: PSI will also try to gather CrUX data for the origin (domain) of the website. This allows you to compare how the page you're testing stacks up against the rest of your website. Again this depends on the data being available.</li>
+<li>Lab Data: This is synthetic data, showing the results of automated Lighthouse tests run on the page. You'll get these results each time you run a test.</li>
+</ul>
+<p>These are pretty well explained on the <a href="https://developers.google.com/speed/docs/insights/v5/about">PSI about page</a>.</p>
+<h3><strong>Google Analytics</strong></h3>
+<p>If you're using Google Analytics on your site you can get see website performance metrics fuelled by data from your real users. You can dive into the data by navigating to the <em><strong>Behaviour</strong></em> tab in the sidebar where you'll see a section titled <em><strong>Site Speed</strong></em>.</p>
+<h3><strong>Google Search Console</strong></h3>
+<p>You can also see real-world data for Google's Core Web Vitals metrics from within the Google Search Console. You'll be presented with data split by mobile and desktop experiences. This data is again based on CrUX though, so if you've got a low-traffic site you're unlikely to see data in here.</p>
+<h2><a href="https://webpagetest.org/"><strong>WebPageTest</strong></a></h2>
+<p>WebPageTest allows you to run speed tests from multiple locations around the globe using real browsers (IE and Chrome) and at real consumer connection speeds. Using WebPageTest you'll get an extremely detailed set of results to dive into. Unlike some of the Google tools I've mentioned above, you'll need some degree of technical understanding to parse and interpret the results presented.</p>
+<h2><a href="https://speedcurve.com/"><strong>SpeedCurve</strong></a></h2>
+<p>SpeedCurve's goal is to deliver metrics that give a true insight into what users are experiencing. What makes SpeedCurve great is that it allows you to set up performance monitoring for your website. It captures both synthetic test results, as well as real user experience data and presents the information on a slick visual dashboard. Unlike the other tools presented here, SpeedCurve is a paid service, starting from $114 per month.</p>
+<h2><a href="https://www.websitecarbon.com/"><strong>Website Carbon</strong></a></h2>
+<p>The internet consumes a lot of electricity. 416.2TWh per year to be precise. To give you some perspective, that’s more than the entire United Kingdom. Website Carbon Calculator allows you to visualise the carbon impact of a web page by analysing the green-rating of website hosts and web page size. It's a different take on web performance testing, but one that I definitely hope more companies put a focus on in the very near future.</p>
+<h2><strong>Articles</strong></h2>
+<p>Here's a couple of articles that caught my eye while I tiptoed around the web in the past fortnight.</p>
+<p><strong><a href="https://dannyvankooten.com/website-carbon-emissions/">CO2 emissions on the web</a></strong><br>
+Developer Danny van Kooten talks through the large, positive, environmental impact made through shaving 20kB off a WordPress plugin he authored.</p>
+<p><strong><a href="https://letsencrypt.org/2020/11/06/own-two-feet.html">Standing on Our Own Two Feet</a></strong><br>
+SSL certificates are vital to secure data transmission on the web. From September next year Let's Encrypt (a popular certificate provider) will be using its own root certificate. As a result users on older Android phones might be blocked off from large swathes of the web. In this article, the Let's Encrypt team explain their decision, the potential impacts, and how you can start planning for this change with your website's visitors.</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on November 27th. In the meantime, I'd really appreciate it if you could share this email with a friend.</p>
+<p>As always if you've got any feedback or specific topics you want covered then just reply to this email.</p>
+<p>Keep safe, stay well.<br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

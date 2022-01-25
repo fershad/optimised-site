@@ -1,0 +1,18 @@
+.fluid-flex {
+  --min: 10ch;
+  --gap: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.fluid-flex > * {
+  flex: 1 1 var(--min);
+}
+
+.fluid-flex.right-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

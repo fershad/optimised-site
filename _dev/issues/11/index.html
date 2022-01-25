@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1>Do you need all that analytics?</h1>
+<p>Hang on, it's March?! That was quick. This week I've been looking at a slightly different area of performance. I've started working with a new client who is looking to improve the speed of their mobile app. It's a new challenge, with plenty to learn &amp; I'm excited for the chance to compliment my web perf knowledge with what I'll learn in the app space.</p>
+<p>In this week's issue, we'll be talking about website analytics. They provide useful insights into the reach of your online content. However, at the same time can also impact page performance and expose privacy concerns.</p>
+<hr>
+<p>If you've ever wanted to find out how many people are visiting your website then you've probably heard of Google Analytics. It's a free service from Google that allows you to collect a plethora of information when a user visits your site. To use it, you just need to add a couple of bits of code to a web page's HTML. The scripts end up adding around 73kB to the overall size of your page in total.</p>
+<p>This allows website owners to get a lot of useful information about the people visiting their sites. However, it also gives the world's largest digital ad seller access to a trove of data too. That digital ad seller, in case you're wondering, is Google and DoubleClick (its advertising arm).</p>
+<p>The Markup has found <a href="https://themarkup.org/blacklight/2020/09/22/blacklight-tracking-advertisers-digital-privacy-sensitive-websites">Google Analytics in use on 69% of the top 800,000 websites</a> they scanned with their <a href="https://themarkup.org/blacklight">Blacklight website privacy inspector</a>. If these sites want to access user demographics through Google Analytics, they have to allow that data to be collected by DoubleClick as well.</p>
+<p>But, there are analytics alternatives that are both lightweight and also address user data privacy concerns. Also, most of these alternatives are not blocked by ad-blockers which is another problem that comes with using Google Analytics.</p>
+<h2>Google Analytics Alternatives</h2>
+<h3>Minimal Google Analytics Script</h3>
+<p><a href="https://minimalanalytics.com/">Website</a> (Free)</p>
+<p>With Minimal Google Analytics you'll still be using Google Analytic's platform to view your data. However, the script is a fraction of the size of the regular Google Analytics tracking script (1.5kB v. 73kB). This will help speed up your page load slightly.</p>
+<h3>Fathom Analytics</h3>
+<p><a href="https://usefathom.com/ref/CEHKLY">Website</a> (affiliate link, starts from $14/month for 100,000 pageviews)</p>
+<p>Fathom's analytics script is 1.7kB and bypasses most ad-blockers too.</p>
+<p>I've been using Fathom for about 6 months now, and I'm really glad I made the switch. Fathom markets itself as <em>privacy-focused analytics</em>, and that's something which they take very, very seriously. Fathom has a simple dashboard which is easy to digest, making it ideal for sharing with different teams within your company. The team behind Fathom are working on Version 3 release for April which will include the ability to drill down data, track campaigns, provide an API, and more.</p>
+<p>Another bonus of using Fathom is that 2% of all the revenue they make goes towards environmental endeavours. 1% of our gross revenue is funding next-generation carbon removal technologies in partnership with Stripe. 1% of our gross revenue is being donated to the Rainforest Trust.</p>
+<h3>Plausible Analytics</h3>
+<p><a href="https://plausible.io/">Website</a> (starts from $4/month for 10,000 pageviews)</p>
+<p>Plausible Analytics script comes in at less than 1kB.</p>
+<p>Plausible Analytics is much like Fathom, in that they are an analytics service with privacy front of mind. Plausible can be used as a service or can be self-hosted. One of the most promising things about Plausible is the size of its tracking script - less than 1kB.</p>
+<p>The folks behind Plausible Analytics also contribute 5% of their revenue to a combination of environmental efforts and open source project sponsorships.</p>
+<h3>Cabin Analytics</h3>
+<p><a href="https://withcabin.com/">Website</a> (Currently invitation only beta)</p>
+<p>Cabin's script is also less than 1kB.</p>
+<p>Cabin is analytics with a difference. Besides being privacy-first, it's also carbon-aware. So beyond just page visits and events, you can use Cabin to track the carbon footprint of your website. As more companies become carbon conscious the ability to track and identify energy intensive pages will definitely be a plus.</p>
+<p>At the time of writing access to Cabin is only via invitation only.</p>
+<h3>Self-hosted</h3>
+<p>Self-hosted solutions give you total control over your data and analytics setup. They do, however, also require you/your team to have the technical know-how to set them up. You'll first need to find hosting services for the analytics dashboard and database. Once you've registered for these services you'll then need to setup the database, and connect it to the dashboard. Most self-hosted analytics packages have scripts and clear instructions you can follow to get started.</p>
+<p>I've listed a couple of self-hosted analytics options below, but a <a href="https://www.ecosia.org/search?q=self-hosted+website+analytics">quick search on Ecosia</a> will give you a few more choices if you need.</p>
+<ul>
+<li><a href="https://umami.is/">Umami</a></li>
+<li><a href="https://ackee.electerious.com/">Ackee</a></li>
+</ul>
+<h3>Resources</h3>
+<ul>
+<li><strong><a href="https://themarkup.org/blacklight/2020/09/22/blacklight-tracking-advertisers-digital-privacy-sensitive-websites">The High Privacy Cost of a “Free” Website</a></strong> - An eye-opening read from The Markup team at just how pervasive tracking scripts &amp; cookies are on the modern web.</li>
+<li><strong><a href="https://themarkup.org/blacklight">Blacklight</a></strong> - A free tool from The Markup that will scan it and reveal the specific user-tracking technologies on the site—and who’s getting your data.</li>
+</ul>
+<h3>Articles</h3>
+<p><strong><a href="https://simonhearne.com/2021/web-stress/">Slow site speed is still the biggest cause of web stress</a></strong><br>
+Can you feel your blood pressure rising the longer a page takes to load? Well you're not alone. This short piece by Simon Hearne points to some of the research that's been done into the health implications of slow websites.</p>
+<p><strong><a href="https://simplified.dev/performance/impact-of-web-performance">The Impact of Web Performance</a></strong><br>
+If you're looking to build a business case around optimising your company's website, then this write up by CP Clermont will definitely help. In it he explains some ways to go about measuring the revenue impact of web performance.</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on March 19th. The website has an <a href="https://optimised.email">archive of all previous emails</a>. It's a good place to recap on anything we've covered, and also handy to share with friends or colleagues.</p>
+<p>As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well.<br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

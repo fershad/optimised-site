@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><div class="callout">
+<p>This article was originally published on my personal website. You can also <a href="https://fershad.com/writing/cop26-a-quick-sustainability-check/">read it there</a>.</p>
+</div> 
+<h1>COP26.org: A quick sustainability check</h1>
+<p>COP26 is taking place in the first two weeks of November 2021. For two weeks, global leaders (or their representatives) will discuss their climate commitments and how countries can collaborate to ensure emissions reductions. COP26 is important, especially off the back of <a href="https://news.un.org/en/story/2021/08/1097362">the latest IPCC report</a> which paints a stark outlook for the planet unless huge steps are taken to cut greenhouse gas emissions within the decade.</p>
+<p>But this isn't a climate newsletter. If you're looking for one, <a href="https://heated.world/">Heated by Emily Atkin</a> is a good read. In this week's issue of Optimised, I thought we'd take a look at the COP26 website. Rather than the usual performance and Core Web Vitals focus though, I want to see how the site stacks up in terms of sustainability. What does it do well, and what can it do better? Let's dive in.</p>
+<hr>
+<p>When looking at the sustainability for a website, there are three key areas of focus:</p>
+<ul>
+<li>Servers (data centres and hosting)</li>
+<li>Networks (data transferred over the wire to load site content)</li>
+<li>Devices (the devices users use to view the site)</li>
+</ul>
+<p>Daniel Hartley has written <a href="https://www.the-public-good.com/web-development/measuring-the-web">a really good explainer</a> if you want to understand things in more detail.</p>
+<p>We'll touch on all three for this quick website sustainability check, but the bulk of our time will be spent looking at sustainability over the network. Too keep things concise as well, I will just look at the homepage (<a href="https://ukcop26.org/">https://ukcop26.org/</a>) on desktop.</p>
+<h2>Making a start</h2>
+<p>To start with, let's collect some data about the page. We'll use <a href="https://digitalbeacon.co/">Beacon</a> to get an initial estimate of its sustainability in CO2e terms, and The Green Web Foundation's API to quickly check how the site is hosted. We'll also run the homepage through WebPageTest to collect some site diagnostics. You can play along at home using the links below if you like.</p>
+<ul>
+<li><strong>Beacon:</strong> <a href="https://digitalbeacon.co/report/ukcop26-org">https://digitalbeacon.co/report/ukcop26-org</a> (tested on 28.October.2021)</li>
+<li><strong>Green Web Foundation:</strong> <a href="https://www.thegreenwebfoundation.org/green-web-check/?url=https%3A%2F%2Fukcop26.org%2F">https://www.thegreenwebfoundation.org/green-web-check/?url=https%3A%2F%2Fukcop26.org%2F</a></li>
+<li><strong>WebPageTest</strong>: <a href="https://webpagetest.org/result/211028_BiDcJJ_6e1700968d79e1eb40c40f0bde65d074/">https://webpagetest.org/result/211028_BiDcJJ_6e1700968d79e1eb40c40f0bde65d074/</a></li>
+</ul>
+<h2>An initial assessment</h2>
+<p>A few things stand out from the tests above. They are:</p>
+<h3><strong>Initial visits are large, but caching is very good.</strong></h3>
+<p>The results from Beacon don't paint the rosiest of pictures. The page downloads 6.13 MB of data for users on a cold cache (i.e. someone who's never visited the page/site before). That's something we'll look to address later in this article. This equates to an estimated 5.136g of CO2e produced for each pageview (or <code>5.136 / 6.13 = 0.837g</code> per MB).</p>
+<p>There is some good news though. Our results on WebPageTest show us what things are like for returning visitors to the site. Caching is set up very effectively, with only 717 KB downloaded on a repeat view.</p>
+<p>The caching across the site does mean that as a user navigates the site, much less data is downloaded compared to their first pageview.</p>
+<h3><strong>Website hosting could be greener</strong></h3>
+<p>Our test from the Green Web Foundation comes back &quot;grey&quot;. That serves to hint that the site might not be on a host that is <em>known</em> to use 100% green energy. There is every chance that the site is still hosted in a country that generates a higher amount of clean energy. The UK is decent in this aspect - <a href="https://app.electricitymap.org/zone/GB">https://app.electricitymap.org/zone/GB</a>.</p>
+<p>The site does use Amazon Cloudfront as a CDN, which is a good start. Using a CDN means that static assets can be stored closer to end users. This reduces the distance it has to travel when requested, and in turn can reduce the amount of electricity required to transmit the data. Since COP26 is a global event, this is a very effective measure.</p>
+<h2>A word on design</h2>
+<p>Overall, the design of the site is simple. There's a focus on three colours - white, green, and a purple-ish blue which the internet tells me is called <a href="https://www.color-name.com/hex/38318c">Cosmic Cobalt</a> 🤷🏾. The use of duotone images in parts is a nice touch and can go some way to reducing the size of image files. It would be great to see the sponsors logos also show in duotone or black &amp; white.</p>
+<p>Some design modifications around the Twitter &amp; Instagram feeds would go a long way towards improving the sustainability of this webpage. Currently, the scripts and content for these sections are all downloaded when the page first loads. With some redesigning of each section, these could be requested on user interaction instead. In that way, only those website visitors interested in the social content would download the additional data. This has the potential to reduce page size by about 1.4 MB.</p>
+<h2>Tackling page size</h2>
+<p>Okay, design changes aside, there are still a few things we can do to get the webpage size down to something more reasonable. For some perspective, the average weight of a webpage in October 2021 is just over 2 MB (<a href="https://httparchive.org/reports/page-weight?start=2017_04_15&amp;end=latest&amp;view=list#bytesTotal">HTTP Archive</a>). Let's set that as our target. So, we're looking to reduce at least 4 MB overall.</p>
+<h3>One change gets us 75% of the way there</h3>
+<p>In the footer of the site there is a half-globe image, similar to the one that is used in hero section at the top of the page. <em>Similar</em>, but not the same. The image in the hero seems designed specifically for that section and comes in at just over 237 kB.</p>
+<p>The image in the footer, however, comes in at 3 MB in size. As a bonus, the image is set as a <code>background-image</code> in the footer's CSS declaration. This means we can't defer loading it using the browser's native lazy-loading capabilities.</p>
+<p>There are a handful of ways to go about making the situation better with this image. Here are two that I'd go with:</p>
+<ol>
+<li><strong>Move it into an <code>&lt;img&gt;</code> tag</strong>
+Removing the image from the CSS, and instead requesting it using an <code>&lt;img&gt;</code> tag within the page's HTML lets us instantly apply the <code>loading=&quot;lazy&quot;</code> attribute to the image. Since it's in the footer, it most certainly won't be requested when the page first loads. There'd be a tiny bit of CSS added to position the image appropriately.</li>
+<li><strong>Re-use the hero image in the footer</strong>
+The image in the hero could be used in the footer with a little CSS to rotate the image to match the current design.</li>
+</ol>
+<p>If done in combination, the two steps above will remove pretty much an entire 3 MB from the total size of the page.</p>
+<div class="callout">
+<p class="h3 title">An impactful change</p>
+<div><p>Since this image is in the footer, it will be downloaded by every single website visitor the first time they visit any part of the COP26 site. Removing this download would have the single biggest impact on the entire site's sustainability profile.</p><p>Let's assume a million unique visitors visit some part of the COP26 site over the next two weeks. We're looking at a potential CO2e reduction of 2500 kg. with this one change alone (<code>3 MB * 0.837g per MB = 2.511g * 1000000 / 1000 = 2511 kg.</code> ).</p></div>
+</div>
+<h3>Almost there with modern image formats</h3>
+<p>Of the remaining 1.5 MB worth of images on the homepage, most are lazy loaded. However, every image on the page could benefit from some further optimisation. By using newer image formats like WebP or even AVIF we can:</p>
+<ul>
+<li>Take over 300 kB off the initial page load.</li>
+<li>Reduce about 600 kB from the entire page.</li>
+</ul>
+<p>This assumes there's nothing we can do about the images that are loaded by the Twitter and Instagram plugins.</p>
+<h3>Replacing icon fonts with SVG</h3>
+<p>Looking through the network requests, there appear to be at least 8 requests for CSS files that relate to icon fonts. Looking around the homepage, I'm not able to see where these icons are used. Running a Coverage test in Edge DevTools confirms just that. Of the 143 kB of icon CSS loaded, only 1.5 kB is used on the homepage.</p>
+<div class="callout">
+<p class="h3 title">There's caching, but ...</p>
+<p>It might be the case that these icons are used in other parts of the website. The site's caching does help here, but users are still being made to download a chunk of data that they might never actually need.</p>
+</div> 
+<p>As an alternative, all these icons files could be replaced with SVG. This would have two benefits:</p>
+<ol>
+<li>The icons would only be downloaded on the pages where they are actually used.</li>
+<li>Requesting the SVG icons using either <code>&lt;img&gt;</code> tags or through CSS will allow the site's caching policy to still be effective.</li>
+</ol>
+<p>Not only would there be a saving made on the CSS loaded by the homepage. As a result of moving off icon fonts we'd eliminate 630 kB worth of font files.</p>
+<h3>Using WOFF or WOFF2 for fonts</h3>
+<p>The main fonts used for text content on the site are Tungsten (Bold) and Rubik (Bold, Medium). These fonts are hosted locally, which is great for performance. That performance gain gets negated somewhat by the fact that the fonts are being transferred in TTF format, totalling 320 kB.</p>
+<p>Providing WOFF or WOFF2 alternatives (which both have <a href="https://caniuse.com/?search=woff">very wide browser coverage</a>) would deliver <em>at least</em> as 50% reduction in file size. That's without going further and subsetting the font files.</p>
+<h2>How have we ended up?</h2>
+<p>Let's recap. Starting out with a page that loads 6.13 MB, we can make the following changes to reduce page weight:</p>
+<ul>
+<li>Remove/replace the 3 MB image in the footer. <strong>Saving 3 MB.</strong></li>
+<li>Use modern image formats for most images. <strong>Saving 300 kB on page load</strong>.</li>
+<li>Replace icon fonts with SVG. <strong>Saving about 770 kB.</strong></li>
+<li>Using WOFF/WOFF2 font formats. <strong>Saving <em>at least</em> 160 kB.</strong></li>
+</ul>
+<p>That gets us down to <strong>about 1.9 MB</strong> page weight on first load. 🎉 Hooray! Mission accomplished.</p>
+<p>If a design change can be made to load the contents of Twitter and Instagram feeds only after user interaction, then the page weight could go as low as <strong>500 kB.</strong></p>
+<h3>What does this mean in terms of CO2e?</h3>
+<p>In terms of CO2e, let's do some back of the envelope math. Beacon had one pageview (6.13 MB) generating 5.136g of CO2e. Breaking that down <code>5.136 / 6.13 = 0.837g per MB</code>.</p>
+<p>Reducing the page size to 1.9 MB would instead generate <code>0.837 * 1.9 = 1.590g CO2e</code> per pageview (<strong>a reduction of 3.546g</strong>). Going all the way with the social media design changes, CO2e could be reduced to as little as <code>0.837 * 0.5 = 0.419g</code> per pageview (<strong>a reduction of 4.717g</strong>).</p>
+<div class="callout">
+<p class="h3 title">Incremental gains</p>
+<p>Let's bear in mind that the numbers above relate only to visitors who first enter the UKCOP26 website via the homepage. Every 10,000 visits like this would result in at least 35 kg. (up-to 47 kg.) less CO2e being released into the atmosphere.</p>
+<p>As we saw with the image in the footer, applying the changes mentioned in this post across the entire site would have an even greater impact.</p>
+</div> 
+<h3>Resources</h3>
+<ul>
+<li><strong><a href="https://heated.world/">Heated by Emily Atkin</a></strong> - A great climate-focused newsletter.</li>
+<li><strong><a href="https://www.the-public-good.com/web-development/measuring-the-web">Measuring The Web</a></strong> - A very well constructed post by Daniel Hartley, explaining the concepts around website sustainability and how they impact calculations.</li>
+</ul>
+<hr>
+<p>The next issue of Optimised will be in your inbox on November 12th. The website has an <strong><a href="https://optimised.email/">archive of all previous emails</a></strong>. It's a good place to recap on anything we've covered, and also handy to share with friends or colleagues.</p>
+<p>As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well.<br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

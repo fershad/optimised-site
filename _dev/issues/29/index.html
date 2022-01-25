@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1>Updates from Chrome Dev Summit 2021</h1>
+<p>Google's 2021 Chrome Dev Summit kicked off last week. In this newsletter we'll look at some of the major announcements especially around performance related tooling and metrics.</p>
+<p>Before we get into it though, a quick update on the COP26 website which I wrote about in the last newsletter. After a couple of weeks of nudging and help from a few people within UK Government Digital Services, each page of the COP26 website is now 2.5MB lighter! The team in the UK Cabinet Office helped replace the 3MB footer image identified in my article with a 462kB version, reducing data consumption for each new website visitor.</p>
+<hr>
+<h2>Seeking opinions for possible new web vital metrics</h2>
+<p>While working with developers of some JavaScript frameworks to improve their out-of-the-box Core Web Vitals the Google team identified two new metrics <a href="https://web.dev/responsiveness/">overall responsiveness</a> and <a href="https://web.dev/smoothness/">smoothness</a>.</p>
+<p>To simplify, overall responsiveness would be an extension of the First Input Delay (FID). It would look to measure the entire duration of an event (a mouse click for example includes <code>pointerdown</code>, <code>click</code>, and <code>pointerup</code> events) until the next frame is painted in the browser.</p>
+<p>The smoothness metric would focus on animations and looks at putting a measure to animation freeze, stutter, and jank.</p>
+<p>The links above have more detailed explanations of each proposed metric.</p>
+<h2>Record user flows in DevTools</h2>
+<p>Up until now it's been difficult for performance measurement tools to deliver accurate measurements for cached page loads, or user interactions with a page. Most tools are also limited to testing a single page, making it hard to get a true feel for user experience through lab metrics.</p>
+<p>The new <strong>Recorder</strong> tab (experimental in Chrome Canary at the time of writing) changes all this. It makes it possible to record, replay, and measure user interactions and entire user journeys in DevTools. What's more, it allows developers to export a full Puppeteer script which can be used to further probe performance on each step of a user flow.</p>
+<p>Here's <a href="https://www.debugbear.com/blog/chrome-devtools-user-flow-recorder">a walkthrough</a> of the recording process by DebugBear.</p>
+<h2>User flows in Lighthouse audits</h2>
+<p>The recorder feature mentioned above ties in with a new &quot;user flows&quot; feature in the Lighthouse auditing tool. Developers can run a Lighthouse audit on the entire exported Puppeteer script. This can help expose layout shifts caused by user interaction, test navigations with a warm cache, and surface possible non-responsive or janky interactions.</p>
+<p>Once again, the DebugBear blog has <a href="https://www.debugbear.com/blog/lighthouse-user-flows">a good walkthrough</a> of this new feature.</p>
+<h2>A new look for PageSpeed Insights (PSI)</h2>
+<p>PSI is a great tool for surfacing performance specific data for a page. It's been boosted in recent years by the inclusion of both page and origin level data from the Chrome User Experience Report dataset.</p>
+<p>The new redesign will make it easier to differentiate between Field (real world) and Lab (synthetic) data in a PSI test report. It will make it easier to view a page's real Core Web Vitals performance and surface a more detailed breakdown for each metric.</p>
+<p>There's <a href="https://web.dev/whats-new-pagespeed-insights/">a detailed post</a> of all the updates at web.dev.</p>
+<h2>Articles</h2>
+<p><strong><a href="https://simonhearne.com/2021/fast-responsive-videos/">Fast and Responsive Hero Videos for Great UX</a></strong></p>
+<p>A thorough post by Simon Hearne looking at a few of the techniques that can be applied to ensure that web page performance doesn't suffer just because there's a hero video present on the page.</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on November 26th. The website has an <strong><a href="https://optimised.email/">archive of all previous emails</a></strong>. It's a good place to recap on anything we've covered, and also handy to share with friends or colleagues.</p>
+<p>As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well.<br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

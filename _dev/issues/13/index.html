@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1>Optimising web fonts - Part 1</h1>
+<p>It's been a busy couple of weeks here as Summer starts to take effect in Taipei. I've been working with the team behind the <a href="https://readle-app.com/">Readle</a> language learning app to improve app performance. It's been a new experience working on an app. But it's also shown me that plenty of the techniques we use for web optimisation can be carried across. In the last couple of weeks, we've managed to more than halve the app start time and removed 110kB of unused data from each launch request. We're now working on speeding up other parts of the app to deliver an even better user experience.</p>
+<p>In this week's newsletter, we'll launch into a multi-part series looking at some of the tricks and techniques to consider when optimising fonts for the web. This issue is more of a primer on the topic. We'll dive into more technical optimisation practices in the next few newsletters.</p>
+<p>We've all been there. You click a link to an article you're keen to read, only to be left staring at a page devoid of text for an uncomfortably long time. Ensuring you've got the proper optimisations and loading strategies in place will help guarantee that your site's visitors don't have a similar experience.</p>
+<h2>Fonts and Core Web Vitals</h2>
+<p>Poor font loading can also negatively impact your Core Web Vital scores (especially for Largest Contentful Paint and Cumulative Layout Shift). This is even more important as we approach May 2021, when Core Web Vitals will start to influence Google search rankings. If you need a refresher on the upcoming update, you can read about it in <a href="https://optimised.email/issues/issue-4-core-web-vitals-and-googles-search-update">Issue 4</a>.</p>
+<h3>Largest Contentful Paint (LCP)</h3>
+<p>LCP measures the time taken for the largest above-the-fold element to be rendered on screen. This is most often a hero image/video or the main block of text. If you've got slow loading fonts, then there's a risk the LCP timing gets pushed out.</p>
+<h3>Cumulative Layout Shift (CLS)</h3>
+<p>CLS indicates the movement of visible elements as the user loads and interacts with the page. A popular font loading strategy is to use a fallback font first and replace it with a custom font once downloaded. However, this can lead to content on the page being moved around as the weighting and spacing of the custom font take effect.</p>
+<h2>Getting started with font optimisation</h2>
+<p>Font optimisation starts during the design phase of your website build. The fonts you use (or don't use) will determine the other optimisation steps you'll have to look at during development. Here are a few things to consider while planning your site.</p>
+<h3>Do you need a custom font?</h3>
+<p>Custom web fonts have allowed designers and brands to craft some genuinely beautiful web pages. That said, it's worth asking the people responsible for designing your website whether you can do without custom fonts for some or all of the textual content.</p>
+<p>Systems fonts are the set of fonts that come preloaded on desktop &amp; mobile operating systems (OS). They differ for each OS, but when configured correctly can provide enough fallback to deliver elegant looking web typography.</p>
+<p>Here are some questions to ask when designing a new site:</p>
+<ul>
+<li>Could system fonts be used for all the web page text?</li>
+<li>Could system fonts be used for all paragraph text &amp; a custom font be used only for headings?</li>
+<li>If you need to use a custom font, could you just stick to one font family and use different weighting for headings and paragraph text?</li>
+</ul>
+<p>Iain Bean <a href="https://iainbean.com/posts/2021/system-fonts-dont-have-to-be-ugly/">wrote a nice article</a> early last month that has some handy demonstrations of attractive system fonts. <a href="https://systemfontstack.com/">Systemfontstack</a> gives standard code snippets for serif, sans-serif and mono typefaces. <a href="https://meowni.ca/font-style-matcher/">Font style matcher</a> is a handy tool that can generate the code you need to have system fonts closely match popular web fonts. You can also apply the code to fallback fonts, which can help reduce CLS.</p>
+<h3>Are you able to modify the custom font you're using?</h3>
+<p>Some brands have specific typography requirements, which can mean there's no choice but to use a custom font. It's worth finding out if there are licensing restrictions that would prevent you from modifying the custom font being used.</p>
+<p>Some of the techniques we'll cover in the following newsletters revolve around making changes to font files. This can deliver large reductions in file size, but some font licenses prohibit this practice.</p>
+<p>If you do find yourself limited to using a particular font, then <a href="https://wakamaifondue.com/">Wakamai Fondue</a> is a terrific tool to help understand all the features that font possesses. It answers the question, &quot;What can my font do?&quot;.</p>
+<h3>Can you reduce the number of font files required?</h3>
+<p>Traditionally, each font style is a separate file that needs to download. For example, you may only use the Open Sans font family for your site. To use the Light, Regular, Regular Italics and Bold variations you'll need to request four separate font files. This can increase page size and also block bandwidth that could be used for other resources.</p>
+<p>Variable fonts are a solution to this problem. Variable fonts allow for multiple font variations to be served in a single file. By changing a few CSS properties we're now able to generate any combination of weight and style. All this without the need for multiple requests. Another upside of variable fonts is that they allow for animations and transitions to be applied to the font style, something that is not possible with traditional web fonts.</p>
+<p>Though relatively new, there's <a href="https://caniuse.com/variable-fonts">pretty good support</a> for variable fonts in modern browsers. I'd recommend checking them out, especially if you work with a highly creative brand. It gives designers a huge range of typographic options that just weren't possible before.</p>
+<p>You can find and play around with variable fonts at <a href="https://v-fonts.com/">Variable Fonts</a> or <a href="https://www.axis-praxis.org/">Axis-Praxis</a>. To learn more I recommend this <a href="https://css-tricks.com/one-file-many-options-using-variable-fonts-web/">great post on CSS Tricks</a>.</p>
+<h3>Resources</h3>
+<ul>
+<li><strong><a href="https://optimised.email/issues/issue-4-core-web-vitals-and-googles-search-update">Optimised Issue 4 - Core Web Vitals &amp; Google's Performance Update</a></strong> - What are Core Web Vitals? What might adding them to the signalling mix for search mean for SEO? And, what can you do to check &amp; prepare your site?</li>
+<li><strong><a href="https://iainbean.com/posts/2021/system-fonts-dont-have-to-be-ugly/">System fonts don’t have to be ugly</a></strong> - Iain Bean argues that we can deliver faster, more environmentally-friendly sites by taking a system-fonts-first approach.</li>
+<li><strong><a href="https://systemfontstack.com/">systemfontstack</a></strong> - A collection of code snippets that cover common system fonts for serif, sans-serif and mono typefaces.</li>
+<li><a href="https://meowni.ca/font-style-matcher/"><strong>Font style matcher</strong></a> - Generate the CSS needed to match system font styles to web fonts.</li>
+<li><a href="https://wakamaifondue.com/"><strong>Wakamai Fondue</strong></a> - What can my font do? Get a detailed breakdown of the features available for any given font file.</li>
+<li><strong><a href="https://v-fonts.com/">Variable Fonts</a></strong> - A simple resource for finding and trying variable fonts.</li>
+<li><strong><a href="https://www.axis-praxis.org/">Axis-Praxis</a></strong> - A playground to discover and experiment with variable fonts.</li>
+<li><strong><a href="https://css-tricks.com/one-file-many-options-using-variable-fonts-web/">One File, Many Options: Using Variable Fonts on the Web</a></strong> - A great article on CSS Tricks that introduces variable fonts and their many possibilities.</li>
+</ul>
+<h3>Articles</h3>
+<p><strong><a href="https://infrequently.org/2021/03/the-performance-inequality-gap/">The Mobile Performance Inequality Gap, 2021</a></strong><br>
+A very interesting write up about the current state of low-/mid-range mobile devices. It goes into setting effective page resource budgets to deliver a usable experience to the majority of users.</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on April 16th. The website has an <a href="https://optimised.email/">archive of all previous emails</a>. It's a good place to recap on anything we've covered, and also handy to share with friends or colleagues.</p>
+<p>As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well.<br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

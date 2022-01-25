@@ -1,0 +1,20 @@
+{% if pagination.href.next or pagination.href.previous %}
+    <nav aria-label="Pagination links">
+        <ul data-space="around">
+            {% if pagination.href.next %}
+                <li>
+                    <a href="{{ site.baseURL }}{{ pagination.href.next }}" data-direction="forwards" class="pill button" data-color="accent-dark">
+                        {{ paginationNextText }}
+                    </a>
+                </li>
+            {% endif %}
+            {% if pagination.href.previous %}
+                <li>
+                    <a href="{{ site.baseURL }}{{ pagination.href.previous }}" data-direction="backwards" class="pill button" data-color="accent-dark">
+                        {{ paginationPrevText }}
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}

@@ -1,0 +1,22 @@
+{% capture pageTitle %}
+    {{title}} - {{site.title}}
+{% endcapture%}
+
+{% if site.title == title %}
+    {% assign pageTitle = title %}
+{% endif %}
+
+{% assign siteTitle = site.title %}
+
+{% if metaTitle %}
+    {% assign pageTitle = metaTitle %}
+{% endif %}
+
+{% unless description %}
+    {% assign description = summary %}
+{% endunless %}
+
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ description }}"/>
+<link rel="canonical" href="{{ site.baseURL }}{{ page.url }}"/>
+<meta name="theme-color" content="#212121">

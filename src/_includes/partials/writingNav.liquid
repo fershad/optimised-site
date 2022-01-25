@@ -1,0 +1,12 @@
+<div id="writing-nav" aria-label="writing categories" role="navigation">
+    <ul>
+        <li class="h5"><a {% if writingNavPage == 'recent' %}class="current marker-highlight" data-highlight="accent-dark" aria-current="page"{% endif %} href="{{site.baseURL}}/writing/">Recent</a></li>
+        <li class="h5"><a {% if writingNavPage == 'featured' %}class="current marker-highlight" data-highlight="accent-dark" aria-current="page"{% endif %} href="{{site.baseURL}}/writing/featured/">Featured</a></li>
+        <li class="h5"><a {% if writingNavPage == 'performance' %}class="current marker-highlight" data-highlight="accent-dark" aria-current="page"{% endif %} href="{{site.baseURL}}/writing/web-performance/">Web Performance</a></li>
+        <li class="h5"><a {% if writingNavPage == 'sustainability' %}class="current marker-highlight" data-highlight="accent-dark" aria-current="page"{% endif %} href="{{site.baseURL}}/writing/web-sustainability/">Web Sustainability</a></li>
+        <li class="h5"><a {% if writingNavPage == 'corewebvitals' %}class="current marker-highlight" data-highlight="accent-dark" aria-current="page"{% endif %} href="{{site.baseURL}}/writing/core-web-vitals/">Core Web Vitals</a></li>
+        <li class="h5"><a {% if writingNavPage == 'casestudies' %}class="current marker-highlight" data-highlight="accent-dark" aria-current="page"{% endif %} href="{{site.baseURL}}/writing/case-studies/">Case Studies</a></li>
+        <li class="h5"><a {% if writingNavPage == 'other' %}class="current marker-highlight" data-highlight="accent-dark" aria-current="page"{% endif %} href="{{site.baseURL}}/writing/other/">Other</a></li>
+        <li class="h5"><a {% if writingNavPage == 'all' %}class="current marker-highlight" data-highlight="accent-dark" aria-current="page"{% endif %} href="{{site.baseURL}}/writing/all/">All</a></li>
+    </ul>
+</div>

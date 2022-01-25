@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1>Approaches to video on the web</h1>
+<p>Heck, where did that year go!! This is the last issue of Optimised for 2021, and I just want to once again say thanks for letting me into your inbox every couple of weeks. It’s been a year of growth and learning from me, and I’m looking forward to an even bigger 2022!</p>
+<p>This week’s issue is inspired in part by a recent project I’ve been working on, and also by this <a href="https://twitter.com/BjarneOldrup/status/1471043738227122178">Tweet by Bjarne Oldrup</a> (and the replies to it).</p>
+<hr>
+<p>I’ve recently been working on a website build for a client that wanted to self-host videos in their Content Management System (CMS). To make things a bit more challenging from a performance perspective they also wanted to be able to use hero videos on parts of their site. This sent me down a bit of a rabbit hole looking at some of the best ways to handle video on the web, from both a performance and sustainability perspective.</p>
+<h2>The best video is no video</h2>
+<p>This is easier said than done. Every client has their own vision for their website, and video is playing an ever increasing role in that. Education around the potential impacts of video on website performance and sustainability is always a good place to start.</p>
+<p>Loading video can consume a lot of bandwidth, which can get in the way of other resources. This is especially important to keep in mind when loading autoplay video elements. Videos can also take some time to load, especially over slower connections. This has the potential to hurt your site’s Largest Contentful Paint (LCP) scores, especially if you’re using hero (or jumbotron) videos at the top of a page.</p>
+<h2>The site <em>needs</em> video. Now what?</h2>
+<p>So, you’ve talked things through and reached the conclusion that videos are still an important part of the overall website design. There are a few things you can do now to minimise the performance impacts when video is used. These will also reduce data consumption when loading the  page.</p>
+<h3>Compress it</h3>
+<p>First up, have someone run the video files through a video transcoding tool like <a href="https://ffmpeg.org/">FFMPEG</a> or <a href="https://handbrake.fr/">Handbrake</a>. If you’re using the video file directly on your site (i.e. not using a service like Cloudinary or YouTube), then you’ll probably want to export it in MP4 (H.264 codec) format for the best cross-browser support.</p>
+<h3>Use a dedicated video streaming service</h3>
+<p>If possible, look at using a dedicated video streaming service to host video for your site. <a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/dyg8fkjzrzhfeiqce9nl">Cloudinary</a>, <a href="https://mux.com/">Mux</a> and <a href="https://developers.cloudflare.com/stream/">Cloudflare</a> all provide video streaming options. These services send down appropriately sized video to a device and adjust bitrate to account for network conditions as well. In doing so, you go a long way towards ensuring that the video content served to a website visitor is as optimised as it can possibly be.</p>
+<h3>If you’re using YouTube ...</h3>
+<p>It might be the case that videos are being posted to YouTube, and there’s a need to embed them on the website. YouTube’s regular embed code pulls in a whole bunch of additional data that isn’t needed for the video. Out of the box it does everything on page load too, even if the video is further down the page. Here are some ways to optimise YouTube content for your site:</p>
+<ul>
+<li><strong>Using YouTube’s embed code</strong> - If you’re using the embed code from YouTube’s website, then add the <code>loading=&quot;lazy&quot;</code> attribute to the <code>iframe</code> , especially if the content is not visible when the page first loads.</li>
+<li><strong>Use a facade</strong> - Alternately, you can use an image facade which loads in place of the video. Only when the user clicks on the facade will the YouTube content start downloading. I’ve written about this with some sample code <a href="https://fershad.com/writing/optimising-embedded-content#youtube">in a previous post</a>.</li>
+<li><strong>Use a custom element</strong> - For better performance, you can use a custom element like Paul Irish’s <a href="https://github.com/paulirish/lite-youtube-embed">Lite YouTube Embed</a>.</li>
+</ul>
+<h3>And then a hero comes along 🎶</h3>
+<p>Handling hero video elements gets a bit trickier. Since they’re almost always at the top of the page we can’t defer loading content. If you’re using a video hosting service, then be sure to have a <code>preconnect</code> link tag in the head of your page to get the connection started sooner.</p>
+<p>If you’re self-hosting video, then there are a few key things you can do:</p>
+<ul>
+<li>Have a <code>poster</code> attribute on your <code>&lt;video&gt;</code> tag. The poster will be shown while the rest of the video content loads.</li>
+<li>Be sure to set an <code>aspect-ratio</code> for the video element to avoid layout shift once it loads.</li>
+</ul>
+<p>Simon Hearne has a great post with these and other more detailed tips for <a href="https://simonhearne.com/2021/fast-responsive-videos/">delivering performant hero videos</a>.</p>
+<h3>A couple more tips</h3>
+<p>To finish off, here are a couple of extra tips that can come in handy especially if you are self-hosting video on your website.</p>
+<ul>
+<li>Read this post by Doug Sillars on <a href="https://dougsillars.com/2020/03/03/video-playback-on-mobile-devices/">serving video on mobile devices</a>. You won’t regret it.</li>
+<li>If you <em><strong>don’t</strong></em> need an autoplay video, then use a <code>poster</code> attribute on the <code>&lt;video&gt;</code> tag. Also, you can add the <code>preload=&quot;none&quot;</code> attribute to prevent too much video content being downloaded. There’s a <a href="https://web.dev/fast-playback-with-preload/#video-preload-attribute">useful post on web.dev</a> about this.</li>
+<li>You can also use a facade in place of the video element on the page. This can be a chance for web designers to get really creative! Once the user interacts with the facade, then the video can start loading.</li>
+<li>For short, decorative videos that you need to autoplay only when they’re shown in the viewport <a href="https://www.youtube.com/watch?v=mV4tnQkqhmI">check out this video</a> from Chris Coyer &amp; Dave Rupert.</li>
+</ul>
+<h2>Articles</h2>
+<p><strong><a href="https://almanac.httparchive.org/en/2021/table-of-contents">2021 Web Almanac</a></strong><br>
+The 2021 Web Almanac is out now. It’s a look at the State of the Web, written and edited by some of the best minds in the industry. There’s a lot of get through, which makes it perfect reading material for the holiday season!</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on January 7th. The website has an <strong><a href="https://optimised.email/">archive of all previous emails</a></strong>. It's a good place to recap on anything we've covered, and also handy to share with friends or colleagues.</p>
+<p>As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well.<br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1>Optimising web fonts - Part 2: Reducing file size</h1>
+<p>I've been mucking around with Cloudflare a lot recently. Working with page rules to help speed up data requests. Learning more about the new Cloudflare Pages, which I'm hoping to move my personal website to shortly. And building out an API with Cloudflare Workers. You might say my head is in the clouds. I'll show myself out.</p>
+<p>If you're still around after that introduction, then let's continue our look at optimising web fonts. Often times when trying to make a website load faster you'll find yourself asking two questions:</p>
+<ol>
+<li>Can I reduce the file size of assets?</li>
+<li>Can I load important assets earlier?</li>
+</ol>
+<p>This week, with web fonts in mind, we'll answer the first of these questions. We'll get to the second question in the next issue.</p>
+<hr>
+<p>Reducing the bytes that need to be transmitted is one way to improve the performance of a website. So how can we do that with web fonts? There are two techniques we can use depending on what our font license allows.</p>
+<ol>
+<li>Using a modern format</li>
+<li>Removing unused characters (subsetting)</li>
+</ol>
+<p>These can be used either in isolation or combined.</p>
+<p>Before I go further, it's worth considering whether a web font is needed at all. As we touched on in the <a href="https://optimised.email/issues/issue-13-optimising-web-fonts-part-1">first part of this series</a>, you can do a lot with system fonts.</p>
+<h2>Using a modern font format</h2>
+<p>As with images, several formats can be used to display fonts on the web. Common font formats you're likely to see around the web are:</p>
+<ul>
+<li>TrueType font (TTF) - A common format for Windows &amp; Mac operating systems. It's got widespread browser support going all the way back to Internet Explorer 9.</li>
+<li>Embedded Open Type (EOT) - A format created by Microsoft that has very little support. Works on Internet Explorer only.</li>
+<li>Web Open Font Format (WOFF/WOFF2) - An efficiently compressed format created specifically for the web. WOFF has very wide support (including IE9), while WOFF2 is supported by all modern browsers.</li>
+</ul>
+<p>The most modern, and best optimised, of the list above is WOFF2. It's very well supported <a href="https://caniuse.com/woff2">across modern browsers</a>, and in 2021 there's really no reason not to be using it on your website. If you need support for older browsers you can still serve WOFF2 and provide WOFF &amp; TTF as fallbacks.</p>
+<h3>Creating WOFF2 font files</h3>
+<p>Converting font files is a fairly simple process. There are several online converters that can do the job for you:</p>
+<ul>
+<li><a href="https://www.fontsquirrel.com/tools/webfont-generator">Font Squirrel's Generator</a></li>
+<li><a href="https://transfonter.org/">Transfonter's Online @font-face Generator</a></li>
+<li><a href="https://fontie.pixelsvsbytes.com/webfont-generator">Fontie</a></li>
+</ul>
+<p>With all of them, you can upload multiple TTF font files, and the generators will convert them into WOFF/WOFF2 alternatives. You'll also get the necessary CSS to use the new font files on your website. All tools also have additional settings, including subsetting options which we'll get to shortly. You can tweak these further if you know what you're doing.</p>
+<p>I use two custom font faces on my own website at the time of writing (I've got an update in the works that will remove these). By converting the TTF version to WOFF2 (without any additional optimisations) I was able to cut 1.1MB from each file. This gave me two files of 280kB each. To get these font files even smaller we can go about removing characters and glyphs that we know we won't be using.</p>
+<h2>Subsetting fonts to remove unused characters</h2>
+<p>Fonts can contain hundreds of glyphs. Sometimes many hundreds more than are actually required by the web pages using them. Often they'll contain glyphs for languages and character sets that we simply don't need. Removing these additional glyphs can help shave hundreds of kilobytes off our font files.</p>
+<p>There are a few ways of subsetting fonts:</p>
+<ul>
+<li>Command-line tools like <a href="https://github.com/filamentgroup/glyphhanger">Glyphhanger</a></li>
+<li>Online tools like Font Squirrel, Fontie &amp; Transfonter</li>
+<li>Graphical tools like <a href="https://fontforge.org/en-US/">FontForge</a></li>
+</ul>
+<h3>Glyphhanger</h3>
+<p>Glyphhanger is a tool created by the folks at <a href="https://www.filamentgroup.com/">Filament Group</a>. It's great in two ways:</p>
+<ol>
+<li>It can automatically crawl web pages to identify the characters used, and</li>
+<li>It can subset a font file containing only those characters.</li>
+</ol>
+<p>I won't get into the ins and outs of using Glyphhanger in this newsletter. <a href="https://www.afasterweb.com/2018/03/09/subsetting-fonts-with-glyphhanger/">Shawn Maust has a good post</a> on the topic. He walks you through using the tool to identify the glyphs a site uses, and then how to create a subset font file.</p>
+<h3>Online tools</h3>
+<p>What's good about Font Squirrel, Fontie &amp; Transfonter is that you can perform the subsetting step at the same time as converting font files to WOFF2. It's a handy little time saver.</p>
+<p>In Transfonter &amp; Fontie you can select one or more languages to keep using the <em>Subset</em> dropdown option. You can even subset individual characters or unicode ranges. Font Squirrel has the same options, but they're hidden behind the <em>Expert</em> settings option. You can select <em>Custom Subsetting</em> to set specific languages or characters.</p>
+<h3>FontForge</h3>
+<p>If you prefer a visual interface and need some more fine-grained control over the subsetting process you can use a tool like <a href="https://fontforge.org/">FontForge</a>. FontForge allows you to visually select the glyphs you want to remove. You can then save the subsetted font in the format of your choice. Here's a quick 5 step guide to get the job done:</p>
+<ol>
+<li>Open the font file with FontForge</li>
+<li>Select <strong>Encoding</strong> &gt; <strong>Compact</strong> to easily view the defined glyphs.</li>
+<li>Select the glyphs you don’t need (use the shift key to select multiple).</li>
+<li>Remove selected glyphs using <strong>Encoding</strong> &gt; <strong>Detach &amp; Remove Glyphs</strong>.</li>
+<li>Save the subset font by <strong>File</strong> &gt; <strong>Generate Fonts</strong>.</li>
+</ol>
+<p>On my own website, I was using the two 280kB WOFF2 font files I mentioned earlier for much of the development process. Shortly before launching the site, I made subset versions of each to keep only the characters I felt would ever be needed. In doing this, I reduced each font file size by over 260kB (compressed) each.</p>
+<p>So if we go right back, I had 2.6MB worth of font files (TTF versions) originally on my website. After converting them to WOFF2 and subsetting I'm now left with just 37.6kB in total. That's a monster saving right there, and one that was pretty easy to achieve.</p>
+<h3>Resources</h3>
+<ul>
+<li><strong><a href="https://optimised.email/issues/issue-13-optimising-web-fonts-part-1">Optimising web fonts - Part 1</a></strong> - The first part of this series, which provides the foundation of this issue and the next.</li>
+<li><a href="https://www.fontsquirrel.com/tools/webfont-generator"><strong>Font Squirrel's Generator</strong></a> - Subset, convert and generate optimised font files plus the CSS needed to add them to your site.</li>
+<li><a href="https://transfonter.org/"><strong>Transfonter's Online @font-face Generator</strong></a> - Subset, convert, and generate optimised font files plus the CSS needed to add them to your site.</li>
+<li><a href="https://fontie.pixelsvsbytes.com/webfont-generator"><strong>Fontie</strong></a> - Subset, convert and generate optimised font files plus the CSS needed to add them to your site.</li>
+<li><strong><a href="https://github.com/filamentgroup/glyphhanger">Glyphhanger</a></strong> - A utility belt for web fonts. Scan web pages to find out what characters are used; generate unicode ranges; and output subset font files.</li>
+<li><strong><a href="https://www.afasterweb.com/2018/03/09/subsetting-fonts-with-glyphhanger/">Subsetting Fonts with Glyphhanger</a></strong> - Shawn Maust's blog post provides an easy-to-follow guide on how to use Glyphhanger.</li>
+<li><strong><a href="https://fontforge.org/en-US/">FontForge</a></strong> - Visual interface that allows you to manually subset font files.</li>
+</ul>
+<h3>Articles</h3>
+<p><strong><a href="https://jakearchibald.com/2021/f1-perf-part-1/">Who has the fastest F1 website in 2021?</a></strong><br>
+Formula 1 is all about speed. Just like web performance, milliseconds matter. In this series, Jake Archibald takes a look under the hood of each F1 team's website, to see what they do well and what they could improve. There's a wealth of great tips in here, so definitely recommend taking the time to read through the series.</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on April 30th. The website has an <strong><a href="https://optimised.email/">archive of all previous emails</a></strong>. It's a good place to recap on anything we've covered, and also handy to share with friends or colleagues.</p>
+<p>As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well.<br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

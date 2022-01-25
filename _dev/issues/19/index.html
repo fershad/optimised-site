@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1>Speed up your WordPress website</h1>
+<p>In this week's newsletter, we'll be taking a look at one of the most important website publishing tools on the internet - WordPress. Full disclosure, I don't profess to be a WordPress developer. I haven't properly used WordPress in several years. That said, WordPress sites make up a big part of the internet, and so getting performance right on them will go a long way towards delivering a better online experience overall.</p>
+<hr>
+<p>WordPress powers over 40% of the internet. That's a lot of websites. When it was first released, WordPress revolutionised online publishing. It democratised it, opening up the ability to publish content online to anyone.</p>
+<p>WordPress has grown from its early days as a blogging platform to now provide a rich ecosystem of plugins that power some of the web's leading content publishers and ecommerce sites. With that has also come performance issues, as everyday users add multiple plugins to their site only to begin experiencing performance bottlenecks.</p>
+<p>In this issue, we'll cover some of the most impactful things you can do on the frontend to improve the speed of your WordPress website.</p>
+<h2>First, understand your site</h2>
+<p>Before getting started, it's important you determine whether your website features mostly static or dynamic content.</p>
+<ul>
+<li><strong>Static content:</strong> This is content that is not updated frequently. For example, company information pages, general product pages, blog posts etc.</li>
+<li><strong>Dynamic content:</strong> Content that's updated frequently/presented in real-time or content that requires user authentication. Examples include product inventory information, membership pages, forums etc.</li>
+</ul>
+<h2>Cache, cache, cache</h2>
+<p>Even if your website has mostly dynamic content, you still almost definitely have static assets that don't change very frequently. Things like logos, JavaScript files, and stylesheets are all perfect caching candidates.</p>
+<p>For static sites, you can even cache entire pages. In this way, when a user visits that page the server can serve it straight from the cache, rather than having to build the page from scratch. This can give you a performance boost, as well as reducing the load on your website's server.</p>
+<p>Almost all dynamic sites also have pages that can be cached. These would include your privacy policy, company details pages, and FAQ pages. Be sure that you're not caching pages that show content that is unique to a user, or time-sensitive content.</p>
+<p>Check with your website host if they have caching options as part of their service. If they don't you can try out one of the plugins below:</p>
+<ul>
+<li><a href="https://wp-rocket.me/">WP Rocket</a> (paid - recommended)</li>
+<li><a href="https://wordpress.org/plugins/comet-cache/">Comet Cache</a> (freemium)</li>
+<li><a href="https://wordpress.org/plugins/cache-enabler/">Cache Enabler</a> (free)</li>
+<li><a href="https://wordpress.org/plugins/w3-total-cache/">W3 Total Cache</a> (free)</li>
+</ul>
+<h2>Use a CDN</h2>
+<p>CDNs work by saving cached version of your pages and other assets on a distributed network of servers. With this in place, when someone visits your website from Melbourne, Australia they'll be served with content from the closest server. As a result, you can dramatically reduce the response times when people visit your site. This also helps further reduce the load on your website's server.</p>
+<p>Kinsta has a <a href="https://kinsta.com/knowledgebase/install-cloudflare/">thorough blog post</a> about getting set up with Cloudflare CDN for your WordPress site. Other CDN providers like Fastly also have <a href="https://wordpress.org/plugins/fastly/">plugins for their services</a>.</p>
+<h2>Optimise your images</h2>
+<p>Images are most likely the heaviest resources on your WordPress site. Optimising them is one of the most important steps you can take to improve the performance of your website. We've covered different <a href="https://optimised.email/series/optimising-images">image optimisation techniques</a> in previous issues of this newsletter. For WordPress specifically, there are a few things to note:</p>
+<h3>Upgrade to WordPress 5.5 for native lazy-loading</h3>
+<p>With the release of WordPress version 5.5, image lazy-loading was added to the core build. With this in place, WordPress will automatically add the loading=lazy attribute to all images. This can be overridden by developers for more control.</p>
+<h3>Upgrade to WordPress 5.8 for WebP support</h3>
+<p>The recent 5.8 release of WordPress <a href="https://make.wordpress.org/core/2021/06/07/wordpress-5-8-adds-webp-support/">introduces WebP support</a>. This allows you to compress and upload WebP images for use on your site. WebP now has really good browser support and delivers quality images at a fraction of the file size when compared to JPEG or PNG.</p>
+<h3>Use a plugin if you can't update</h3>
+<p>If something is stopping you from updating your version of WordPress, then you can still achieve great image compression and optimisations using one of the plugins below.</p>
+<ul>
+<li><strong><a href="https://wordpress.org/plugins/imagify/">Imagify</a></strong></li>
+<li><strong><a href="https://wordpress.org/plugins/wp-smushit/">WP Smush</a></strong></li>
+<li><strong><a href="https://wordpress.org/plugins/optimole-wp/">Optimole</a></strong></li>
+<li><strong><a href="https://wordpress.org/plugins/ewww-image-optimizer-cloud/">EWWW Cloud</a></strong></li>
+<li><strong><a href="https://wordpress.org/plugins/shortpixel-image-optimiser/">ShortPixel</a></strong></li>
+</ul>
+<h2>Pick a fast theme</h2>
+<p>The theme you choose can also make a big difference in terms of site performance. After all, it is the underlying foundation upon which your website is built. You'll want to find a theme that gives you just the features you need, without extra bloat. For example, if you're not using FontAwesome icons (and in 2021 <a href="https://optimised.email/issues/issue-7-web-icons-in-2021">you really don't need to</a>), then make sure the theme you use does not ship with it (or at least has a way to disable it).</p>
+<div class="callout">
+<p class="h3 title">Consider this too</p>
+<p>Another important consideration is the design of the template. Those that have feature large, hero/jumbotron images at the top of each page might end up proving problematic to your <a href="https://optimised.email/issues/issue-4-core-web-vitals-and-googles-search-update">Core Web Vital scores</a>. These might require you to take extra care in optimising the images you upload.</p>
+</div>
+<p>If you're after a fast WordPress theme then try out <a href="https://www.wholegraindigital.com/blog/granola-starter-theme/">Granola from Wholegrain Digital</a>. The Wholegrain team is passionate about digital sustainability, and that's part of the ethos behind Granola. For more options, you can check out this <a href="https://kinsta.com/blog/fastest-wordpress-theme/">detailed list</a> from Kinsta.</p>
+<h2>Assess the plugins you're using</h2>
+<p>Plugins can be another source of performance pain for WordPress sites. Sometimes, they're installed to solve one particular problem but then just left in place even after they're no longer required. This often causes sites to become bloated.</p>
+<p>The easiest way to keep on top of this is to set a yearly reminder to review the plugins you have installed on your WordPress site. Ask yourself (or others in your organisation) if those plugins are all required for the site to function. Remove those which are not.</p>
+<h2>Resources</h2>
+<ul>
+<li><strong><a href="https://kinsta.com/knowledgebase/install-cloudflare/">How to Install Cloudflare on Your WordPress Site</a></strong> - Kinsta's guide to installing the Cloudflare plugin on a WordPress site.</li>
+<li><strong><a href="https://optimised.email/series/optimising-images">Optimising Images</a></strong> - The 2 part series from this newsletter covering image optimisation techniques.</li>
+<li><strong><a href="https://make.wordpress.org/core/2021/06/07/wordpress-5-8-adds-webp-support/">WordPress 5.8 adds WebP support</a></strong> - The WordPress 5.8 announcement for WebP support. This will be handy for developers.</li>
+<li><strong><a href="https://www.wholegraindigital.com/blog/granola-starter-theme/">Granola: a WordPress starter theme built for efficiency and performance</a></strong> - An introduction to the Granola starter theme for WordPress.</li>
+<li><strong><a href="https://kinsta.com/blog/fastest-wordpress-theme/">11 Fastest WordPress Themes in 2021</a></strong> - Kinsta's assessment of how several popular WordPress themes compare on performance.</li>
+</ul>
+<h2>Articles</h2>
+<p><strong><a href="https://www.youtube.com/watch?v=Lh9q3h2khlc">Top 10 Web Performance Pitfalls</a></strong><br>
+Jake &amp; Surma from Google go through the top 10 performance issues Jake saw while analysing a bunch of websites. This is a really good video!</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on July 9th. The website has an <strong><a href="https://optimised.email/">archive of all previous emails</a></strong>. It's a good place to recap on anything we've covered, and also handy to share with friends or colleagues.</p>
+<p>As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well.<br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

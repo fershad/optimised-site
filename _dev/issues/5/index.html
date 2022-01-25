@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1><strong>Optimising images - Reducing image size</strong></h1>
+<p>The next two issues of this newsletter will be all about images. What a way to end the year!</p>
+<p>For most web pages out there images are their heaviest assets, slowing down page loading times &amp; impacting Core Web Vitals like LCP &amp; CLS. This makes them one of the first places you should look at if you're first starting to think about optimising your website. There are a few things you can do to reduce the impact of images on page performance. Today, we'll take a look at optimising image files, and in a couple of weeks we'll shift focus to look at some strategies you can apply in your site's markup.</p>
+<hr>
+<p>When it comes to optimising images, the easiest place to start is with the image files themselves. With modern image formats, compression tools, and online services it's easy to shave megabytes off the total size of a web page.</p>
+<h2><strong>Use the right format</strong></h2>
+<p>To begin with, make sure you're using the right image format for the type of image you're trying to display. As a general rule of thumb:</p>
+<ul>
+<li>Use PNG <em>only</em> when your image contains transparency that should be retained.</li>
+<li>Use JPG for everything else. And,</li>
+<li>Don't use GIF. They're bloated, not very accessible, and can instantly undo all the hard optimisation work you've done on a page. Use a video file instead.</li>
+</ul>
+<h2><strong>Image compression tools</strong></h2>
+<p>There are a wealth of tools, libraries, and online apps out there that allow you to easily compress images. What we're looking at here is straight image compression, taking a JPEG and returning a smaller JPEG file.</p>
+<ul>
+<li><a href="http://compressor.io/">Compressor.io</a> (Online. My recommendation)</li>
+<li><a href="https://imageoptim.com/mac">ImageOptim</a> (Best choice if you're on a Mac)</li>
+<li><a href="https://imagecompressor.com/">Optimizilla</a> (Online)</li>
+<li><a href="https://www.imgbot.ai/compress-image">Imgbot.ai</a> (Online)</li>
+</ul>
+<p>It's worth noting that the online tools I've listed here do limit the number of images you can upload at one time.</p>
+<h2><strong>Modern image formats</strong></h2>
+<p>I'll start this section with a huge caveat. Browser support for image formats varies, especially when looking at the modern image formats mentioned below. I've put links with each format to the website Can I Use which gives you a visual breakdown of support based on the browser version.</p>
+<div class="callout">
+<p class="h3 title">Tip</p>
+<p>If your site requires support for Internet Explorer users then you can skip over this section as neither format mentioned is supported by IE11.</p>
+</div>
+<h3><strong>WebP</strong></h3>
+<p>WebP (<a href="https://caniuse.com/?search=webp">Can I Use?</a>) recently go support in Safari (macOS 11+) which means it's now supported by all the major browser engines 🎉 . WebP has long been promoted by Google as a recommended image format for the web. According to them, it can reduce file size by 19% - 64% over JPG or PNG.</p>
+<p>WebP can be used on standard images, as well as images that have transparency. So you can use it on your site to replace all your images if you're feeling up to it. Of course, if you have visitors coming in on older versions of Safari, Chrome or Firefox then you should still keep the JPG/PNG versions to show as a fallback. We'll get more into this next issue, but I've written up <a href="https://www.fershad.com/blog/posts/reduce-page-weight-with-picture-tag/">a post about this</a> if you just can't wait.</p>
+<p><strong>WebP Conversion Tools</strong></p>
+<ul>
+<li><a href="http://romeolight.com/products/webpconv/">Romeolight</a> (Windows)</li>
+<li><a href="https://github.com/Splode/optimus">Optimus</a> (Windows, Mac, Linux)</li>
+<li><a href="https://convertio.co/jpg-webp/">Convertio</a> (Online)</li>
+</ul>
+<h3><strong>AVIF (AV1)</strong></h3>
+<p>AVIF (<a href="https://caniuse.com/?search=avif">Can I Use?</a>) is the newest image format on the block, and boy does it shrink images. <a href="https://jakearchibald.com/2020/avif-has-landed/">Jake Archibald has a terrifically in-depth article</a> about the new format &amp; how it stacks up with other formats across a range of use cases. In the article, he shows that using AVIF a 2.5MB image of an F1 car can be crunched down to a mere 18kb.</p>
+<p>Support is currently very limited - Chrome (Desktop), Opera &amp; Firefox (behind flags). That said, if you're keen for some lightweight images then you can start serving AVIF using the fallback method I touched on above.</p>
+<p><strong>AVIF Conversion Tools</strong></p>
+<ul>
+<li><a href="https://squoosh.app/">Squoosh</a> (Online)</li>
+<li>WASM AVIF decoder/encoder (<a href="https://github.com/saschazar21/webassembly/tree/master/packages/avif">Code library</a>)</li>
+</ul>
+<h2><strong>Let an online service take care of things</strong></h2>
+<p>If the thought of converting &amp; optimising each image you add to your site turns you off the idea, then rest easy - there are several service providers who can do most of the hard work for you! These are paid services, though some do have free-tiers to begin with.</p>
+<p>The major players in this space are <a href="https://cloudinary.com/">Cloudinary</a>, <a href="https://www.imgix.com/">Imgix</a> &amp; <a href="https://www.fastly.com/products/web-and-mobile-performance/image-optimization">Fastly</a>. Each provides you with &quot;on-the-fly&quot; image optimisation, conversion, and manipulation. It's all done by using a URL they provide to serve your images and passing along a couple of variables. Take a look at the Imgix homepage to see it in action.</p>
+<p>I use Cloudinary on a few websites I host. It allows me to easily serve images to visitors in the best format, and at the best quality with just a single line of HTML.</p>
+<pre><code class="language-html">&lt;img src=&quot;&lt;https://res.cloudinary.com/[MY_ACCOUNT_NAME]/image/fetch/q_auto,f_auto/https://www.mysite.com/logo.jpg&gt;&quot; alt=&quot;Don't forget it, fam&quot;&gt;
+</code></pre>
+<p>What this will do is send the image from my site to Cloudinary along with information about the user's browser. Cloudinary will then send back the image in the best supported format (i.e. WebP if the visitor's browser supports it, JPG if not), and compress it to the smallest size while retaining visual quality. Cloud computing ... 🤯.</p>
+<h2><strong>Resources</strong></h2>
+<ul>
+<li><a href="https://www.fershad.com/blog/posts/reduce-page-weight-with-picture-tag/">Reduce the Weight of Your Web Pages with the Picture Tag</a> - A short run-through of how you can use the latest image formats while still presenting JPG/PNG formats for users that don't have support.</li>
+<li><a href="https://jakearchibald.com/2020/avif-has-landed/">AVIF has landed</a> - Jake Archibald's dive into all of the benefits of the AVIF image format. A detailed read, but also full of visual examples that you can quickly skim over.</li>
+</ul>
+<h2><strong>Articles</strong></h2>
+<p><strong><a href="https://www.youtube.com/watch?v=Z6wjUOSh9Tk">Beyond fast with new performance features</a></strong><br>
+Google's 2020 Chrome Developer's Summit is on this week, so there's a heap of fascinating content coming out of that. In this video, Jake Archibald features some very new features and proposal aimed at improving web performance. The <code>&lt;portal&gt;</code> element looks especially cool.</p>
+<p><strong><a href="https://almanac.httparchive.org/en/2020/performance">Web Almanac 2020 - Performance</a></strong><br>
+The 2020 Web Almanac was published this week. I've linked above to the Performance section which this year is focused on Core Web Vitals. It's worth checking out the other sections too, there are heaps of insights across the board.</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on December 25th. In the meantime, I'd really appreciate it if you could share this email with a friend. As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well. <br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

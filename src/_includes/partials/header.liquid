@@ -1,0 +1,22 @@
+<header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                {% for item in nav %}
+                {% unless item[1].footerOnly == true %}
+                <li>
+                    <a href="{{ item[1].link }}">{{ item[1].title }}</a>
+                </li>
+                {% endunless %}
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>

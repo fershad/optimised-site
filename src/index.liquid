@@ -1,0 +1,16 @@
+---
+title: Homepage
+layout: base
+ogTitle: "Web Sustainability & Performance"
+description: "Hey, I'm Fershad. I help environmentally conscious companies ensure their websites are fast, optimised for
+performance, and have a low carbon impact."
+---
+<ul>
+    {% for issue in collections.issue %}
+    {% assign title = issue.data.title %}
+    {% assign content = issue.data.description %}
+    {% assign timestamp = issue.data.published %}
+    {% assign issueNo = issue.data.issue %}
+    {% include 'partials/imageTextOverlap' %}
+    {% endfor %}
+</ul>

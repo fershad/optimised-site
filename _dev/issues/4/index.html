@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1><strong>Core Web Vitals &amp; Google's Performance Update</strong></h1>
+<p>As promised last time, this issue of Optimised will focus on Google's recent announcement that, come May 2021, Core Web Vitals will be added to the signal mix for search. What are Core Web Vitals? What might Google's announcement mean for the web? And, what can you do to check &amp; prepare your site? Stick around to find out!</p>
+<hr>
+<p>A couple of weeks ago Google put out a <a href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">short blog post</a> to announce something rather significant. Core Web Vitals metrics will be added to the page experience signals mix as part of the May 2021 search update. That's six months notice for a change that could have SEO ramifications as large as those felt when Google started prioritising sites for mobile-friendliness (another page experience signal) back in 2015.</p>
+<h2><strong>So, what are Core Web Vitals?</strong></h2>
+<p>Put simply they're a set of user experience metrics that aim to quantify real-world user experiences across the web. They measure page interactivity, content loading, and content stability during page load. The three metrics that form the Core Web Vitals are:</p>
+<ul>
+<li><strong>Largest Contentful Paint (LCP)</strong>: A timing of how long it takes for the largest above-the-fold element to be painted on screen. This is usually a hero image/video or large text block.</li>
+<li><strong>First Input Delay (FID):</strong> Measures the time it takes before the browser can react to a user input (like a click or tap).</li>
+<li><strong>Cumulative Layout Shift (CLS):</strong> Indicates the movement of visible elements as the user loads and interacts with the page. You know when you start reading an article, then an ad loads above it &amp; all the content get pushed down? CLS measures that.</li>
+</ul>
+<p>Together these three metrics give an indication of a page's load time (LCP), responsiveness (FID), and page experience (CLS).</p>
+<h2><strong>How might these impact SEO?</strong></h2>
+<p>Well, we'll find out in May 2021, won't we? But hey, let's speculate for a bit.</p>
+<p>Google's been paying more attention to page experience for some time now. That was spearheaded by the shift to mobile-first indexing back in 2015. In recent times it's also been playing around with having page experience indicators in the Chrome browser, and they've even indicated plans to start testing similar indicators directly in search results.</p>
+<blockquote>
+<p>We believe that providing information about the quality of a web page’s experience can be helpful to users in choosing the search result that they want to visit. ... We plan to test this [visual indicators] soon and if the testing is successful, it will launch in May 2021 and we’ll share more details on the progress of this in the coming months.<br>
+<strong>Jeffrey Jose</strong>, Google Product Manager on Search</p>
+</blockquote>
+<p>So all signs point to Google doubling-down on page experience for the foreseeable future. The changes in May next year <em>could</em> see sites that have neglected site performance and page experience dropping down Google search results. The addition of visual page experience indicators alongside search results could have the same impact, with users able to choose to navigate to better-performing pages.</p>
+<h2><strong>Start preparing now.</strong></h2>
+<h3><strong>Test your site for Core Web Vitals</strong></h3>
+<p>Last issue (<a href="https://www.fershad.com/optimised/issue/3/tools-to-measure-website-performance">read it here</a>) I sent out a list of tools that can be used to check website performance. From that list, I'd recommend using <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a> to check pages on your site for the Core Web Vitals listed above.</p>
+<p>If your site as a whole receives a high number of visitors per month then you can also find real user Core Web Vitals measurements through Google's Search Console dashboard.</p>
+<h3><strong>Plan, prioritize, and fix</strong></h3>
+<p>With a baseline in place, it's easier to identify the areas that most urgently require attention. If you are seeing &quot;poor&quot; rankings for any of the Core Web Vitals then definitely look to address them first. It's also a good time to start driving a culture of performance within your web team - from design to content writers, to developers. It'd be a pain to fix existing pages only to find that newer pages being added to the website revert back to old habits.</p>
+<p>Simon Hearne has a <a href="https://simonhearne.com/2020/core-web-vitals/">very detailed blog post</a> that goes through the topics covered in this email. It includes actions you can take to address problems with each of the Core Web Vitals.</p>
+<h2><strong>Resources</strong></h2>
+<ol>
+<li><strong><a href="https://developers.google.com/search/blog/2020/11/timing-for-page-experience">Timing for bringing page experience to Google Search</a></strong> - Google's blog post announcing the upcoming addition of Core Web Vitals to the UX signals mix.</li>
+<li><strong><a href="https://www.fershad.com/optimised/issue/3/tools-to-measure-website-performance">Issue 3: Tools to measure site performance</a></strong> - Issue 3 of this newsletter which lists several tools you can use to check the performance of your site.</li>
+<li><strong><a href="https://simonhearne.com/2020/core-web-vitals/">How to Improve Core Web Vitals</a> -</strong> Simon Hearne goes into great detail about Core Web Vitals and ways you can address some common issues that might be impacting these metrics.</li>
+</ol>
+<h2><strong>Article</strong></h2>
+<p><strong><a href="https://medium.com/@chris-hinds/bbc-world-service-web-performance-26b08f7abfcc">BBC World Service &amp; Web Performance</a></strong><br>
+How the BBC World Service migrated 31 million weekly readers to an isomorphic react app and improved page performance by up to 83%.</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on December 11th. In the meantime, I'd really appreciate it if you could share this email with a friend.</p>
+<p>As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well. <br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

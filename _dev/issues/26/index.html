@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1>Reducing website carbon emissions</h1>
+<p>This is issue 26. That's 52 weeks. One year! When I started this newsletter, I wasn't sure how long I'd be able to maintain the consistency of writing every two weeks. But here we are! Thanks to all of you for letting me into your inboxes and giving this newsletter a read.</p>
+<p>This week's issue will have an environmental focus. Earlier this year I worked with the team at <a href="http://sustain.Life">Sustain.Life</a> to create a few green web development action guides for their platform. Sustain.Life aims to help organisations take their first step towards a more sustainable future through action guides that are easy to understand. Alongside Sustain.Life's own carbon calculator and vetted carbon offset program, organisations can track and account for the carbon emissions caused by different aspects of their operations. This issue covers a few of the green web development strategies that I wrote about for Sustain.Life.</p>
+<hr>
+<p>I've <a href="https://optimised.email/issues/issue-12-the-environmental-case-for-website-performance">written about the carbon impact of the internet before</a>. Here's a quick recap:</p>
+<ul>
+<li>Global information and communication technology (ICT) accounts for around <a href="https://theshiftproject.org/wp-content/uploads/2019/03/Lean-ICT-Report_The-Shift-Project_2019.pdf">4% of global CO2 emissions</a>.</li>
+<li>Just over one-third of that is attributable to data centers and networks (i.e. the internet).</li>
+<li>Some forecasts put ITC as high as 8% of global carbon emissions by 2025 if left unchecked.</li>
+<li>For a bit of perspective, if the internet were a country it would be the 6th largest polluter.</li>
+</ul>
+<p>A lot of the carbon impact from websites and apps comes from data centers and networks. So how do we, as frontend developers, go about reducing the carbon emissions associated with what we build?</p>
+<h2>Start by measuring</h2>
+<p>If you want to improve an existing website, then start off by getting a sense of its current impact. Using tools like <a href="https://www.websitecarbon.com/">Website Carbon Calculator</a>, <a href="https://digitalbeacon.co/">Beacon</a>, or <a href="https://ecoping.earth/">EcoPing</a> you can get an estimate of carbon emissions for a given web page. By using these figures alongside your site's analytics you can estimate your total carbon emissions.</p>
+<div class="callout">
+<p class="h3 title">Note</p>
+<p>You should consider whatever figures you get from these tools as the ***minimum estimated*** carbon emissions for a web page. They are all based on data transferred for the initial page load, and so do not take into account lazy-loaded images, javascript, or other data that might be fetched through user interaction.</p>
+</div> 
+<h2>Emissions reductions starts with design</h2>
+<p>There are a lot of things you can do when designing a new website or app that can ensure you start from a base that's already optimised for lower emissions.</p>
+<h3>Use energy efficient colours</h3>
+<p>This helps reduce the energy a user's device consumes when using your site or app. Consider a darker colour palette or offering a dark mode option (you can switch to this automatically based on user preferences too!). Interestingly, blues are about <a href="https://www.youtube.com/watch?v=N_6sPd0Jd3g">25% more energy intensive than reds or greens</a>.</p>
+<h3>Seriously question jumbotron videos, hero images, and image carousels</h3>
+<p>Large autoplay videos at the top of web pages force an incredible amount of data to be transferred over the network. Often these videos are purely aesthetic. Ask yourself if it's really needed, or if you can instead play the video only if the user interacts with it. <a href="https://justdiggit.org/">Justdiggit</a> have a really creative example of this practice on their homepage.</p>
+<p>The same applies for large hero images or carousels. Carousels, in particular, can result in multiple images being downloaded some of which may never be seen by the user. Plus, there's evidence that they're <a href="https://thegood.com/insights/ecommerce-image-carousels/">not as effective</a> as your marketing manager might think. If you've got no option but to use a carousel/hero image then ensure its optimised (more on this later), and that any images not required for the initial page load are lazy loaded.</p>
+<h3>Reduce the number of fonts used</h3>
+<p>In an ideal world you'd be using only system fonts for your site's content. That would mean no additional data download for end users. A lot of the time that's not possible, so ensure the fonts you are using a kept to a minimum, and are optimised. This will improve your site's Core Web Vitals too. I've <a href="https://optimised.email/issues/issue-13-optimising-web-fonts-part-1">written about font optimisation</a> in an earlier issue.</p>
+<h2>Green hosting plus a CDN</h2>
+<p>Hosting your site on a green provider can go a long way to reducing your site's footprint. The more people who move to green web hosts, the stronger the message will be to the rest of the industry that green options should become the norm.</p>
+<p>The Green Web Foundation maintain a <a href="https://www.thegreenwebfoundation.org/directory/">directory of verified green web hosts</a>. You can reference this list to find a provider in your region, or one that's located close to your customers.</p>
+<p>Back up your hosting strategy with a CDN that can cache static content closer to your users. By doing so you reduce the amount of electricity required for data transmission. Some providers like <a href="https://blog.cloudflare.com/cloudflare-committed-to-building-a-greener-internet/">Cloudflare</a> and <a href="https://www.akamai.com/company/corporate-responsibility/sustainability">Akamai</a> have varying degrees of sustainability commitments outlined on their websites.</p>
+<h2>Optimise images</h2>
+<p>Images often make up the bulk of data transferred for a web page. Effective image optimisation can instantly take megabytes off the total size of your page. This topic is really deep, and I've written more about it in <a href="https://optimised.email/issues/issue-5-optimising-images-reducing-image-size">previous</a> <a href="https://optimised.email/issues/issue-6-optimising-images-serving-images">issues</a>. A quick checklist of impactful optimisations:</p>
+<ul>
+<li>Use modern image formats like AVIF or WebP.</li>
+<li>Compress JPEG and PNG images.</li>
+<li>Refrain from using GIFs.</li>
+<li>Lazy-load any images that are not visible when the page initially loads.</li>
+<li>Properly size images based on how they appear in the viewport.</li>
+<li>Use an image CDN to take care of most of the above for you 😉.</li>
+</ul>
+<p>Taking this a step further, you can even use lightweight images as placeholders and load a higher quality image one user interaction. <a href="https://lowimpact.organicbasics.com/usd/products/accessories-recycled-wool-starter-pack">Organic Basics' low impact website</a> is a great example of this practice in action.</p>
+<h2>Other significant steps you can take</h2>
+<p>The above few items can take a long way towards ensuring your website or app has a small carbon impact. Below is a list of a few extra steps that will move the needle even further.</p>
+<ul>
+<li>Use facades for heavy content like videos or JavaScript dependent widgets. Load the actual content only when the users interacts with the element.</li>
+<li>Minify your CSS &amp; JS. Check that any third-party code you use is also minified.</li>
+<li>Ensure you have GZIP or Brotli compression enabled on your host or CDN.</li>
+<li>Set <a href="https://csswizardry.com/2019/03/cache-control-for-civilians/">effective cache headers</a> for static assets.</li>
+<li>If you're running a WordPress website, check if your host or CDN can help you cache HTML pages. This will also improve your performance, and reduce the load on your server too!</li>
+</ul>
+<h2>Systemic change is needed</h2>
+<p>Let's be real. Reducing the carbon emissions of my personal website, with its 700 odd pageviews each month, isn't going to make a difference. However, if we as a web community can increase awareness of the impacts that our sites, apps, and platforms are having then we'll be in a better place to drive system-level change.</p>
+<p>A sustainable web is also a faster web. By standardising sustainable web development practices, we can as an industry do our part to provide a cleaner more sustainable future for the planet.</p>
+<h3>Resources</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=N_6sPd0Jd3g"><strong>Cost of a pixel of color</strong></a> - A video from google explaining why every pixel matters when optimising for power consumption.</li>
+<li><strong><a href="https://thegood.com/insights/ecommerce-image-carousels/">Why Image Carousels Are Almost Always A Bad Idea</a></strong> - The case for opting against image carousels on your website.</li>
+<li>Font optimisation - I wrote a three-part series on font optimisation. <strong><a href="https://optimised.email/issues/issue-13-optimising-web-fonts-part-1">Part 1 is Issue 13</a></strong>.</li>
+<li><strong><a href="https://www.thegreenwebfoundation.org/directory/">The Green Hosting Directory</a></strong> - Find a host that runs on renewable energy.</li>
+<li>Image optimisation - I wrote about image optimisation in Issues <a href="https://optimised.email/issues/issue-5-optimising-images-reducing-image-size"><strong>5</strong></a> &amp; <strong><a href="https://optimised.email/issues/issue-6-optimising-images-serving-images">6</a></strong> of this newsletter.</li>
+<li><strong><a href="https://lowimpact.organicbasics.com/usd/products/accessories-recycled-wool-starter-pack">Organic Basics' low-impact website</a></strong> - A great example, with explainers, of sustainable web design in practice.</li>
+<li><strong><a href="https://csswizardry.com/2019/03/cache-control-for-civilians/">Cache-Control for Civilians</a></strong> - Harry Robert's detailed guide on how to select and apply the best caching strategies for your content.</li>
+</ul>
+<h3>Articles</h3>
+<p><strong><a href="https://fershad.com/writing/building-fast-sustainable-personal-website/">Building a fast, sustainable personal website</a></strong><br>
+I've written about my own journey building a personal website with sustainability front of mind. I've shared it previously in this newsletter, but it feels like an apt companion piece to this issue.</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on October 15th. The website has an <strong><a href="https://optimised.email/">archive of all previous emails</a></strong>. It's a good place to recap on anything we've covered, and also handy to share with friends or colleagues.</p>
+<p>As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well.<br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

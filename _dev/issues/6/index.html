@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1><strong>Optimising images - Serving images</strong></h1>
+<p>This will be the last newsletter of 2020. I hope that during this holiday period you've been able to stay connected with those dearest to you.</p>
+<p>In this issue, we'll continue our look at serving optimised images on the web. This week we'll be looking at some of the techniques you can use in your code, or plugins that you can use for WordPress. If you need a recap on the last email you can <a href="https://www.fershad.com/optimised/issue/5/optimising-images-reducing-image-size/">find it here</a>.</p>
+<hr>
+<p>Okay, so you've gone ahead and optimised your images. You've taken entire megabytes off them by compressing them, and you've even made a WebP version. We could stop here, but we're not going to.</p>
+<p>Serving the right images to your users, at the right time, is another small step you can take towards reducing the size of your page. The techniques we'll go through here focus on loading only the images your users are likely to see (lazy-loading) and serving images at the right size for the space they will occupy (responsive-loading).</p>
+<h2><strong>Lazy-loading</strong></h2>
+<p>Lazy-loading is an image loading technique that focuses on downloading only the images that are currently, or will soon be, displayed in the browser window as a user scrolls a page. It's been around for a long time in web development, but one that only recently gained widespread native browser support. The main benefit lazy-loading delivers is faster initial page load, since the browser won't be tied up downloading images that are outside the viewport.</p>
+<p>Prior to this year, developers would likely reach for a JavaScript library to add this functionality to their websites. However, as of today <a href="https://caniuse.com/loading-lazy-attr">Chrome, Edge &amp; Firefox all support native lazy-loading</a> for images - that's about 70% over the browser market. In Safari it can be turned on via the settings.</p>
+<p>The great thing about using a browser's native lazy-loading capabilities is that you're delivering a progressively enhanced web experience to your users. That means if a user's browser doesn't support it then the image will just be downloaded as per normal without breaking any other functionality of the page.</p>
+<p>To add lazy-loading to images within your code all you need to do is put the <code>loading=lazy</code> attribute inside your image tag.</p>
+<pre><code class="language-html">&lt;img src=&quot;/your-cool-image.jpg&quot; loading=&quot;lazy&quot; alt=&quot;Make your images accessibly, fam&quot; height=&quot;100&quot; width=&quot;100&quot;&gt;
+</code></pre>
+<p>If you're running a WordPress site then <a href="https://kinsta.com/blog/wordpress-lazy-load/">Kinsta have a solid post</a> that goes through a few plugins you can look to add to your site.</p>
+<div class="callout">
+<p class="h3 title">Tips & Gotchas</p>
+<ul>
+<li>To prevent layout shift as lazy-loaded images are rendered be sure to add the height and width attributes to the image. This helps the browser understand the aspect-ratio of the image, and how much space to set aside for it. Jen Simmons has a <a href="https://www.youtube.com/watch?v=4-d_SoCHeWE&feature=youtu.be">great video explaining this</a>.</li>
+<li>You can also use lazy-loading techniques for iframes (think YouTube embeds). I've written about that in <a href="https://www.fershad.com/blog/posts/lazy-loading-embedded-iframes/">a blog post</a>.</li>
+</ul>
+</div>
+<h2><strong>Responsive-loading</strong></h2>
+<p>I alluded to responsive-loading in the last email. There are a couple of use cases in this section:</p>
+<ol>
+<li>Serving modern images formats to browsers that support them</li>
+<li>Serving smaller sized images for smaller screens</li>
+</ol>
+<h3><strong>Serving modern image formats with fallbacks</strong></h3>
+<p>If you're hosting images yourself (i.e. alongside your web page files) then you can use the <code>picture</code> tag to serve super-light WebP or AVIF images to users, while keeping your optimised JPEG image for users on older browsers.</p>
+<p>The code in your HTML would look something like the below.</p>
+<pre><code class="language-html">&lt;picture&gt; 
+  &lt;source srcset=&quot;img/example.avif&quot; type=&quot;image/avif&quot;&gt; 
+  &lt;source srcset=&quot;img/example.webp&quot; type=&quot;image/webp&quot;&gt; 
+  &lt;img src=&quot;img/example.jpg&quot; alt=&quot;This will be the fallback image&quot;&gt; 
+&lt;/picture&gt;
+</code></pre>
+<p><strong>Serving smaller sized images for smaller screens</strong></p>
+<p>Sometimes we'll have images that display at different sizes depending on the size of the user's window. You might have a product image that is 640px wide on desktop, but on mobile takes the up the full width of the screen (~320px). Rather than forcing mobile users to download the full 640px image, we can prepare images of different sizes and hint to the browser which one it should use. Here's an example:</p>
+<ul>
+<li>Create the variants of the image:
+<ul>
+<li>1280px wide for retina desktop displays</li>
+<li>640px wide for regular display desktop monitors &amp; retina mobile displays</li>
+<li>320px wide for regular mobile displays</li>
+</ul>
+</li>
+<li>Add the <code>srcset</code> attribute to our image tag which tells the browser the sizes of each image:</li>
+</ul>
+<pre><code class="language-html">&lt;img srcset=&quot;
+  img/example-large.jpg 1280w,
+  img/example-regular.jpg 640w,
+  img/example-small.jpg 320w&quot;/&gt;
+</code></pre>
+<p>Add the <code>sizes</code> attribute to the image tag, with a tiny bit of CSS:</p>
+<pre><code class="language-html">&lt;img srcset=&quot;
+  img/example-large.jpg 1280w,
+  img/example-regular.jpg 640w,
+  img/example-small.jpg 320w&quot;
+  sizes=&quot;(min-width: 600px) 640w, 320w/&gt;
+</code></pre>
+<p>What this says to the browser is - when the viewport width is &gt; 600px use the 640px wide image, otherwise use the 320px version. The browser is smart enough to work out if it should use the retina variant.</p>
+<p>The thought of coding all this is nauseating, but thankfully there's a <a href="https://www.responsivebreakpoints.com/">tool from Cloudinary</a> that can do all the hard work for you (including resizing the images!).</p>
+<h3><strong>For the WordPress crowd</strong></h3>
+<p>There's a WordPress plugin for almost everything you'd want to do, and image optimisation is no different. Here's a few popular image optimisation plugins I've seen recommended around the web:</p>
+<ul>
+<li><a href="https://wordpress.org/plugins/imagify/">Imagify</a></li>
+<li><a href="https://wordpress.org/plugins/wp-smushit/">WP Smush</a></li>
+<li><a href="https://wordpress.org/plugins/optimole-wp/">Optimole</a></li>
+<li><a href="https://wordpress.org/plugins/ewww-image-optimizer-cloud/">EWWW Cloud</a></li>
+<li><a href="https://wordpress.org/plugins/shortpixel-image-optimiser/">ShortPixel</a></li>
+</ul>
+<h2><strong>Resources</strong></h2>
+<ol>
+<li><strong><a href="https://www.fershad.com/optimised/issue/5/optimising-images-reducing-image-size/">Optimised #5 - Reducing image size</a></strong> - The previous edition of this newsletter if you need a refresher on file optimisation.</li>
+<li><strong><a href="https://kinsta.com/blog/wordpress-lazy-load/">Image lazy-loading on WordPress</a></strong> - Kinsta's blog post featuring recommended plugins and practices for image lazy-loading on WordPress.</li>
+<li><strong><a href="https://www.youtube.com/watch?v=4-d_SoCHeWE&amp;feature=youtu.be">Jen Simmon's guide to image lazy-loading</a></strong> - An interesting video looking at how browsers lazy-load images, and how to avoid layout shifts.</li>
+<li><strong><a href="https://www.fershad.com/blog/posts/lazy-loading-embedded-iframes/">Lazy-loading iframes</a> -</strong> A brief blog post by yours truly that looks at how YouTube embeds can be lazy-loaded to save data on initial page load.</li>
+<li><strong><a href="https://www.responsivebreakpoints.com/">Responsive Breakpoint Generator</a> -</strong> A tool by Cloudinary that does all the hard work of image resizing and code generation for you.</li>
+</ol>
+<h2><strong>Articles</strong></h2>
+<p><strong><a href="https://addyosmani.com/blog/import-on-interaction/">The Import on Interaction Pattern</a></strong><br>
+Addy Osmani looks at techniques that developers can implement to delay the loading of non-critical resources until the time when a user needs to interact with them. This is can be a great performance win if you're relying on third-party resources like chat widgets, sharing modals and the like.</p>
+<p><strong><a href="https://umaar.com/dev-tips/242-considerate-javascript/">Conditional JavaScript</a></strong><br>
+While Addy's article above talks about delaying resource load until it's required, Umar Hansa takes a different look at things. In his dev tips post he goes into methods developers can implement to selectively load resources on a user's device based on certain conditions - like connection speed or battery level.</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on January 8th, 2021. Yes, 2021. In the meantime, I'd really appreciate it if you could share this email with a friend. As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Enjoy your holidays if you have them.</p>
+<p>Keep safe, stay well. <br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

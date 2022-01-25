@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1>CSS can do that</h1>
+<p>I've been doing a fair bit of work in Svelte lately. If you've never heard of it, it's a JavaScript framework just like React or Vue. It allows you to build rich, reactive web experiences with little bloat. Since Svelte is a compiler, it can remove unused code and only ship what's required for a site/page. What I like most about Svelte is that it leans very heavily on pure HTML, CSS and JavaScript rather than creating a new syntax or way of working.</p>
+<p>Using pure HTML and CSS as much as possible is the theme of this week's issue. Let's get into some of the native CSS and HTML APIs which can be used instead of JavaScript.</p>
+<hr>
+<p>In the not too distant past, web developers would almost instinctively reach for jQuery when starting out a new project. The features and capabilities it opened up were immense and were simply not present in native JavaScript at that time.</p>
+<p>Fast forward to today, and a lot of the things we once used jQuery for are now easily done with modern JavaScript. This is a huge performance win, being one less library for the browser to download, parse and execute. Check out <strong><a href="http://youmightnotneedjquery.com/">You Might Not Need jQuery</a></strong> to see what's now possible.</p>
+<h2><strong>Using JavaScript still comes at a cost</strong></h2>
+<p>But JavaScript still puts a heavy burden on the browser, especially to compile and execute it. By using CSS whenever possible we can remove that burden from the browser, keeping the main thread free to handle other tasks.</p>
+<ul>
+<li>Smooth scrolling</li>
+<li>Lazy-loading images</li>
+<li>Keeping elements stuck in the viewport while scrolling</li>
+<li>Smoothly scrolling in &amp; snapping elements into place</li>
+</ul>
+<p>All the tasks listed above were once only capable of using JavaScript, and or jQuery. They're now all things that <strong><a href="https://calendar.perfplanet.com/2020/html-and-css-techniques-to-reduce-your-javascript/">modern browsers can handle natively</a></strong> with CSS. In the case of lazy-loading content, there is actually a native HTML attribute for that.</p>
+<p>Over on CSS Tricks, Håvard Brynjulfsen has a very slick demonstration of creating a <strong><a href="https://css-tricks.com/how-to-create-a-shrinking-header-on-scroll-without-javascript/">shrinking sticky site header entirely controlled with CSS</a></strong>. This was definitely a case where once JavaScript would have been required to keep track of the user's scroll position and apply classes to change the header.</p>
+<h2><strong>Even cooler stuff coming up</strong></h2>
+<p><code>@scroll-timeline</code> is an upcoming CSS addition that will open up a world of even more amazing page effects, all without having to run any JavaScript. It will replace a lot of the things we might normally use IntersectionObserver for, such as scroll-triggered animations. There's still a way to go before we get support for it in browsers, but Bramus Van Damme has been <strong><a href="https://www.bram.us/2021/02/23/the-future-of-css-scroll-linked-animations-part-1/#more-demos--full-screen-panels-with-snap-points">playing around with it on his blog</a></strong>.</p>
+<p>Meanwhile there's also a lot of work being done to make CSS Container Queries possible. Currently, responsiveness in front-end website design is based entirely around the browser (also called 'viewport') width. Container queries makes responsive web design more granular. It will allow for the look of individual components to be adjusted based on the width of their parent container. For example, this would allow a card component to have a wider layout if used in the main content block of a website, while switching to a stacked layout if it's placed inside a narrow sidebar. Container queries are currently available in <a href="https://caniuse.com/css-container-queries">Chrome behind flags</a>, but hopefully the work going on to make them possible goes smoothly and we can start seeing wider support.</p>
+<h2>Resources</h2>
+<ul>
+<li><strong><a href="http://youmightnotneedjquery.com/">You might not need jQuery</a></strong> - Find out what you can do with modern native javascript browser APIs.</li>
+<li><strong><a href="https://calendar.perfplanet.com/2020/html-and-css-techniques-to-reduce-your-javascript/">HTML and CSS techniques to reduce your JavaScript</a></strong> - Explore some of the native HTML &amp; CSS solutions that are available to the majority of your users.</li>
+<li><strong><a href="https://css-tricks.com/how-to-create-a-shrinking-header-on-scroll-without-javascript/">How to Create a Shrinking Header on Scroll Without JavaScript</a></strong> - A pure CSS implementation of a very common design pattern.</li>
+<li><strong><a href="https://www.bram.us/2021/02/23/the-future-of-css-scroll-linked-animations-part-1">The Future of CSS: Scroll-Linked Animations</a></strong> - Bramus Van Damme gives us a peak at <code>@scroll-timeline</code>, a powerful upcoming addition to CSS.</li>
+</ul>
+<h2>Articles</h2>
+<p><strong><a href="https://www.gov.uk/service-manual/technology/using-progressive-enhancement">Building a resilient frontend using progressive enhancement</a></strong><br>
+Not an article this week, more of a guide. This one is from the Gov.uk team, and provides a service manual for their design and development teams to reference when building out new pages and features.</p>
+<hr>
+<p>The next issue of Optimised will be in your inbox on September 3rd. The website has an <strong><a href="https://optimised.email/">archive of all previous emails</a></strong>. It's a good place to recap on anything we've covered, and also handy to share with friends or colleagues.</p>
+<p>As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well.<br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

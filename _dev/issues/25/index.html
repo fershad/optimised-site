@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://rudolph-rebel-rebel.fershad.com">
+  <script async src="/js/instant-page.mjs" type="module"></script>
+  <script async nomodule="" src="/js/instant-page.js"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json">
+<link href="/assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'"></head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  
+
+  <header>
+    <div class="wrapper">
+        <div class="logo">
+            Optimised
+            </a>
+            <div>
+                <small>A newsletter about website performance and sustainability.</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                
+                
+                <li>
+                    <a href="http://localhost:8080">Archive</a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="http://localhost:8080/series/">Series</a>
+                </li>
+                
+                
+                
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+  <main id="main-content" class="wrapper flow"><h1>Stress testing site performance</h1>
+<p>It's been a busy couple of weeks over here. <a href="http://openspacedata.netlify.app/">OpenSpaceData</a>, an open-source project to make it easier for people to access and interpret satellite data went into public beta. I've also been busy wrapping up a client project building a headless CMS backend and a static website frontend.</p>
+<p>All that has meant that I've been doing a bit of website testing. Since it's on my mind, I decided it would be a good topic to cover in this week's newsletter.</p>
+<hr>
+<p>As developers, we're normally building and testing websites on devices with decent specs. That's fine for productivity, but it does leave a lot of room for performance issues to be missed.</p>
+<p>The truth is that most people who use the web do not have access to the latest iPhone, an ultra-fast laptop, or even high-speed internet. Heck, they <a href="https://shkspr.mobi/blog/2021/01/the-unreasonable-effectiveness-of-simple-html/">might not even be using a phone, laptop, or desktop at all</a>. Browsers come installed with a lot of low-powered devices - from portable games consoles, to TVs, to fridges. These devices don't necessarily have powerful CPUs to handle heavy processing tasks, and portable devices might be further restricted by weak network connectivity.</p>
+<p>Of course, it's next to impossible to test your website for every possible usage scenario. But effective stress testing will greatly increase the likelihood that your site is available and usable to visitors, even in less-than-ideal situations.</p>
+<h2>Testing on your device</h2>
+<p>Regularly testing a web page as you build it is a great way to prevent performance issues from creeping in. However, there's one important thing to keep in mind when running performance tests on your own device.</p>
+<p>Local testing tools will often use your device's CPU, GPU and network to run tests. This means that if you're on a souped-up laptop and connected to high-speed internet, your test will be reflective of that environment.</p>
+<h3>Have extra testing devices handy</h3>
+<p>It's always worth keeping some older devices handy for testing. Not only is this good for performance testing, but it also <a href="https://www.siliconrepublic.com/enterprise/gerry-mcgovern-digital-pollution-e-waste">helps reduce e-waste</a> by extending the useful life of those devices.</p>
+<p>Personally, I've taken over my girlfriend's old 2012 MacBook and iPhone 8 to use as testing devices for iOS &amp; Safari. Despite also recently upgrading to a faster laptop, I've held onto my Surface Pro 6 to serve as lower-spec laptop testing device.</p>
+<p>Of course, this solution is possible for everyone. Space, budget, and access to devices can all get in the way.</p>
+<h3>Apply throttling to your tests</h3>
+<p>Another way to test site performance during development is to use your browser's DevTools. Once again, though, these tests will all be run using your device's own CPU, GPU and network. Throttling is one way you can turn down the speed of your processors and network to simulate how your site performs on lower spec devices.</p>
+<p>If you're checking requests in the Network tab, you can apply Network throttling to get a feel for how requests come in over slower networks. You can also disable caching, allowing you to experience the site as a first-time visitor.</p>
+<p>The same applies in the Performance tab. Here you can also apply CPU throttling, to simulate how processor-intensive tasks may perform on low-powered devices.</p>
+<p>Finally, if you're using DevTools to run Lighthouse audits then be sure that you've enabled the <em>Simulated throttling</em> option which will apply network and CPU throttling to the tests being run.</p>
+<div class="callout">
+<p class="h3 title">Note</p>
+<p>It's worth noting that network throttling here will slow down the download time for assets, but TCP/SSL connections will not be slowed down. This is important to keep in mind if you've got a lot of third-party resources coming in. </p>
+<p>TCP/SSL connections add about a second to requests and in the real world will be impacted by slow network conditions.</p>
+</div>
+<h2>Going further with WebPageTest</h2>
+<p><a href="https://webpagetest.org/">WebPageTest</a> is an insanely powerful tool for understanding website performance. WebPageTest allows you run tests from different locations, on a wide range of devices (some real, other simulated), alongside applying network throttling and a host of other settings.</p>
+<p>When working with WebPageTest, I strongly recommend using network settings that are a few notches down from what you might expect your average user to be on. For example, if you're testing the desktop version of your site, then run a test using a 4G (or even Fast 3G) network connection just to simulate how it might feel for someone that doesn't have fast cable internet.</p>
+<p>Another huge benefit of using WebPageTest is that it allows you script clicks and navigations into your tests. This means that you can test performance of page navigation, or even simulate a user journey while collecting performance metrics at the same time. It's a bit too much to get into right now, but if you're interested here's <a href="https://docs.webpagetest.org/scripting/">some documentation</a> to get you started.</p>
+<h2>Resources</h2>
+<ul>
+<li><strong><a href="https://shkspr.mobi/blog/2021/01/the-unreasonable-effectiveness-of-simple-html/">The unreasonable effectiveness of simple HTML</a></strong> - Terence Eden explains that visitors to our site might not be on the devices we imagine, and why plain old HTML as the foundation of your site can help.</li>
+<li><strong><a href="https://www.siliconrepublic.com/enterprise/gerry-mcgovern-digital-pollution-e-waste">‘Digital is not green. It is a hidden accelerant of global warming’</a></strong> - Gerry McGovern with the case for reducing e-waste and extending the life of existing devices.</li>
+<li><strong><a href="https://docs.webpagetest.org/scripting/">Custom Scripting for WebPageTest</a></strong> - Docs to help you get started with custom scripting performance tests on WebPageTest.</li>
+</ul>
+<hr>
+<p>The next issue of Optimised will be in your inbox on October 1st. The website has an <strong><a href="https://optimised.email/">archive of all previous emails</a></strong>. It's a good place to recap on anything we've covered, and also handy to share with friends or colleagues.</p>
+<p>As always if you've got any feedback or specific topics you want to be covered then just reply to this email.</p>
+<p>Keep safe, stay well.<br>
+Fershad.</p>
+</main>
+  <footer class="footer">
+    <div class="wrapper text-center flow">
+        <div id="wcb-wrapper"></div>
+        <nav>
+            <ul>
+                
+                    <li>
+                        <a href="http://localhost:8080">Archive</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/series/">Series</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:8080/contact/">Contact</a>
+                    </li>
+                
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Copyright 2022 Fershad Digital
+            </p>
+            <small>Fershad Digital LTD is a company registered in Taiwan.
+                <br>Unified business number: 82954243
+                <br>
+                <a href="http://localhost:8080/privacy">Privacy policy</a>
+            </small>
+        </div>
+    </div>
+</footer>
+
+<!-- <script async src="/js/carbon-badge.mjs" type="module"></script>
+<script async nomodule="" src="/js/carbon-badge.js"></script> -->
+
+
+  <svg class="svg-filters" style="display:none;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="marker-shape">
+        <feTurbulence basefrequency="0 0.15" numoctaves="1" result="warp" type="fractalNoise" />
+        <feDisplacementMap in2="warp" ein="SourceGraphic" scale="30" xchannelselector="R" ychannelselector="G" />
+      </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#marker-shape)" />
+  </svg>
+
+  <script async src="/prism/prism.js"></script>
+  <link href="/assets/css/tokens.css" rel="stylesheet">
+
+  
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<article class="imageTextOverlap">
+    <div class="content">
+        {% if timestamp %}
+        <div class="postInfo">
+            <span>Published on
+            </span>
+            <time datetime="{{ timestamp | w3DateFilter }}">{{ timestamp | dateFilter | upcase }}</time>
+        </div>
+        {% endif %}
+        <h3 class="heading">
+            <a href="/issues/{{issueNo}}/">{{ title }}</a>
+        </h3>
+        <p>{{ content }}</p>
+    </div>
+</article>

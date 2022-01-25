@@ -1,0 +1,28 @@
+{% if hasJSONLD == true %}
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org/",
+    "@type": "{{ type }}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ site.baseURL }}{{ page.url }}"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Fershad Irani"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fershad Digital LTD",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fershad.com/img/Avataaar.png"
+      }
+    },
+    "headline": "{{ post.title }}",
+    "image": "{{ post.image }}",
+    "datePublished": "{{ post.publishedAt }}",
+    "dateModified": "{{ post._updatedAt }}"
+}
+</script>
+{% endif %}
