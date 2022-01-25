@@ -90,7 +90,7 @@ module.exports = (eleventyConfig) => {
   });
 
   eleventyConfig.addCollection("issuesDescending", (collection) =>
-    collection.getFilteredByGlob("issues/*.md").sort((a, b) => {
+    collection.getFilteredByGlob("src/issues/*.md").sort((a, b) => {
       if (a.data.issue > b.data.issue) return -1;
       else if (a.data.issue < b.data.issue) return 1;
       else return 0;
