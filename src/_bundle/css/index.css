@@ -90,10 +90,10 @@ input[type="email"] {
 
   input[type="submit"]:hover,
   input[type="submit"]:focus {
-    color: var(--dark-text);
+    color: var(--light-text);
     overflow: visible;
     background: transparent;
-    border: 2px var(--dark-text) solid;
+    border: 2px var(--color-accent-dark) solid;
   }
 
   /* input[type="submit"]:focus {
