@@ -13,6 +13,7 @@ description: '{{ description }}'
 {% for item in collections.issue %}
 {% if item.data.issue == issue %}
 {% assign this_issue = item %}
+{% assign slug = false %}
 {% assign title = this_issue.data.title %}
 {% assign content = this_issue.data.description %}
 {% assign timestamp = this_issue.data.published %}
