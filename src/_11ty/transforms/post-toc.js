@@ -22,7 +22,7 @@ module.exports = async (content, outputPath) => {
             });
 
             if ($(headings).length > 0) {
-                const toc = `<details class="toc flow"><summary><h2 class="h5">Table of content</h2></summary><nav><ul class="flow">${makeTOC(
+                const toc = `<details open class="toc flow"><summary><h2 class="h5">Table of content</h2></summary><nav><ul class="flow">${makeTOC(
                     tocArray
                 )}</ul></nav></details>`;
 
