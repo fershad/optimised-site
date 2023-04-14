@@ -74,7 +74,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addTransform("postFlow", postFlow);
     eleventyConfig.addTransform("postTOC", postTOC);
     //* Inline page CSS & purge all unused CSS per page
-    eleventyConfig.addTransform('purge-styles', purgeStyles);
+    // eleventyConfig.addTransform('purge-styles', purgeStyles);
     //* Inline critical CSS & purge all unused CSS per page
     // eleventyConfig.addTransform('imgPlaceholder', imgPlaceholder);
     //* Minify the HTML

@@ -13,8 +13,8 @@
     "dev:rollup": "rollup -c -w"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
-    "@11ty/eleventy-img": "^0.7.3",
+    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-img": "^3.1.0",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@babel/core": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
