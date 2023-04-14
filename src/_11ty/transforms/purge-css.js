@@ -25,7 +25,7 @@ const siteFolder = !dev ? '_site' : '_dev';
 
 const extractCritical = async (content, outputPath) => {
     const { html, uncritical } = await critical.generate({
-        inline: true,
+        inline: false,
         base: path.dirname(outputPath),
         html: content,
         css: [`/${siteFolder}/assets/css/main.css`],

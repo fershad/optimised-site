@@ -75,12 +75,12 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addTransform("postTOC", postTOC);
     //* Inline page CSS & purge all unused CSS per page
     // eleventyConfig.addTransform('purge-styles', purgeStyles);
+    eleventyConfig.addTransform('dev-styles', devStyles);
     //* Inline critical CSS & purge all unused CSS per page
     // eleventyConfig.addTransform('imgPlaceholder', imgPlaceholder);
     //* Minify the HTML
     eleventyConfig.addTransform("htmlmin", htmlMin);
   }  else {
-    eleventyConfig.addTransform('dev-styles', devStyles);
   }
 
   eleventyConfig.addPlugin(sitemap, {
